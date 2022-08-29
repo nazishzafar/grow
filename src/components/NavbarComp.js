@@ -16,10 +16,13 @@ export default function NavbarComp() {
         </div>
        
         <div className='navlinks'>
-       <Link to='/' className='navlinks'>MI Phones</Link>
-       <Link to='/' className='navlinks'>Redmi Phones</Link>
-       <Link to='/' className='navlinks'>Smart Devices</Link>
-       <Link to='/' className='navlinks'>Xiaomi</Link>
+       <Link to='/' className='navlinks'>Home</Link>
+       <Link to='/assessment' className='navlinks'>Assessments</Link>
+       <Link to='/articles' className='navlinks'>Articles</Link>
+       <Link to='/diet' className='navlinks'>Diet Plan</Link>
+       <Link to='/community' className='navlinks'>Community</Link>
+       <Link to='/contact' className='navlinks'>Contact</Link>
+       <Link to='/about' className='navlinks'>About</Link>
 
      </div>
 

@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     border: 1px solid black;
-    padding: 1vmax;
+    padding: 0.5vmax;
     z-index: 1000;
 }
 .navlinks{
