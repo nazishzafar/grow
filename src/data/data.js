@@ -529,26 +529,7 @@ export const data={
                         "name": "Warrenty",
                         "url": "https://www.mi.com/in/service/warranty/"
                   },
-                  {
-                        "name": "Mi Exchange",
-                        "url": "https://www.mi.com/in/miexchange/"
-                  },
-                  {
-                        "name": "Bulk Order",
-                        "url": "https://www.mi.com/in/bulkbuy/"
-                  },
-                  {
-                        "name": "User Guide",
-                        "url": "https://www.mi.com/in/service/userguide/"
-                  },
-                  {
-                        "name": "Laptop Drivers",
-                        "url": "https://www.mi.com/in/service/support/laptop-drivers.html"
-                  },
-                  {
-                        "name": "Mi Screen Protect",
-                        "url": "https://www.mi.com/in/service/miphoneprotection/#miscreenprotect"
-                  },
+                  
                   {
                         "name": "Mi Extended Warranty",
                         "url": "https://www.mi.com/in/service/miextendedwarranty/"
@@ -575,54 +556,7 @@ export const data={
                         "name": "Mi 11X Pro",
                         "url": "https://www.mi.com/in/mi-11x-pro/"
                   },
-                  {
-                        "name": "Redmi 8",
-                        "url": "https://www.mi.com/in/redmi-8/"
-                  },
-                  {
-                        "name": "Redmi 9",
-                        "url": "https://www.mi.com/in/redmi-9/"
-                  },
-                  {
-                        "name": "Redmi 9 Prime",
-                        "url": "https://www.mi.com/in/redmi-9-prime/"
-                  },
-                  {
-                        "name": "Redmi 9i",
-                        "url": "https://www.mi.com/in/redmi-9i/"
-                  },
-                  {
-                        "name": "Redmi 9A",
-                        "url": "https://www.mi.com/in/redmi-9a/"
-                  },
-                  {
-                        "name": "Redmi Note 10",
-                        "url": "https://www.mi.com/in/redmi-note-10/"
-                  },
-                  {
-                        "name": "Redmi Note 10 Pro",
-                        "url": "https://www.mi.com/in/redmi-note-10-pro/"
-                  },
-                  {
-                        "name": "Redmi Note 10 Pro Max",
-                        "url": "https://www.mi.com/in/redmi-note-10-pro-max/"
-                  },
-                  {
-                        "name": "Redmi Note 9 Pro",
-                        "url": "https://www.mi.com/in/redmi-note-9-pro/"
-                  },
-                  {
-                        "name": "Redmi Note 9",
-                        "url": "https://www.mi.com/in/redmi-note-9/"
-                  },
-                  {
-                        "name": "Redmi Note 9 Pro Max",
-                        "url": "https://www.mi.com/in/redmi-note-9-pro-max/"
-                  },
-                  {
-                        "name": "TVs",
-                        "url": "https://www.mi.com/in/all-mi-tv"
-                  },
+               
                   {
                         "name": "Laptops",
                         "url": "https://www.mi.com/in/xiaomi-laptops"
@@ -659,30 +593,7 @@ export const data={
                         "name": "Privacy Policy",
                         "url": "https://www.mi.com/in/about/privacy/"
                   },
-                  {
-                        "name": "Declarations",
-                        "url": "https://www.mi.com/in/service/support/mideclare.html"
-                  },
-                  {
-                        "name": "Integrity & Compliance",
-                        "url": "https://integrity.mi.com/global"
-                  },
-                  {
-                        "name": "Smartphone Quality",
-                        "url": "https://www.mi.com/in/smartphone-quality/"
-                  },
-                  {
-                        "name": "TV Quality",
-                        "url": "https://www.mi.com/in/tv-quality/"
-                  },
-                  {
-                        "name": "Service Quality",
-                        "url": "https://www.mi.com/in/service-quality/"
-                  },
-                  {
-                        "name": "Environment",
-                        "url": "https://www.mi.com/in/service/support/ewastetakeback.html"
-                  },
+              
                   {
                         "name": "Sitemap",
                         "url": "https://www.mi.com/in/sitemap"

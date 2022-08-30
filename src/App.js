@@ -31,10 +31,6 @@ function App() {
                 <Route path='/Signup' element={<Signup/>}/>
                 <Route path='/Login' element={<Login/>}/>
             </Routes>
-             {/* <PreNavbar/>
-             <NavbarComp/>
-            <Slider start={data.banner.start}/>
-            <Footer footer={data.footer}/> */}
             <Footer footer={data.footer}/>
         </Router>
       
