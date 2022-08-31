@@ -14,18 +14,9 @@ import Diet from './Diet'
 import Contact from './Contact'
 import Signup from './Signup'
 import Login from './Login'
-import {ThemeProvider} from 'styled-components'
+import {ThemeProvide} from 'styled-components'                                                          
 function App() {
-    const theme={
-        colors:{},
-        media:{ mobile:"768px" , tab:"998px"
-
-        }
-
-    }
-
     return (
-        <ThemeProvider theme={theme}>
         <Router>
             <PreNavbar/>
             <NavbarComp/>
@@ -42,7 +33,6 @@ function App() {
             </Routes>
             <Footer footer={data.footer}/>
         </Router>
-        </ThemeProvider>
       
        
     );

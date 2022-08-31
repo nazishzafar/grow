@@ -1,9 +1,12 @@
 .footer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  padding: 2.5vmax;
+  padding: 2.5  vmax;
   background-color: rgb(117, 117, 117);
   color: white;
+  position: absolute;
+  bottom:0;         
+  width:100%;   
 
 }
 .footer>div>a{
