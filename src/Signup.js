@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap';
 import "./styles/Signup.css"
+import {FaEnvelope, FaLock,  FaUser} from 'react-icons/fa'
+
 
 
 const Signup = () => {
@@ -20,7 +22,7 @@ const Signup = () => {
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.post("hdf",userRegisteration);
+    // axios.post("hdf",userRegisteration);
   }
 
 
@@ -28,16 +30,16 @@ const Signup = () => {
     
     <form  onSubmit={handleSubmit}  className='card-container'>
         <div className='input-field'>
-          <label htmlFor='username'>Full Name</label>
+          <label htmlFor='username'><FaUser/> Full Name</label>
           <input type='text' value={userRegisteration.username} autoComplete='off' onChange={handleInput} name='username' id='username'/>
         </div>
 
         <div className='input-field'>
-          <label htmlFor='email'>Email</label>
+          <label htmlFor='email'><FaEnvelope/>  Email</label>
           <input type='email' value={userRegisteration.email} autoComplete='off' onChange={handleInput} name='email' id='email'/>
         </div>
         <div className='input-field'>
-          <label htmlFor='password'>Password</label>
+          <label htmlFor='password'><FaLock/>  Password</label>
           <input type='password' value={userRegisteration.password} autoComplete='off' onChange={handleInput} name='password' id='password'/>
         </div>
 
