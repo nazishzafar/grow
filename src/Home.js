@@ -1,8 +1,17 @@
 import React from 'react'
+import hero from "./Images/hero.jpg"
+import "./styles/Home.css"
+
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <div className='hero-image'>
+      <img  src={hero} alt="hero image"/>
+      </div>
+     
+
+    </div>
   )
 }
 

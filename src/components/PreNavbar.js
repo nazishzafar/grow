@@ -15,7 +15,7 @@ export default function PreNavbar() {
 
         </div>
         <div>
-        <Link to='/login' className='navlinks'><FaUser/> Log in</Link> <span>|</span>
+        <Link to='/login' className='navlinks'><FaLock/> Log in</Link> <span>|</span>
             <Link to='/signup' className='navlinks'><FaUser/> Sign Up</Link>
             
         </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/Nav.css'
 import {Link} from 'react-router-dom'
 import {data} from "../data/data"
+import logo from "../Images/logo.png"
 
 
 
@@ -10,7 +11,7 @@ export default function NavbarComp() {
     <div className='Navbar'>
         <div className='logo'>
             <Link to='/'>
-                <img id='logoimg' src={data.logo} alt= 'logo' />
+                <img id='logoimg' src={logo} alt= 'logo' />
             </Link>
 
         </div>
