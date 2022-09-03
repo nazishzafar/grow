@@ -4,7 +4,7 @@ import NavbarComp from './components/NavbarComp'
 
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import {data} from './data/data'
-import {form} from './data/form'
+import {assessment} from './data/form'
 import Footer from './components/Footer'
 import Home from './Home'
 import Assessments from './Assessments'
@@ -23,7 +23,7 @@ function App() {
             <NavbarComp/>
             <Routes>
                 <Route path='/' element={<Home/>}/>
-                <Route path='/assessment' element={<Assessments assessments={form.assessment}/>}/>
+                <Route path='/assessment' element={<Assessments assessments={assessment}/>}/>
                 <Route path='/articles' element={<Articles/>}/>
                 <Route path='/diet' element={<Diet/>}/>
                 <Route path='/community' element={<Community/>}/>

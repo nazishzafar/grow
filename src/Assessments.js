@@ -1,7 +1,9 @@
 import React from 'react'
-import {form} from './data/form'
+import {assessment} from './data/form'
 import adhd from "./Images/adhd.svg"
 import "./styles/Home.css"
+import "./styles/Assessments.css"
+
 
 const Assessments = () => {
   return (
@@ -9,22 +11,34 @@ const Assessments = () => {
       <div className='hero-image'>
       <img  src={adhd} alt="hero image"/>
       </div>
-    <div>
+
+
+      <div className='container'>
+    
             {
-           form.assessment.Question.map((item,index)=>(
-                <p key={item.Question1} href={item.Question1}>{item.Question1}</p>
+           assessment.map((item,index)=>(
+            <div className='questions'>
+                <div key={item.Question} href={item.Question}>{index+1}. {item.Question}</div>
+                <div className='options'>
+                {
+                  [1,2,3,4].map((option)=><div className='radio-label'>
+      <input type='radio' name='options' id='options' checked='False'/>
+        <label key={option} href={option}>{option}</label>
+       
+                  </div>)
+                }
+                </div>
+            </div>
             ))
         }
-    </div>
+   
 
-{/* 
+
       <div>
-      {
-     form.assessment.options.map((item,index)=>(
-          <p key={item.option} href={item.option}>{item.option}</p>
-      ))
-  }
-</div> */}
+ 
+
+</div>
+</div>
 </div>
   );
 }
