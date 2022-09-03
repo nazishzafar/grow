@@ -1,9 +1,14 @@
 import React from 'react'
 import {form} from './data/form'
+import adhd from "./Images/adhd.svg"
+import "./styles/Home.css"
 
 const Assessments = () => {
   return (
     <div>
+      <div className='hero-image'>
+      <img  src={adhd} alt="hero image"/>
+      </div>
     <div>
             {
            form.assessment.Question.map((item,index)=>(
