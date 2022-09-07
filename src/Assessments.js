@@ -22,7 +22,7 @@ const Assessments = () => {
                 <div className='options'>
                 {
                   [1,2,3,4].map((option)=><div className='radio-label'>
-      <input type='radio' name='options' id='options' checked='False'/>
+      <input type='radio' name='options' id='options' />
         <label key={option} href={option}>{option}</label>
        
                   </div>)
