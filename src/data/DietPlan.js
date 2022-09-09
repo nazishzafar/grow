@@ -20,6 +20,7 @@ export const DietPlan={
 
 
         "overweight":{
+
             "Water_Requirement":["8 Glass"],
 
             "Recommendation":["Take at least 10 glass of water to maintain the heat balance",
@@ -30,19 +31,17 @@ export const DietPlan={
             "Do jogging and brisk wall for 30 minutes daily" ,
             "Have kaleji once a week or mutton twice a week"],
 
-            "Digestion boosting tea":["2 Cup water, 10 mint leaves,7 Feenugreek,sequeeze lemon if you want"],
+            "Digestion_boosting_tea":["2 Cup water, 10 mint leaves","7 Feenugreek,sequeeze lemon if you want"],
 
             "Pre_Breakfast":["1 glass water","1 tbs Ispaghol"],
 
-            "Breakfast":[
-                "1 bran bread","2 eggs white","1 yolk omelette"
-            ],
+            "Breakfast":["1 bran bread","2 eggs white","1 yolk omelette"],
 
             "Snack1":["1 glass whole milk"],
 
             "Lunch":["1 kebab","Salad","1 bread optional"],
 
-            "Snack2":["1-2 fruits"],
+            "Snack2":["1/2 fruits"],
 
             "Dinner":["1 chapatti","1 tbs yogurt","1/2 salan"],
 
