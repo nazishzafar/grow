@@ -139,6 +139,10 @@ const Diet = () => {
         </form>
       ) : BMI === 1 ? (
         <div className="container">
+          <div>Water Requirement</div>
+          {DietPlan.underweight.Water_Requirement.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
           <div>Pre Breakfast</div>
           {DietPlan.underweight.Pre_Breakfast.map((item, index) => (
             <div key={index}>{item}</div>
@@ -164,10 +168,40 @@ const Diet = () => {
             <div key={index}>{item}</div>
           ))}
         </div>
+
+        
       ) : BMI === 2 ? (
         <div className="container">
+           <div>Water Requirement</div>
+          {DietPlan.normalweight.Water_Requirement.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
           <div>Recommendation</div>
           {DietPlan.normalweight.Recommendation.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div>Digestion Boosting Tea</div>
+          {DietPlan.normalweight.Digestion_boosting_tea.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div>Pre Breakfast</div>
+          {DietPlan.normalweight.Pre_Breakfast.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div>Breakfast</div>
+          {DietPlan.normalweight.Breakfast.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+           <div>Snack1</div>
+          {DietPlan.normalweight.Snack2.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div>Lunch</div>
+          {DietPlan.normalweight.Lunch.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+           <div>Snack2</div>
+          {DietPlan.normalweight.Snack2.map((item, index) => (
             <div key={index}>{item}</div>
           ))}
         </div>

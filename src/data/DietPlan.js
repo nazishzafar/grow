@@ -1,6 +1,6 @@
 export const DietPlan={
     "underweight":
-        {
+        {    "Water_Requirement":["8 Glass"],
             "Pre_Breakfast":["VEGETABLE SANDWICH GRILLED","VEGETABLE CHICKEN SOUP","HANDFULL OF NUTS",
             "MUTTON BITES SEASONED WITH SESAME SEEDS.","SPINACH CHEESE SANDWICH"],
 
@@ -20,6 +20,7 @@ export const DietPlan={
 
 
         "overweight":{
+            "Water_Requirement":["8 Glass"],
 
             "Recommendation":["Take at least 10 glass of water to maintain the heat balance",
             "Try to choose home made snacks",
@@ -51,6 +52,7 @@ export const DietPlan={
 
 
         "normalweight":{
+            "Water_Requirement":["8 Glass"],
             "Recommendation":["Take at least 10 glass of water to maintain the heat balance",
             "Eat proteins that your body needs in this age.",
             "Have a energy rich breakfast best options are cereals,proteins and milk",
