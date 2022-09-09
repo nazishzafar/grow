@@ -3,6 +3,7 @@ import  { useState } from 'react'
 import nutrition from "./Images/Nutrition.svg"
 import { Button } from 'react-bootstrap';
 import "./styles/Home.css"
+import {DietPlan} from './data/DietPlan'
 
 const Diet = () => {
   
@@ -35,14 +36,30 @@ const Diet = () => {
     }
 
     if(BMI<18.5){
-      console.log("You're Underweight");
+      console.log("underweight")
+      return(
+      <div className='container'>
+      <p>Snack</p>
+      {
+         DietPlan.underweight.Pre_Breakfast.map((item,index)=>(
+              <div key={item} >{item}</div>
+          ))
+      }
+      
+      </div>
+
+     
+      )
     }
+
     else if(BMI>18.5 && BMI <24.9){
       console.log("Your weight is normal");
     }
+
     else if(BMI >25 && BMI < 29.9){
       console.log("You're overweight");
     }
+
     else{
       console.log("You're obese");
     }

@@ -4,7 +4,7 @@ import {teacherForm} from './data/teacher'
 import adhd from "./Images/adhd.svg"
 import "./styles/Home.css"
 import "./styles/Assessments.css"
-import { teacher } from './data/teacher'
+
 
 
 const Assessments = () => {
