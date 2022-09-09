@@ -25,7 +25,7 @@ const Diet = () => {
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    const BMI=userDiet.weight/Math.pow(userDiet.height,2)
+    const BMI=userDiet.weight/Math.pow((userDiet.height/100),2)
     var BEE;
     if(userDiet.gender==="Male")
     {
@@ -75,12 +75,12 @@ const Diet = () => {
           <input type='number' autoComplete='off'  name='age' id='age'  onChange={handleInput} value={userDiet.age}/>
         </div>
         <div className='input-field'>
-          <label htmlFor='weight'>  Weight</label>
+          <label htmlFor='weight'>  Weight in kg:</label>
           <input type='number'  autoComplete='off'  name='weight' id='weight' onChange={handleInput} value={userDiet.weight}/>
         </div>
 
         <div className='input-field'>
-          <label htmlFor='Height'>  Height</label>
+          <label htmlFor='Height'>  Height in cm:</label>
           <input type='number'  autoComplete='off'  name='height' id='height' onChange={handleInput} value={userDiet.height}/>
         </div>
         <div className='input-field'>
