@@ -166,6 +166,7 @@ const Diet = () => {
           {DietPlan.underweight.Dinner.map((item, index) => (
             <div key={index}>{item}</div>
           ))}
+          
         </div>
 
         
@@ -204,6 +205,7 @@ const Diet = () => {
           {DietPlan.normalweight.Snack3.map((item, index) => (
             <div key={index}>{item}</div>
           ))}
+        
 
         </div>
 
@@ -258,6 +260,7 @@ const Diet = () => {
       ) : (
         <div>You're obese</div>
       )}
+      
     </div>
   );
 };
