@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import { Button } from 'react-bootstrap';
 import "./styles/Signup.css"
 import {FaEnvelope, FaLock,  FaUser} from 'react-icons/fa'
+import axios from 'axios';
 
 
 
 const Signup = () => {
   const [userRegisteration, setUserRegisteration]=useState({
-    username:'',
+    name:'',
     email:'',
     password:''
   });
@@ -20,9 +21,13 @@ const Signup = () => {
 
   }
 
-  const handleSubmit=(e)=>{
+  const handleSubmit=async(e)=>{
     e.preventDefault();
-    // axios.post("hdf",userRegisteration);
+    try {
+      // const {data}=await axios.post("http://127.0.0.1:8000/api/user/register/",{...userRegisteration,password2:userRegisteration.emailpassword})
+    } catch (error) {
+      alert(error.message)
+    }
   }
 
 
@@ -30,8 +35,8 @@ const Signup = () => {
     
     <form  onSubmit={handleSubmit}  className='card-container'>
         <div className='input-field'>
-          <label htmlFor='username'><FaUser/> Full Name</label>
-          <input type='text' value={userRegisteration.username} autoComplete='off' onChange={handleInput} name='username' id='username'/>
+          <label htmlFor='name'><FaUser/> Full Name</label>
+          <input type='text' value={userRegisteration.name} autoComplete='off' onChange={handleInput} name='name' id='name'/>
         </div>
 
         <div className='input-field'>

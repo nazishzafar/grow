@@ -19,8 +19,13 @@
     gap:1rem;
 }
 
+.questions div,form{
+    width: 50%;
+}
+
 .options{
     display: flex;
+    justify-content: space-between;
     gap:1rem;
 }
 
