@@ -5,6 +5,13 @@ import { Button } from "react-bootstrap";
 import "./styles/Home.css";
 import { DietPlan } from "./data/DietPlan";
 
+// const Bed_ridden=1.2;
+// const Light_or_sedentary	=1.53
+// const Moderate_to_active	=1.76
+// const Heavily_active=	2.25
+
+
+
 const Diet = () => {
   const [userDiet, setUserDiet] = useState({
     name: "",
@@ -129,6 +136,11 @@ const Diet = () => {
               value="Female"
             />
             Female
+          </div>
+
+          <div>
+            <label htmlFor="activity">Activity</label>
+            <input type='drop-down'></input>
           </div>
 
           <Button type="submit">Submit</Button>

@@ -24,7 +24,7 @@ const Signup = () => {
   const handleSubmit=async(e)=>{
     e.preventDefault();
     try {
-      // const {data}=await axios.post("http://127.0.0.1:8000/api/user/register/",{...userRegisteration,password2:userRegisteration.emailpassword})
+      const {data}=await axios.post("http://127.0.0.1:8000/api/user/register/",{...userRegisteration,password2:userRegisteration.emailpassword})
     } catch (error) {
       alert(error.message)
     }
