@@ -42,37 +42,37 @@ const initialValue = [
     question: "Argues with adults",
   },
   {
-    blocks:[false,true,false,false],
+    blocks:[false,false,false,true],
     answer: null,
     options: [0, 1, 2, 3],
     question: "Fidgets with hands or feet or squirms in seat",
   },
   {
-    blocks:[false,false,true,false],
+    blocks:[false,true,false,false],
     answer: null,
     options: [0, 1, 2, 3],
     question: "Fails to complete assignments",
   },
   {
-    blocks:[true,false,false,false],
+    blocks:[false,false,true,false],
     answer: null,
     options: [0, 1, 2, 3],
     question: "Hard to control in malls or grocery shopping",
   },
   {
-    blocks:[false,true,false,false],
+    blocks:[false,false,false,true],
     answer: null,
     options: [0, 1, 2, 3],
     question: "Messy or disorganized at home or school",
   },
   {
-    blocks:[false,false,false,true],
+    blocks:[true,false,false,false],
     answer: null,
     options: [0, 1, 2, 3],
     question: "Loss temper",
   },
   {
-    blocks:[false,false,true,false],
+    blocks:[false,true,false,false],
     answer: null,
     options: [0, 1, 2, 3],
     question: "Needs close supervision to get through assignments",
@@ -86,18 +86,18 @@ const initialValue = [
   {
     question:
       "Runs about or climbs excessively in situations where it is inapproprait",
-    blocks:[true,false,false,false],
+      blocks:[false,false,true,false],
       answer: null,
     options: [0, 1, 2, 3],
   },
   {
-    blocks:[false,true,false,true],
+    blocks:[false,false,false,true],
     answer: null,
     options: [0, 1, 2, 3],
     question: "Distractibility or attention span a problem",
   },
   {
-    blocks:[false,false,true,false],
+    blocks:[true,false,false,false],
     answer: null,
     options: [0, 1, 2, 3],
     question: "Irritable",
@@ -106,30 +106,30 @@ const initialValue = [
     question:
       "Avoids, express reluctance about, or has difficulties engaging in tasks that require sustained mental effort (such as \n school work or homework",
 
-    blocks:[false,false,false,true],
+      blocks:[false,true,false,true],
       answer: null,
     options: [0, 1, 2, 3],
-  },
-  {
-    blocks:[true,false,false,false],
-    answer: null,
-    options: [0, 1, 2, 3],
-    question: "Restless is the squirmy sense",
-  },
-  {
-    blocks:[false,true,false,false],
-    answer: null,
-    options: [0, 1, 2, 3],
-    question: "Gets distracted when given instructions to do something",
   },
   {
     blocks:[false,false,true,false],
     answer: null,
     options: [0, 1, 2, 3],
-    question: "Actively defies or refuses to comply with adults' requests",
+    question: "Restless is the squirmy sense",
   },
   {
     blocks:[false,false,false,true],
+    answer: null,
+    options: [0, 1, 2, 3],
+    question: "Gets distracted when given instructions to do something",
+  },
+  {
+    blocks:[true,false,false,false],
+    answer: null,
+    options: [0, 1, 2, 3],
+    question: "Actively defies or refuses to comply with adults' requests",
+  },
+  {
+    blocks:[false,true,false,true],
     answer: null,
     options: [0, 1, 2, 3],
     question: "has trouble concentrating in class",
@@ -138,7 +138,7 @@ const initialValue = [
     question:
       "has difficulty waiting in lines or awaiting turn in games or ground instructions",
 
-    blocks:[true,false,false,false],
+      blocks:[false,false,true,false],
       answer: null,
     options: [0, 1, 2, 3],
   },
@@ -146,12 +146,12 @@ const initialValue = [
     question:
       "Leaves seat in classroom or in other situations in which remaining seated is expected",
 
-    blocks:[false,true,false,true],
+      blocks:[false,false,false,true],
       answer: null,
     options: [0, 1, 2, 3],
   },
   {
-    blocks:[false,false,true,false],
+    blocks:[true,false,true,false],
     answer: null,
     options: [0, 1, 2, 3],
     question: "Deliberately does things that annoy other people",
@@ -160,7 +160,7 @@ const initialValue = [
     question:
       "Does not follow through on instruction and fails to finish schoolwork,chores or duties inthe workspace (not due to oppositional behaviour or failures tounderstand instructions)",
 
-    blocks:[false,false,true,false],
+      blocks:[false,true,false,true],
       answer: null,
     options: [0, 1, 2, 3],
   },
@@ -168,12 +168,12 @@ const initialValue = [
     question:
       "Has difficulty playing or engaging in leisure activities quietly",
 
-    blocks:[true,false,false,false],
+    blocks:[false,false,true,false],
       answer: null,
     options: [0, 1, 2, 3],
   },
   {
-    blocks:[true,false,false,false],
+    blocks:[false,false,false,true],
     answer: null,
     options: [0, 1, 2, 3],
     question: "Easily frustrated in efforts",
