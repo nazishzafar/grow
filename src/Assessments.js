@@ -5,100 +5,99 @@ import "./styles/Assessments.css";
 
 const initialValue = [
   {
-    blocks:[false,false,false,true],
     answer: null,
+    blocks: [0, 0, 0, -1],
     options: [0, 1, 2, 3],
-
     question: "Inattentive,easily distracted",
   },
   {
-    blocks:[true,false,false,false],
     answer: null,
+    blocks: [-1, 0, 0, 0],
     options: [0, 1, 2, 3],
     question: "Angry and resentful",
   },
   {
-    blocks:[false,true,false,false],
     answer: null,
+    blocks: [0, -1, 0, 0],
     options: [0, 1, 2, 3],
     question: "Difficulty doing or completing home work",
   },
   {
-    blocks:[false,false,true,false],
     answer: null,
+    blocks: [0, 0, -1, 0],
     options: [0, 1, 2, 3],
     question: "Is always 'on the go' or act as if driven by motor",
   },
   {
-    blocks:[false,false,false,true],
     answer: null,
+    blocks: [0, 0, 0, -1],
     options: [0, 1, 2, 3],
     question: "Short attention span",
   },
   {
-    blocks:[true,false,false,false],
     answer: null,
+    blocks: [-1, 0, 0, 0],
     options: [0, 1, 2, 3],
     question: "Argues with adults",
   },
   {
-    blocks:[false,false,false,true],
     answer: null,
+    blocks: [0, 0, 0, -1],
     options: [0, 1, 2, 3],
     question: "Fidgets with hands or feet or squirms in seat",
   },
   {
-    blocks:[false,true,false,false],
     answer: null,
+    blocks: [0, -1, 0, 0],
     options: [0, 1, 2, 3],
     question: "Fails to complete assignments",
   },
   {
-    blocks:[false,false,true,false],
     answer: null,
+    blocks: [0, 0, -1, 0],
     options: [0, 1, 2, 3],
     question: "Hard to control in malls or grocery shopping",
   },
   {
-    blocks:[false,false,false,true],
     answer: null,
+    blocks: [0, 0, 0, -1],
     options: [0, 1, 2, 3],
     question: "Messy or disorganized at home or school",
   },
   {
-    blocks:[true,false,false,false],
     answer: null,
+    blocks: [-1, 0, 0, 0],
     options: [0, 1, 2, 3],
     question: "Loss temper",
   },
   {
-    blocks:[false,true,false,false],
     answer: null,
+    blocks: [0, -1, 0, 0],
     options: [0, 1, 2, 3],
     question: "Needs close supervision to get through assignments",
   },
   {
-    blocks:[false,false,false,true],
     answer: null,
+    blocks: [0, 0, 0, -1],
     options: [0, 1, 2, 3],
     question: "Only attends if it is something he/she is very interested in",
   },
   {
-    question:
-      "Runs about or climbs excessively in situations where it is inapproprait",
-      blocks:[false,false,true,false],
-      answer: null,
+    question: "Runs about or climbs excessively in situations where it is inapproprait",
+
+    answer: null,
+    blocks: [0, 0, -1, 0],
     options: [0, 1, 2, 3],
   },
   {
-    blocks:[false,false,false,true],
     answer: null,
+    blocks: [0, 0, 0, -1],
     options: [0, 1, 2, 3],
     question: "Distractibility or attention span a problem",
   },
   {
-    blocks:[true,false,false,false],
     answer: null,
+    blocks: [-1, 0, 0, 0],
     options: [0, 1, 2, 3],
     question: "Irritable",
   },
@@ -106,31 +105,31 @@ const initialValue = [
     question:
       "Avoids, express reluctance about, or has difficulties engaging in tasks that require sustained mental effort (such as \n school work or homework",
 
-      blocks:[false,true,false,true],
-      answer: null,
+    answer: null,
+    blocks: [0, -1, 0, -1],
     options: [0, 1, 2, 3],
   },
   {
-    blocks:[false,false,true,false],
     answer: null,
+    blocks: [0, 0, -1, 0],
     options: [0, 1, 2, 3],
     question: "Restless is the squirmy sense",
   },
   {
-    blocks:[false,false,false,true],
     answer: null,
+    blocks: [0, 0, 0, -1],
     options: [0, 1, 2, 3],
     question: "Gets distracted when given instructions to do something",
   },
   {
-    blocks:[true,false,false,false],
     answer: null,
+    blocks: [-1, 0, 0, 0],
     options: [0, 1, 2, 3],
     question: "Actively defies or refuses to comply with adults' requests",
   },
   {
-    blocks:[false,true,false,true],
     answer: null,
+    blocks: [0, -1, 0, -1],
     options: [0, 1, 2, 3],
     question: "has trouble concentrating in class",
   },
@@ -138,21 +137,21 @@ const initialValue = [
     question:
       "has difficulty waiting in lines or awaiting turn in games or ground instructions",
 
-      blocks:[false,false,true,false],
-      answer: null,
+    answer: null,
+    blocks: [0, 0, -1, 0],
     options: [0, 1, 2, 3],
   },
   {
     question:
       "Leaves seat in classroom or in other situations in which remaining seated is expected",
 
-      blocks:[false,false,false,true],
-      answer: null,
+    answer: null,
+    blocks: [0, 0, 0, -1],
     options: [0, 1, 2, 3],
   },
   {
-    blocks:[true,false,true,false],
     answer: null,
+    blocks: [-1, 0, -1, 0],
     options: [0, 1, 2, 3],
     question: "Deliberately does things that annoy other people",
   },
@@ -160,21 +159,21 @@ const initialValue = [
     question:
       "Does not follow through on instruction and fails to finish schoolwork,chores or duties inthe workspace (not due to oppositional behaviour or failures tounderstand instructions)",
 
-      blocks:[false,true,false,true],
-      answer: null,
+    answer: null,
+    blocks: [0, -1, 0, -1],
     options: [0, 1, 2, 3],
   },
   {
     question:
       "Has difficulty playing or engaging in leisure activities quietly",
 
-    blocks:[false,false,true,false],
-      answer: null,
+    answer: null,
+    blocks: [0, 0, -1, 0],
     options: [0, 1, 2, 3],
   },
   {
-    blocks:[false,false,false,true],
     answer: null,
+    blocks: [0, 0, 0, -1],
     options: [0, 1, 2, 3],
     question: "Easily frustrated in efforts",
   },
@@ -182,24 +181,32 @@ const initialValue = [
 
 const Assessments = () => {
   const [assessments, setAssessments] = useState(initialValue);
+  const [totals, setTotals] = useState([0, 0, 0, 0])
   const [bool, setBool] = useState(false);
 
   const handleChange = (e, index) => {
+    const newBlock = assessments[index].blocks.map((block) => block === -1 ? Number(e.target.value) : block)
     setAssessments((prev) =>
       prev.map((assessment, id) =>
-        id === index ? { ...assessment, answer: e.target.value } : assessment
+        id === index ? ({ ...assessment, blocks: newBlock, answer: Number(e.target.value) }) : assessment
       )
     );
   };
 
   const handleSubmit = () => {
-      const verify=assessments.find((assessment)=>assessment.answer===null);
-      if(verify){
-        alert("Please fill all options");
-      }
-      else{
-        setBool(true)
-      }
+    const verify = assessments.find((assessment) => assessment.answer === null);
+
+    if (verify) {
+      alert("Please fill all options");
+    }
+    else {
+      const a = assessments.map((assessment) => assessment.blocks[0]).reduce((total, num) => total + num);
+      const b = assessments.map((assessment) => assessment.blocks[1]).reduce((total, num) => total + num);
+      const c = assessments.map((assessment) => assessment.blocks[2]).reduce((total, num) => total + num);
+      const d = assessments.map((assessment) => assessment.blocks[3]).reduce((total, num) => total + num);
+      setTotals([a, b, c, d])
+      setBool(true)
+    }
   };
 
   return (
@@ -236,8 +243,8 @@ const Assessments = () => {
               {assessment.options.map((option) => (
                 <div key={option} className="radio-label">
                   {bool ? (
-                    assessment.blocks[option]?<div style={{backgroundColor:"grey",color:"white",width:"3rem",textAlign:"center"}}>{assessment.answer!==null?assessment.answer:"null"}</div>:<div style={{backgroundColor:"black",color:"white",width:"3rem",textAlign:"center"}}>null</div>
-                  ) : ( 
+                    <div style={{ backgroundColor: "grey", color: "white", width: "3rem", textAlign: "center" }}>{assessment.blocks[option]}</div>
+                  ) : (
                     <input
                       onChange={(e) => handleChange(e, index)}
                       type="radio"
@@ -251,6 +258,7 @@ const Assessments = () => {
             </form>
           </div>
         ))}
+        {bool && <div style={{display:"flex",gap:"1rem",fontWeight:"500"}}>Result: {totals.map((total, id) => <div key={id}>{total}</div>)}</div>}
         <button onClick={handleSubmit} type="button">
           Submit
         </button>

@@ -16,38 +16,10 @@ const Diet = () => {
     weight: 0,
     height: 0,
     gender: "",
+    activity: "",
+    temperature: "",
+    stress: ""
 
-  });
-
-  const [userActivity, setActivity] = useState({
-    Bed_ridden: 1.2,
-    Light_or_sedentary: 1.53,
-    Moderate_to_active: 1.76,
-    Heavily_active: 2.25
-  });
-  console.log(userActivity)
-  const [userStress,setStress]=useState({
-    None:1.0,
-Solid_tumor	:1.15,
-Leukemia_or_Lymphoma	:1.27,
-Inflammatory_bowel_disease	:1.11,
-Liver_disease	:1.07,
-Burns	:1.64,
-Pancreatic_disease:	1.13,
-General_surgery:	1.2	,
-Transplantation	:1.19,
-Sepsis	:1.33,
-Abscess:1.12,
-Other_infection:	1.16
-
-  });
-
-  const[userTemp,setTemp]=useState({
-    Normal:1.0,
-Greater_100:	1.1,
-Greater_102:1.2,
-Greater_104:1.3,
-Greater_105:	1.4
   });
 
   const [BMI, setBMI] = useState(0);
@@ -60,8 +32,8 @@ Greater_105:	1.4
   };
 
 
- 
- 
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -77,28 +49,29 @@ Greater_105:	1.4
     }
     console.log(BEE);
 
-    var TEE=0;
-    TEE=userStress*userTemp*userActivity*BEE;
+   
+    var TEE = userDiet.activity * userDiet.stress * userDiet.temperature * BEE;
     console.log(TEE)
+    console.log(BMI)
 
-    if (BMI < 18.5 && userDiet.age>=12) {
+    if (BMI < 18.5 && userDiet.age >= 12) {
       console.log("You're underweight");
       setBMI(1);
 
     }
-    else if (BMI > 18.5 && BMI < 24.9 && userDiet.age>=12) {
+    else if (BMI > 18.5 && BMI < 24.9 && userDiet.age >= 12) {
       console.log("Your weight is normal");
       setBMI(2);
     }
-    else if (BMI > 25 && BMI < 29.9 && userDiet.age>=12) {
+    else if (BMI > 25 && BMI < 29.9 && userDiet.age >= 12) {
       console.log("You're overweight");
       setBMI(3);
     }
-    else if (BMI>=30 && userDiet.age>=12) {
+    else if (BMI >= 30 && userDiet.age >= 12) {
       console.log("You're obese");
       setBMI(4);
     }
-    else if(userDiet.age<12){
+    else if (userDiet.age < 12) {
       console.log("Youre age is less than 12")
       setBMI(5);
     }
@@ -179,60 +152,41 @@ Greater_105:	1.4
             Female
           </div>
 
-          <div className= "input-field">
+          <div className="input-field">
             <label htmlFor="activity">Activity</label>
-            <select value={userActivity.value} onChange={e=>{setActivity(e.target.value)}}>
-              <option value={userActivity.Bed_ridden}>Bed_ridden</option>
-              <option value={userActivity.Light_or_sedentary}>Light_or_sedentary</option>
-              <option value={userActivity.Moderate_to_active}>Moderate_to_active</option>
-              <option value={userActivity.Heavily_active}>Heavily_active</option>
-
+            <select onChange={handleInput}
+              name="activity">
+              {[{name:"Bed_ridden",ratio:1.2},{name:"Heavily_Active",ratio:2.25},{name:"Moderate_to_Active",ratio:1.76},{name:"Light_or_Sedentary",ratio:1.53}].map((o) => <option value={o.ratio} key={o.name}>{o.name}</option>)}
             </select>
 
           </div>
-          <div className= "input-field">
-            <label htmlFor="Stress">Stress</label>
-            <select value={userStress.value} onChange={e=>{setStress(e.target.value)}}>
-              <option value={userStress.None}>None</option>
-              <option value={userStress.Solid_tumor}>Solid_tumor</option>
-              <option value={userStress.Leukemia_or_Lymphoma}>Leukemia/Lymphoma</option>
-              <option value={userStress.Inflammatory_bowel_disease}>Inflammatory_bowel_disease</option>
-              <option value={userStress.Liver_disease}>Liver_disease</option>
-              <option value={userStress.Burns}>Burns</option>
-              <option value={userStress.Pancreatic_disease}>Pancreatic_disease</option>
-              <option value={userStress.General_surgery}>General_surgery</option>
-              <option value={userStress.Transplantation}>Transplantation</option>
-              <option value={userStress.Sepsis}>Sepsis</option>
-              <option value={userStress.Abscess}>Abscess</option>
-              <option value={userStress.Other_infection}>Other_infection</option>
-            
-
+          <div className="input-field">
+            <label htmlFor="stress">Stress</label>
+            <select onChange={handleInput}
+              name="stress">
+              {[{name :"None ", ratio :1.0} ,{name:"Solid Tumor ", ratio: 1.15 } ,{name:"Leukemia/Lymphoma",ratio:1.27},{name:"Inflammatory bowel disease", ratio:1.11},{name:"Liver disease", ratio:1.07},{name:"Burns", ratio: 1.64},{name: "Pancreatic disease", ratio:	1.13},{name:"General surgery", ratio:1.2},{name:" Transplantation", ratio:	1.19},{name:"Sepsis", ratio :	1.33},{name:"Abscess", ratio: 1.12},{name: "Other infection" ,ratio:	1.16  }].map((o) => <option value={o.ratio} key={o.name}>{o.name}</option>)}
             </select>
 
           </div>
 
-          <div className= "input-field">
-            <label htmlFor="Temperature">Temperature</label>
-            <select value={userTemp.value} onChange={e=>{setTemp(e.target.value)}}>
-            <option value={userTemp.Normal}> Normal</option>
-              <option value={userTemp.Greater_100}> 100.4°F or 38°C</option>
-              <option value={userTemp.Greater_102}>102.2°F or 39°C</option>
-              <option value={userTemp.Greater_104}>104°F or 40°C</option>
-              <option value={userTemp.Greater_105}>105.8°F or 41°C</option>
-
+          <div className="input-field">
+            <label htmlFor="temperature">Temperature</label>
+            <select onChange={handleInput}
+              name="temperature">
+              {[{name:"Normal", ratio:1.0},{name:">=100.4F OR 38°C", ratio : 1.1} ,{name:" >=102.2 OR 39°C", ratio:1.2} ,{name:">=104 OR 40°C", ratio: 1.3} ,{name:">=105.8 OR 41°C", ratio: 1.4}].map((o) => <option value={o.ratio} key={o.names}>{o.name}</option>)}
             </select>
 
-          </div>
+          </div> 
 
           <Button type="submit">Submit</Button>
         </form>
 
 
 
-      ) : BMI === 1  ? (
+      ) : BMI === 1 ? (
         <div className="container">
           <h3>You are Under weight </h3>
-      
+
           <div><h2>Water Requirement</h2></div>
           {DietPlan.underweight.Water_Requirement.map((item, index) => (
             <div key={index}>{item}</div>
@@ -267,8 +221,8 @@ Greater_105:	1.4
 
       ) : BMI === 2 ? (
         <div className="container">
-        <h3>Your weight is normal/Healthy </h3>
-        
+          <h3>Your weight is normal/Healthy </h3>
+
           <div><h2>Water Requirement</h2></div>
           {DietPlan.normalweight.Water_Requirement.map((item, index) => (
             <div key={index}>{item}</div>
@@ -309,8 +263,8 @@ Greater_105:	1.4
 
       ) : BMI === 3 ? (
         <div className="container">
-        <h3>You are Over weight </h3>
-         
+          <h3>You are Over weight </h3>
+
 
           <div><h2>Water Requirement</h2></div>
           {DietPlan.overweight.Water_Requirement.map((item, index) => (
@@ -358,10 +312,10 @@ Greater_105:	1.4
       ) : BMI === 5 ? (
         <div className="container">
           <h3>You are under 12 </h3>
-      
-         
-        
-          
+
+
+
+
           <div><h2>Breakfast</h2></div>
           {DietPlan.kids.Breakfast.map((item, index) => (
             <div key={index}>{item}</div>
@@ -382,14 +336,14 @@ Greater_105:	1.4
           {DietPlan.kids.Dinner.map((item, index) => (
             <div key={index}>{item}</div>
           ))}
-             <div><h2>Desserts</h2></div>
+          <div><h2>Desserts</h2></div>
           {DietPlan.kids.Desserts.map((item, index) => (
             <div key={index}>{item}</div>
           ))}
 
         </div>
 
-      ): (
+      ) : (
         <div>You're obese</div>
       )
       }
