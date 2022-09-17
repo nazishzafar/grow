@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import adhd from "./Images/adhd.svg";
 import "./styles/Home.css";
 import "./styles/Assessments.css";
+import { Profile } from "./data/Profile";
 
 const initialValue = [
   {
@@ -83,7 +84,8 @@ const initialValue = [
     question: "Only attends if it is something he/she is very interested in",
   },
   {
-    question: "Runs about or climbs excessively in situations where it is inapproprait",
+    question:
+      "Runs about or climbs excessively in situations where it is inapproprait",
 
     answer: null,
     blocks: [0, 0, -1, 0],
@@ -181,14 +183,18 @@ const initialValue = [
 
 const Assessments = () => {
   const [assessments, setAssessments] = useState(initialValue);
-  const [totals, setTotals] = useState([0, 0, 0, 0])
+  const [totals, setTotals] = useState([]);
   const [bool, setBool] = useState(false);
 
   const handleChange = (e, index) => {
-    const newBlock = assessments[index].blocks.map((block) => block === -1 ? Number(e.target.value) : block)
+    const newBlock = assessments[index].blocks.map((block) =>
+      block === -1 ? Number(e.target.value) : block
+    );
     setAssessments((prev) =>
       prev.map((assessment, id) =>
-        id === index ? ({ ...assessment, blocks: newBlock, answer: Number(e.target.value) }) : assessment
+        id === index
+          ? { ...assessment, blocks: newBlock, answer: Number(e.target.value) }
+          : assessment
       )
     );
   };
@@ -198,14 +204,21 @@ const Assessments = () => {
 
     if (verify) {
       alert("Please fill all options");
-    }
-    else {
-      const a = assessments.map((assessment) => assessment.blocks[0]).reduce((total, num) => total + num);
-      const b = assessments.map((assessment) => assessment.blocks[1]).reduce((total, num) => total + num);
-      const c = assessments.map((assessment) => assessment.blocks[2]).reduce((total, num) => total + num);
-      const d = assessments.map((assessment) => assessment.blocks[3]).reduce((total, num) => total + num);
-      setTotals([a, b, c, d])
-      setBool(true)
+    } else {
+      const a = assessments
+        .map((assessment) => assessment.blocks[0])
+        .reduce((total, num) => total + num);
+      const b = assessments
+        .map((assessment) => assessment.blocks[1])
+        .reduce((total, num) => total + num);
+      const c = assessments
+        .map((assessment) => assessment.blocks[2])
+        .reduce((total, num) => total + num);
+      const d = assessments
+        .map((assessment) => assessment.blocks[3])
+        .reduce((total, num) => total + num);
+      setTotals([a, b, c, d]);
+      setBool(true);
     }
   };
 
@@ -243,7 +256,16 @@ const Assessments = () => {
               {assessment.options.map((option) => (
                 <div key={option} className="radio-label">
                   {bool ? (
-                    <div style={{ backgroundColor: "grey", color: "white", width: "3rem", textAlign: "center" }}>{assessment.blocks[option]}</div>
+                    <div
+                      style={{
+                        backgroundColor: "grey",
+                        color: "white",
+                        width: "3rem",
+                        textAlign: "center",
+                      }}
+                    >
+                      {assessment.blocks[option]}
+                    </div>
                   ) : (
                     <input
                       onChange={(e) => handleChange(e, index)}
@@ -258,10 +280,42 @@ const Assessments = () => {
             </form>
           </div>
         ))}
-        {bool && <div style={{display:"flex",gap:"1rem",fontWeight:"500"}}>Result: {totals.map((total, id) => <div key={id}>{total}</div>)}</div>}
+        {bool && (
+          <div style={{ display: "flex", gap: "1rem", fontWeight: "500" }}>
+            Result:{" "}
+            {totals.map((total, id) => (
+              <div key={id}>{total}</div>
+            ))}
+          </div>
+        )}
         <button onClick={handleSubmit} type="button">
           Submit
         </button>
+        {totals &&
+          Profile.map((p, i) => (
+            <div
+              style={{
+                display: "flex",
+                gap: "1rem",
+                width: "50%",
+                justifyContent: "space-between",
+              }}
+              key={i}
+            >
+              {p.a.map((v, j) => (
+                <div>{v}</div>
+              ))}
+              {p.b.map((v, j) => (
+                <div>{v}</div>
+              ))}
+              {p.c.map((v, j) => (
+                <div>{v}</div>
+              ))}
+              {p.d.map((v, j) => (
+                <div>{v}</div>
+              ))}
+            </div>
+          ))}
       </div>
     </div>
   );
