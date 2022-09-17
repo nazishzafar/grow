@@ -16,18 +16,13 @@ import Signup from './Signup'
 import Login from './Login'
 import {ThemeProvider} from 'styled-components'
 function App() {
-    const theme={
-        
-        media:{ mobile:"768px" , tab:"998px"
 
-        }
-
-    }
 
     return (
-        <ThemeProvider theme={theme}>
+
+        
         <Router>
-            <PreNavbar/>
+                
             <NavbarComp/>
             <Routes>
                 <Route path='/' element={<Home/>}/>
@@ -42,7 +37,7 @@ function App() {
             </Routes>
             <Footer footer={data.footer}/>
         </Router>
-        </ThemeProvider>
+     
       
        
     );
