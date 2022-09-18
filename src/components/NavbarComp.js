@@ -21,7 +21,7 @@ export default function NavbarComp() {
        <Link to='/assessment' className='navlinks'>Assessments</Link>
        <Link to='/articles' className='navlinks'>Articles</Link>
        <Link to='/diet' className='navlinks'>Diet Plan</Link>
-       <Link to='/community' className='navlinks'>Community</Link>
+       <Link to='/CommentApp' className='navlinks'>Community</Link>
        <Link to='/contact' className='navlinks'>Contact</Link>
        <Link to='/about' className='navlinks'>About</Link>
 

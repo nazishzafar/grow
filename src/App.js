@@ -9,12 +9,12 @@ import Home from './Home'
 import Assessments from './Assessments'
 import About from './About'
 import Articles  from './Articles'
-import Community from './Community'
+import CommentApp from './CommentApp'
 import Diet from './Diet'
 import Contact from './Contact'
 import Signup from './Signup'
 import Login from './Login'
-import {ThemeProvider} from 'styled-components'
+
 function App() {
 
 
@@ -29,7 +29,7 @@ function App() {
                 <Route path='/assessment' element={<Assessments/>}/>
                 <Route path='/articles' element={<Articles/>}/>
                 <Route path='/diet' element={<Diet/>}/>
-                <Route path='/community' element={<Community/>}/>
+                <Route path='/CommentApp' element={<CommentApp/>}/>
                 <Route path='/contact' element={<Contact/>}/>
                 <Route path='/about' element={<About/>}/>
                 <Route path='/Signup' element={<Signup/>}/>
