@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import "./styles/Comment.css";
+
 
 import AddComment from "./AddComment";
 import DeleteModal from "./DeleteModel";

@@ -1,5 +1,4 @@
 
-
 const DeleteModal = ({ setDeleting, deleteComment, setDeleteModalState }) => {
   const cancelDelete = () => {
     setDeleting(false);
