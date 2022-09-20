@@ -187,7 +187,7 @@ const Diet = () => {
         <div className="container">
           <h3>You are Under weight </h3>
 
-          <div><h2>Water Requirement</h2></div>
+          {/* <div><h2>Water Requirement</h2></div>
           {DietPlan.underweight.Water_Requirement.map((item, index) => (
             <div key={index}>{item}</div>
           ))}
@@ -214,7 +214,7 @@ const Diet = () => {
           <div><h2>Dinner</h2></div>
           {DietPlan.underweight.Dinner.map((item, index) => (
             <div key={index}>{item}</div>
-          ))}
+          ))} */}
 
         </div>
 

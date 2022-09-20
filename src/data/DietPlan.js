@@ -1,21 +1,59 @@
 export const DietPlan = {
     "underweight":
     {
-        "Water_Requirement": ["8 Glass"],
-        "Pre_Breakfast": ["VEGETABLE SANDWICH GRILLED", "VEGETABLE CHICKEN SOUP", "HANDFULL OF NUTS",
-            "MUTTON BITES SEASONED WITH SESAME SEEDS.", "SPINACH CHEESE SANDWICH"],
+        "Water_Requirement": ["9-10 Glass"],
+
+     
 
         "Breakfast": [
-            "½ paratha", "1 egg", "3 wallnuts"
+            "Oat meal 2c", "1 cup milk", "4 wallnuts","1 Apple"
+        ],
+        "BreakCal": [
+            "160+120+75+60=415 Calories"
         ],
 
-        "Snack2": ["1 apple", "1 sandwich (2 bran bread+ 2 tbs CREAM CHEESSE)"],
+        "Snack2": ["2 Banana"],
+        "Snack2Cal": [
+            "120 Calories"
+        ],
 
-        "Lunch": ["½ PLATE RICE", "1/2 CUP CHICKPEAS", "6 TBS yogurt"],
+        "Lunch": ["Salad (1/2c Cabbage+ 1/2 Cucumber)","3/4c","1 cup Rice","Mutton (2 Piece)"],
+        "LunchCal": [
+            "50+60+24+150=284 Calories"
+        ],
 
-        "Snack3": ["1 Mango"],
+        "EveningSnack3": ["1 oz Chicken","1/2 Cabbage","1c barley","1/2c tomato","1cup corns"],
+        "EveSnackCal": [
+            "75+25+80+12+80=272 Calories"
+        ],
 
-        "Dinner": ["½ chapatti", "1 tbs butter", "1 piece mutton"]
+        "Dinner": ["½ chapatti","3/4c yougurt", "1 peach", "1 piece chicken"],
+        "DinnerCal": [
+            "180+120+75+60=435 Calories"
+        ],
+        "BedTimeSnack": [
+            "1 cup milk", "6 almonds"
+        ],
+        "bedTimeCal": [
+            "120+75=125 Calories"
+        ],
+        "Total Cal": [
+            "1641 Calories"
+        ],
+        "Exercise": [
+            "20-30 minutes Walk daily"
+        ],
+
+        "Recommendation": ["Try to eat in small frequently meals", 
+        "Hydrate your body enough",
+        "Eat Nutrient rich diet",
+        "Avoid bakery items and soft/cold drinks",
+        "Avoid processed foods and fried items",
+        "Eat fully cooked food",
+        "Do not skip milk/yougurt and nuts",
+        "Take 8 hours sleep",
+        "Try to eat fish juice a week",
+        "Check your Vit D level"],
 
     },
 

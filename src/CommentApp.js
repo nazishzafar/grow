@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+
 import Comment from "./Comment";
 import AddComment from "./AddComment";
 
@@ -8,7 +9,7 @@ const CommentApp = () => {
   const [deleteModalState, setDeleteModalState] = useState(false);
 
   const getData = async () => {
-    const res = await fetch("./data/data.json");
+    const res = await fetch("./data/ComData.json");
     const data = await res.json();
     updateComments(data.comments);
   };
