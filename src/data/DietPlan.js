@@ -52,67 +52,110 @@ export const DietPlan = {
         "Eat fully cooked food",
         "Do not skip milk/yougurt and nuts",
         "Take 8 hours sleep",
-        "Try to eat fish juice a week",
+        "Try to eat fish twice a week",
         "Check your Vit D level"],
 
     },
 
 
+
     "overweight": {
-        "Water_Requirement": ["8 Glass"],
+        "Water_Requirement": ["12 Glass"],
 
-        "Recommendation": ["Take at least 10 glass of water to maintain the heat balance",
-            "Try to choose home made snacks",
-            "Have a energy rich breakfast best options are cereals,proteins and milk",
-            "Your body requires 1500 calories so, plan your day accordingly",
-            "Have 3-4 protein servings",
-            "Do jogging and brisk wall for 30 minutes daily",
-            "Have kaleji once a week or mutton twice a week"],
+        "Recommendation": ["Avoid processed foods/frozen items/bakery items. ",
+            "Avoid Bakeryitems , fride items and frizzy drinks",
+            "Limit whitesugar and salt",
+            "Eat fresh vegetables , fruits and nuts",
+            "Drink plenty of water",
+            "Take 8 hours sleep ",
+            "Don't skip your physical activity",
+            "Don't eat outdoor food more than a once in a week.",
+            "Try to eat fish twice a week",
+            "Check your Vitamin D level."],
+            "Breakfast": [
+                "2 Bran Bread", "1 Boiled egg ", "1 Apple" , "Tea After 1 hour"
+            ],
+            "BreakCal": [
+                "75+160+60+80=375 Calories"
+            ],
 
-        "Digestion_boosting_tea": ["2 Cup water, 10 mint leaves,7 Feenugreek,sequeeze lemon if you want"],
-
-        "Pre_Breakfast": ["1 glass water", "1 tbs Ispaghol"],
-
-        "Breakfast": [
-            "1 bran bread", "2 eggs white", "1 yolk omelette"
+            "Morning_Snack": ["1 Guava"],
+            "MornSnackCal": [
+                "60 Calories"
+            ],
+        "Lunch": ["3/4 c Yogurt","Salad(1/2 Cucumber + 1/2 Tomato + 1/2 Cabbage)", "1/2 Chapatti" ,"Lima beans "],
+        "LunchCal": [
+            "120+37+80+75 = 312 Calories"
         ],
 
-        "Snack1": ["1 glass whole milk"],
+        "EveSnack": ["1 Cup Yogurt (low fat)"],
+        "EveSnackCal": [
+            "100 Calories"
+        ],
 
-        "Lunch": ["1 kebab", "Salad", "1 bread optional"],
+        "Dinner": ["Salad","2 Bran Bread","1 Kabab","1 tbs Low fat mayo"],
+        "DinnerCal": [
+            "50+140+75+45 =310 Calories"
+        ],
 
-        "Snack2": ["1-2 fruits"],
-
-        "Dinner": ["1 chapatti", "1 tbs yogurt", "1/2 salan"],
-
-        "Snack3": ["1 glass milk"]
+        "BedTimeSnack": ["1 Cup milk","$ Wallnuts"],
+        "BedSnackCal": [
+            "120+45 =165 Calories"
+        ],
+        "Exercise":["30 Minutes Brisk Walk"]
 
     },
 
 
     "normalweight": {
-        "Water_Requirement": ["8 Glass"],
-        "Recommendation": ["Take at least 10 glass of water to maintain the heat balance",
-            "Eat proteins that your body needs in this age.",
-            "Have a energy rich breakfast best options are cereals,proteins and milk",
-            "Your body requires 1500 calories so, plan your day accordingly",
-            "Have 3-4 protein servings",
-            "Do 15 MIN RESISTENCE TRAINING"],
+        "Water_Requirement": ["13 Glass."],
+        "Recommendation": ["Eat Healthy , Fresh Food.",
+            "Drink Plenty Of Water.",
+            "Sleep Well For 8 hours. ",
+            "Avoid Processed Meat / Frozen Food.",
+            "Avoid Ready to eat meals.",
+            "Don't skip Walk.",
+            "Drink 2 glass of milk daily.",
+            "Try to Eat Fish Twice.",
+            "Eat Fresh Food then Frozen.",
+            "Check your Vitamin D level.",],
 
         "Breakfast": [
-            "1 SPINACH CHEESE EGG,", "2 BRAN BREAD,", "1 GLASS JUICE FRUIT JUICE"
+            "1 Apple","2 Multi Grain Bread","2 Eggs","2 tbs Olive Oil"
         ],
+        "BreakCal": [
+            "90+60+160+150= 460 Calories"
+        ],
+        "MorningSnack": ["2 Fruites (SEASONAL)"],
 
-        "Snack1": ["1 GLASS MILK SHAKE"],
+        "MornSnackCal": [
+            "120 Calories"
+        ],
+        "Lunch": ["Salad(1/2 Cucumber + 1/2 Tomato + 1/2 Cabbage )","1 Chapatti","Gravy(1/2C Spanish + 10g Chicken)","3/4 C Yogurt"],
 
-        "Lunch": ["1 CHAPATTI WITH QEEMA, Vegetable"],
+        "LunchCal": [
+            "37+120+25+75+120=377 Calories"
+        ],
+        "EveningSnack": ["1 Cup Tea"],
 
-        "Snack2": ["HANDFULL OF NUTS"],
+        "ESnackCal": [
+            "80 Calories"
+        ],
+        "Dinner": ["1 Fruit","1 C Brown Rice","20g Chicken","1/2 Cup Mashed Potatos"],
 
-        "Dinner": ["MUTTON,", "CHICKEN STEAK WITH STEAMED VEGGIES"],
+        "DinnerCal": [
+            "60+120+150+25=355 Calories"
+        ],
+        "BedTimeSnack": ["1 CUP MILK","4 Wallnuts"],
 
-        "Snack3": ["1 CUP MILK HOT, MILK"]
+        "BedTimeSnackCal": [
+            "120+45=165 Calories"
+        ],
+        "Exercise":["1 Hour Walk.","3rice a week Light aerobic exercise"]
     },
+
+
+
     "kids": {
 
         "Breakfast": [
