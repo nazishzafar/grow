@@ -104,7 +104,7 @@ export const DietPlan = {
         ],
         "Exercise":["30 Minutes Brisk Walk"],
         "Total_Cal": [
-            "1641 Calories"
+            "1322 Calories"
         ]
 
     },
@@ -154,9 +154,9 @@ export const DietPlan = {
         "BedTimeSnackCal": [
             "120+45=165 Calories"
         ],
-        "Exercise":["1 Hour Walk.","3rice a week Light aerobic exercise"],
+        "Exercise":["1 Hour Walk.","3rice a week Light aerobic exercise like running, walking"],
         "Total_Cal": [
-            "1641 Calories"
+            "15507 Calories"
         ]
     },
 
