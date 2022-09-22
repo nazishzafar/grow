@@ -182,6 +182,8 @@ const initialValue = [
 ];
 
 const Assessments = () => {
+  const [age,setAge]=useState(4)
+  const [status,setStatus]=useState("")
   const [assessments, setAssessments] = useState(initialValue);
   const [totals, setTotals] = useState([]);
   const [bool, setBool] = useState(false);
@@ -218,6 +220,71 @@ const Assessments = () => {
         .map((assessment) => assessment.blocks[3])
         .reduce((total, num) => total + num);
       setTotals([a, b, c, d]);
+      if(totals){
+        let values=[]
+
+        if(age>=3 && age<=5){
+         Profile.map((p,index)=>{
+          if(p.oppositional[0]===totals[0] ||
+          p.inattention[0]===totals[1] ||
+          p.hyperactivity[0]===totals[2] ||
+          p.adhdindex[0]===totals[3]){
+            values.push(90-index);
+          }
+          return p
+         })
+        }else if(age>=6 && age<=8){
+          Profile.map((p,index)=>{
+            if(p.oppositional[1]===totals[0] ||
+            p.inattention[1]===totals[1] ||
+            p.hyperactivity[1]===totals[2] ||
+            p.adhdindex[1]===totals[3]){
+              values.push(90-index);
+            }
+            return p
+           })
+        }
+        else if(age>=9 && age<=11){
+          Profile.map((p,index)=>{
+            if(p.oppositional[2]===totals[0] ||
+            p.inattention[2]===totals[1] ||
+            p.hyperactivity[2]===totals[2] ||
+            p.adhdindex[2]===totals[3]){
+              values.push(90-index);
+            }
+            return p
+           })
+        }else if(age>=12 && age<=14){
+          Profile.map((p,index)=>{
+            if(p.oppositional[3]===totals[0] ||
+            p.inattention[3]===totals[1] ||
+            p.hyperactivity[3]===totals[2] ||
+            p.adhdindex[3]===totals[3]){
+              values.push(90-index);
+            }
+            return p
+           })
+        }
+        else if(age>=15 && age<=17){
+          Profile.map((p,index)=>{
+            if(p.oppositional[4]===totals[0] ||
+            p.inattention[4]===totals[1] ||
+            p.hyperactivity[4]===totals[2] ||
+            p.adhdindex[4]===totals[3]){
+              values.push(90-index);
+            }
+            return p
+           })
+        }
+
+        // values.map((value)=>{
+        //   if(value>60){
+        //     setStatus("1")
+        //   }
+        //   return value
+        // })
+
+      }
       setBool(true);
     }
   };
@@ -291,6 +358,8 @@ const Assessments = () => {
         <button onClick={handleSubmit} type="button">
           Submit
         </button>
+
+
         {totals &&
           Profile.map((p, i) => (
             <div
@@ -302,16 +371,16 @@ const Assessments = () => {
               }}
               key={i}
             >
-              {p.a.map((v, j) => (
+              {p.oppositional.map((v, j) => (
                 <div>{v}</div>
               ))}
-              {p.b.map((v, j) => (
+              {p.inattention.map((v, j) => (
                 <div>{v}</div>
               ))}
-              {p.c.map((v, j) => (
+              {p.hyperactivity.map((v, j) => (
                 <div>{v}</div>
               ))}
-              {p.d.map((v, j) => (
+              {p.adhdindex.map((v, j) => (
                 <div>{v}</div>
               ))}
             </div>

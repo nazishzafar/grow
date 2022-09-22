@@ -71,8 +71,8 @@ const Diet = () => {
       console.log("You're obese");
       setBMI(4);
     }
-    else if (userDiet.age < 12) {
-      console.log("Youre age is less than 12")
+    else if (userDiet.age>0 &&userDiet.age < 12 ) {
+      console.log("Your age is less than 12")
       setBMI(5);
     }
   };
@@ -273,26 +273,59 @@ const Diet = () => {
           {DietPlan.normalweight.Breakfast.map((item, index) => (
             <div key={index}>{item}</div>
           ))}
-          <div><h2>Snack1</h2></div>
-          {DietPlan.normalweight.Snack1.map((item, index) => (
+           <div><h2>Breakfast Calories</h2></div>
+          {DietPlan.normalweight.BreakCal.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div><h2>Morning Snack</h2></div>
+          {DietPlan.normalweight.MorningSnack.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+           <div><h2>Morning Snack Calories</h2></div>
+          {DietPlan.normalweight.MornSnackCal.map((item, index) => (
             <div key={index}>{item}</div>
           ))}
           <div><h2>Lunch</h2></div>
           {DietPlan.normalweight.Lunch.map((item, index) => (
             <div key={index}>{item}</div>
           ))}
-          <div><h2>Snack</h2></div>
-          {DietPlan.normalweight.Snack2.map((item, index) => (
+            <div><h2>Lunch Calories</h2></div>
+          {DietPlan.normalweight.LunchCal.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div><h2>Evening Snack</h2></div>
+          {DietPlan.normalweight.EveningSnack.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+            <div><h2>Evening Snack Calories</h2></div>
+          {DietPlan.normalweight.ESnackCal.map((item, index) => (
             <div key={index}>{item}</div>
           ))}
           <div><h2>Dinner</h2></div>
           {DietPlan.normalweight.Dinner.map((item, index) => (
             <div key={index}>{item}</div>
           ))}
-          <div><h2>Snack</h2></div>
-          {DietPlan.normalweight.Snack3.map((item, index) => (
+           <div><h2>Dinner Calories</h2></div>
+          {DietPlan.normalweight.DinnerCal.map((item, index) => (
             <div key={index}>{item}</div>
           ))}
+          <div><h2>Bed Time Snack</h2></div>
+          {DietPlan.normalweight.BedTimeSnack.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div><h2>Bed Time Snack Calories</h2></div>
+          {DietPlan.normalweight.BedTimeSnackCal.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+            <div><h2> Exercise</h2></div>
+          {DietPlan.normalweight.Exercise.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+           <div><h2> Total Calories</h2></div>
+          {DietPlan.normalweight.Total_Cal.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+
 
 
         </div>
@@ -327,12 +360,12 @@ const Diet = () => {
             <div key={index}>{item}</div>
           ))}
 
-          <div><h2>Snack</h2></div>
-          {DietPlan.overweight.Snack2.map((item, index) => (
+          <div><h2>Morning Snack</h2></div>
+          {DietPlan.overweight.Morning_Snack.map((item, index) => (
             <div key={index}>{item}</div>
           ))}
-            <div><h2>Snack Calories</h2></div>
-          {DietPlan.overweight.Snack2Cal.map((item, index) => (
+            <div><h2>Morning Snack Calories</h2></div>
+          {DietPlan.overweight.MornSnackCal.map((item, index) => (
             <div key={index}>{item}</div>
           ))}
           <div><h2>Lunch</h2></div>
@@ -344,7 +377,7 @@ const Diet = () => {
             <div key={index}>{item}</div>
           ))}
           <div><h2>Evening Snack</h2></div>
-          {DietPlan.overweight.EveningSnack3.map((item, index) => (
+          {DietPlan.overweight.EveSnack.map((item, index) => (
             <div key={index}>{item}</div>
           ))}
             <div><h2>Evening Snack Calories</h2></div>
@@ -364,7 +397,7 @@ const Diet = () => {
             <div key={index}>{item}</div>
           ))}
            <div><h2>Bed Time Snack Calories</h2></div>
-          {DietPlan.overweight.bedTimeCal.map((item, index) => (
+          {DietPlan.overweight.BedSnackCal.map((item, index) => (
             <div key={index}>{item}</div>
           ))}
            <div><h2>Total Calories of the diet</h2></div>
@@ -373,9 +406,84 @@ const Diet = () => {
           ))}
 
         </div>
+         ) : BMI === 4 ? (
+          <div className="container">
+            <h3>Your are obese </h3>
+  
+            <div><h2>Water Requirement</h2></div>
+            {DietPlan.underweight.Water_Requirement.map((item, index) => (
+              <div key={index}>{item}</div>
+            ))}
+             <div><h2>Exercise</h2></div>
+            {DietPlan.underweight.Exercise.map((item, index) => (
+              <div key={index}>{item}</div>
+            ))}
+              <div><h2>Recommendations</h2></div>
+            {DietPlan.underweight.Recommendation.map((item, index) => (
+              <div key={index}>{item}</div>
+            ))}
+            <div><h2>Breakfast</h2></div>
+            {DietPlan.underweight.Breakfast.map((item, index) => (
+              <div key={index}>{item}</div>
+            ))}
+            <div><h2>Breakfast Calories</h2></div>
+            {DietPlan.underweight.BreakCal.map((item, index) => (
+              <div key={index}>{item}</div>
+            ))}
+  
+            <div><h2>Snack</h2></div>
+            {DietPlan.underweight.Snack2.map((item, index) => (
+              <div key={index}>{item}</div>
+            ))}
+              <div><h2>Snack Calories</h2></div>
+            {DietPlan.underweight.Snack2Cal.map((item, index) => (
+              <div key={index}>{item}</div>
+            ))}
+            <div><h2>Lunch</h2></div>
+            {DietPlan.underweight.Lunch.map((item, index) => (
+              <div key={index}>{item}</div>
+            ))}
+             <div><h2>Lunch Calories</h2></div>
+            {DietPlan.underweight.LunchCal.map((item, index) => (
+              <div key={index}>{item}</div>
+            ))}
+            <div><h2>Evening Snack</h2></div>
+            {DietPlan.underweight.EveningSnack3.map((item, index) => (
+              <div key={index}>{item}</div>
+            ))}
+              <div><h2>Evening Snack Calories</h2></div>
+            {DietPlan.underweight.EveSnackCal.map((item, index) => (
+              <div key={index}>{item}</div>
+            ))}
+            <div><h2>Dinner</h2></div>
+            {DietPlan.underweight.Dinner.map((item, index) => (
+              <div key={index}>{item}</div>
+            ))}
+              <div><h2>Dinner Calories</h2></div>
+            {DietPlan.underweight.DinnerCal.map((item, index) => (
+              <div key={index}>{item}</div>
+            ))}
+             <div><h2>Bed Time Snack</h2></div>
+            {DietPlan.underweight.BedTimeSnack.map((item, index) => (
+              <div key={index}>{item}</div>
+            ))}
+             <div><h2>Bed Time Snack Calories</h2></div>
+            {DietPlan.underweight.bedTimeCal.map((item, index) => (
+              <div key={index}>{item}</div>
+            ))}
+             <div><h2>Total Calories of the diet</h2></div>
+            {DietPlan.underweight.Total_Cal.map((item, index) => (
+              <div key={index}>{item}</div>
+            ))}
+  
+  
+          </div>
+  
 
       ) : (
-        <div>You're obese</div>
+       <div>
+        <h2>Your age is less than 12</h2>
+       </div>
       )
       }
 
