@@ -98,7 +98,7 @@ export const DietPlan = {
             "50+140+75+45 =310 Calories"
         ],
 
-        "BedTimeSnack": ["1 Cup milk","$ Wallnuts"],
+        "BedTimeSnack": ["1 Cup milk","4 Wallnuts"],
         "BedSnackCal": [
             "120+45 =165 Calories"
         ],
@@ -159,6 +159,115 @@ export const DietPlan = {
             "15507 Calories"
         ]
     },
+
+
+
+    "Obese": {
+        "Water_Requirement": ["10 Glass"],
+
+        "Recommendation": ["Avoid processed foods/frozen items/bakery items. ",
+            "Avoid Bakeryitems , fride items and frizzy drinks",
+            "Limit whitesugar and salt",
+            "Eat fresh vegetables , fruits and nuts",
+            "Drink plenty of water",
+            "Take 8 hours sleep ",
+            "Don't skip your physical activity",
+            "Don't eat outdoor food more than a once in a week.",
+            "Try to eat fish twice a week",
+            "Check your Vitamin D level."],
+
+            "Morning_Snack": ["1 cup normal water","1 tbs apple cider vineger"],
+            "MornSnackCal": [
+                "60 Calories"
+            ],
+
+            "Breakfast": [
+                "1 EGG 1 yolk omelet", "2 bran bread" ,"8 almonds"
+            ],
+            "BreakCal": [
+                "75+160+60+80=375 Calories"
+            ],
+
+           
+        "Lunch": ["Chapati 6 inch (Almond flour)",  "salan" ," 8 tbs yogurt"],
+        "LunchCal": [
+            "120+37+80+75 = 312 Calories"
+        ],
+
+        "EveSnack": ["1 glass strawberry juice / falsa juice"],
+        "EveSnackCal": [
+            "100 Calories"
+        ],
+
+        "Dinner": ["Steamed broccoli", "cabbage" ," black pepper" , "2-piece Chicken/mutton"],
+        "DinnerCal": [
+            "50+140+75+45 =310 Calories"
+        ],
+
+        "BedTimeSnack": ["1 cup milk (skimmed)"],
+        "BedSnackCal": [
+            "120+45 =165 Calories"
+        ],
+        "Exercise":["30 Minutes Brisk Walk","Deep breathing for 10 mints"],
+        "Total_Cal": [
+            "1322 Calories"
+        ]
+
+    },
+
+
+    "normalweight": {
+        "Water_Requirement": ["13 Glass."],
+        "Recommendation": ["Eat Healthy , Fresh Food.",
+            "Drink Plenty Of Water.",
+            "Sleep Well For 8 hours. ",
+            "Avoid Processed Meat / Frozen Food.",
+            "Avoid Ready to eat meals.",
+            "Don't skip Walk.",
+            "Drink 2 glass of milk daily.",
+            "Try to Eat Fish Twice.",
+            "Eat Fresh Food then Frozen.",
+            "Check your Vitamin D level.",],
+
+        "Breakfast": [
+            "1 Apple","2 Multi Grain Bread","2 Eggs","2 tbs Olive Oil"
+        ],
+        "BreakCal": [
+            "90+60+160+150= 460 Calories"
+        ],
+        "MorningSnack": ["2 Fruites (SEASONAL)"],
+
+        "MornSnackCal": [
+            "120 Calories"
+        ],
+        "Lunch": ["Salad(1/2 Cucumber + 1/2 Tomato + 1/2 Cabbage )","1 Chapatti","Gravy(1/2C Spanish + 10g Chicken)","3/4 C Yogurt"],
+
+        "LunchCal": [
+            "37+120+25+75+120=377 Calories"
+        ],
+        "EveningSnack": ["1 Cup Tea"],
+
+        "ESnackCal": [
+            "80 Calories"
+        ],
+        "Dinner": ["1 Fruit","1 C Brown Rice","20g Chicken","1/2 Cup Mashed Potatos"],
+
+        "DinnerCal": [
+            "60+120+150+25=355 Calories"
+        ],
+        "BedTimeSnack": ["1 CUP MILK","4 Wallnuts"],
+
+        "BedTimeSnackCal": [
+            "120+45=165 Calories"
+        ],
+        "Exercise":["1 Hour Walk.","3rice a week Light aerobic exercise like running, walking"],
+        "Total_Cal": [
+            "15507 Calories"
+        ]
+    },
+
+
+
 
 
 
