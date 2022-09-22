@@ -4,6 +4,7 @@ import "./styles/Home.css";
 import "./styles/Assessments.css";
 import { Profile } from "./data/Profile";
 
+
 const initialValue = [
   {
     answer: null,
@@ -182,7 +183,19 @@ const initialValue = [
 ];
 
 const Assessments = () => {
-  const [age,setAge]=useState(4)
+  const [userData, setUserData] = useState({
+    name: "",
+    age: 4,
+    school_grade:0,
+    parent_id:0,
+    gender: "",
+   today_date:'12/06/2021',
+  
+  });
+  
+
+
+  
   const [status,setStatus]=useState("")
   const [assessments, setAssessments] = useState(initialValue);
   const [totals, setTotals] = useState([]);
@@ -223,7 +236,7 @@ const Assessments = () => {
       if(totals){
         let values=[]
 
-        if(age>=3 && age<=5){
+        if(userData.age>=3 && userData.age<=5){
          Profile.map((p,index)=>{
           if(p.oppositional[0]===totals[0] ||
           p.inattention[0]===totals[1] ||
@@ -233,7 +246,7 @@ const Assessments = () => {
           }
           return p
          })
-        }else if(age>=6 && age<=8){
+        }else if(userData.age>=6 && userData.age<=8){
           Profile.map((p,index)=>{
             if(p.oppositional[1]===totals[0] ||
             p.inattention[1]===totals[1] ||
@@ -244,7 +257,7 @@ const Assessments = () => {
             return p
            })
         }
-        else if(age>=9 && age<=11){
+        else if(userData.age>=9 && userData.age<=11){
           Profile.map((p,index)=>{
             if(p.oppositional[2]===totals[0] ||
             p.inattention[2]===totals[1] ||
@@ -254,7 +267,7 @@ const Assessments = () => {
             }
             return p
            })
-        }else if(age>=12 && age<=14){
+        }else if(userData.age>=12 &&userData.age<=14){
           Profile.map((p,index)=>{
             if(p.oppositional[3]===totals[0] ||
             p.inattention[3]===totals[1] ||
@@ -265,7 +278,7 @@ const Assessments = () => {
             return p
            })
         }
-        else if(age>=15 && age<=17){
+        else if(userData.age>=15 && userData.age<=17){
           Profile.map((p,index)=>{
             if(p.oppositional[4]===totals[0] ||
             p.inattention[4]===totals[1] ||
@@ -294,6 +307,90 @@ const Assessments = () => {
       <div className="hero-image">
         <img src={adhd} alt="hero image" />
       </div>
+
+      <form  className="card-container">
+          <div className="input-field">
+            <label htmlFor="name">Full Name</label>
+            <input
+              type="text"
+              autoComplete="off"
+              name="name"
+              id="name"
+             
+              value={userData.name}
+            />
+          </div>
+
+          <div className="input-field">
+            <label htmlFor="age"> Age</label>
+            <input
+              type="number"
+              autoComplete="off"
+              name="age"
+              id="age"
+         
+              value={userData.age}
+            />
+          </div>
+      
+
+        
+          <div className="input-field">
+            <label htmlFor="gender"> Gender</label>
+            <input
+              type="radio"
+              autoComplete="off"
+            
+              name="gender"
+              id="Male"
+              value="Male"
+            />
+            Male
+            <input
+              type="radio"
+              autoComplete="off"
+              
+              name="gender"
+              id="Female"
+              value="Female"
+            />
+            Female
+          </div>
+
+          <div className="input-field">
+            <label htmlFor="parent_id">Parent ID</label>
+            <input
+              type="text"
+              autoComplete="off"
+              name="parent_id"
+              id="parent_id"
+             
+              value={userData.parent_id}
+            />
+          </div>
+          <div className="input-field">
+            <label htmlFor="school">School Grade</label>
+            <input
+              type="text"
+              autoComplete="off"
+              name="school"
+              id="school"
+           
+              value={userData.school_grade}
+            />
+          </div>
+            <div className="input-field">
+            <label htmlFor="date">Today Date</label>
+            <input
+              type="date"
+              autoComplete="off"
+              name="date"
+              id="date"
+           
+              value={userData.today_date}
+            />
+          </div>
+          </form>
 
       <div className="container">
         <div className="questions">

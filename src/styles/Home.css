@@ -1,3 +1,31 @@
 .hero-image>img{
     width: 100%;
 }
+.learn,.play,.life{
+   
+    padding:1.5rem;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.4);   
+    border-radius: 5px;
+    background-color: #fff;
+    margin:3rem 2rem 3rem 2rem ;    
+    display: flex;
+    flex-direction: row;
+    height: 15rem;
+   
+   
+     
+}
+p{
+    padding: 1.5rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.container_blocks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}

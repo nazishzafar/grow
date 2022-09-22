@@ -1,51 +1,30 @@
 import React from 'react'
 import '../styles/Footer.css'
-
+import { data } from "../data/data";
 
 
 export default function Footer({footer}) {
     return(
     <div className='footer'>
         <div>
-        <p>Support</p>
+        <p>Services</p>
         {
-            footer.support.map((item,index)=>(
-                <a key={item.url} href={item.url}>{item.name}</a>
+            data.Services.map((item,index)=>(
+                <div key={index}>{item}</div>
+                
             ))
         }
         </div>
         <div>
-        <p>Shop and Learn</p>
+        <p>Contact Us</p>
         {
-            footer.shopAndLearn.map((item,index)=>(
-                <a key={item.url} href={item.url}>{item.name}</a>
+            data.Contact_Us.map((item,index)=>(
+                <div key={index}>{item}</div>
+                
             ))
         }
         </div>
-        <div>
-            <p>Retail Store</p>
-            {
-            footer.retailStore.map((item,index)=>(
-                <a key={item.url} href={item.url}>{item.name}</a>
-            ))
-        }
-        </div>
-        <div>
-            <p>About Us</p>
-            {
-            footer.aboutUS.map((item,index)=>(
-                <a key={item.url} href={item.url}>{item.name}</a>
-            ))
-        }
-        </div>
-        <div>
-            <p>Contact Us</p>
-            {
-            footer.contactUs.map((item,index)=>(
-                <a key={item.url} href={item.url}>{item.name}</a>
-            ))
-        }
-        </div>
+       
     
     </div>
     );
