@@ -4,7 +4,6 @@ import "./styles/Home.css";
 import "./styles/Assessments.css";
 import { Profile } from "./data/Profile";
 
-
 const initialValue = [
   {
     answer: null,
@@ -186,17 +185,20 @@ const Assessments = () => {
   const [userData, setUserData] = useState({
     name: "",
     age: 4,
-    school_grade:0,
-    parent_id:0,
+    school_grade: 0,
+    parent_id: 0,
     gender: "",
-   today_date:'12/06/2021',
-  
+    today_date: "12/06/2021",
   });
-  
 
+  const handleInput = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
 
-  
-  const [status,setStatus]=useState("")
+    setUserData({ ...userData, [name]: value });
+  };
+
+  const [status, setStatus] = useState("");
   const [assessments, setAssessments] = useState(initialValue);
   const [totals, setTotals] = useState([]);
   const [bool, setBool] = useState(false);
@@ -232,71 +234,84 @@ const Assessments = () => {
       const d = assessments
         .map((assessment) => assessment.blocks[3])
         .reduce((total, num) => total + num);
-      setTotals([a, b, c, d]);
-      if(totals){
-        let values=[]
+      setTotals([
+        "Oppositional:  " + a,
+        "Cognitive  " + b,
+        "Hyperactivity:  " + c,
+        "ADHD:  " + d,
+      ]);
+      if (totals) {
+        let values = [];
 
-        if(userData.age>=3 && userData.age<=5){
-         Profile.map((p,index)=>{
-          if(p.oppositional[0]===totals[0] ||
-          p.inattention[0]===totals[1] ||
-          p.hyperactivity[0]===totals[2] ||
-          p.adhdindex[0]===totals[3]){
-            values.push(90-index);
+        if (userData.age >= 3 && userData.age <= 5) {
+          Profile.map((p, index) => {
+            if (
+              p.oppositional[0] === totals[0] ||
+              p.inattention[0] === totals[1] ||
+              p.hyperactivity[0] === totals[2] ||
+              p.adhdindex[0] === totals[3]
+            ) {
+              values.push(90 - index);
+            }
+            return p;
+          });
+        } else if (userData.age >= 6 && userData.age <= 8) {
+          Profile.map((p, index) => {
+            if (
+              p.oppositional[1] === totals[0] ||
+              p.inattention[1] === totals[1] ||
+              p.hyperactivity[1] === totals[2] ||
+              p.adhdindex[1] === totals[3]
+            ) {
+              values.push(90 - index);
+            }
+            return p;
+          });
+        } else if (userData.age >= 9 && userData.age <= 11) {
+          Profile.map((p, index) => {
+            if (
+              p.oppositional[2] === totals[0] ||
+              p.inattention[2] === totals[1] ||
+              p.hyperactivity[2] === totals[2] ||
+              p.adhdindex[2] === totals[3]
+            ) {
+              values.push(90 - index);
+            }
+            return p;
+          });
+        } else if (userData.age >= 12 && userData.age <= 14) {
+          Profile.map((p, index) => {
+            if (
+              p.oppositional[3] === totals[0] ||
+              p.inattention[3] === totals[1] ||
+              p.hyperactivity[3] === totals[2] ||
+              p.adhdindex[3] === totals[3]
+            ) {
+              values.push(90 - index);
+            }
+            return p;
+          });
+        } else if (userData.age >= 15 && userData.age <= 17) {
+          Profile.map((p, index) => {
+            if (
+              p.oppositional[4] === totals[0] ||
+              p.inattention[4] === totals[1] ||
+              p.hyperactivity[4] === totals[2] ||
+              p.adhdindex[4] === totals[3]
+            ) {
+              values.push(90 - index);
+            }
+            return p;
+          });
+        }
+
+        values.map((value) => {
+          if (value > 60) {
+            setStatus("1");
           }
-          return p
-         })
-        }else if(userData.age>=6 && userData.age<=8){
-          Profile.map((p,index)=>{
-            if(p.oppositional[1]===totals[0] ||
-            p.inattention[1]===totals[1] ||
-            p.hyperactivity[1]===totals[2] ||
-            p.adhdindex[1]===totals[3]){
-              values.push(90-index);
-            }
-            return p
-           })
-        }
-        else if(userData.age>=9 && userData.age<=11){
-          Profile.map((p,index)=>{
-            if(p.oppositional[2]===totals[0] ||
-            p.inattention[2]===totals[1] ||
-            p.hyperactivity[2]===totals[2] ||
-            p.adhdindex[2]===totals[3]){
-              values.push(90-index);
-            }
-            return p
-           })
-        }else if(userData.age>=12 &&userData.age<=14){
-          Profile.map((p,index)=>{
-            if(p.oppositional[3]===totals[0] ||
-            p.inattention[3]===totals[1] ||
-            p.hyperactivity[3]===totals[2] ||
-            p.adhdindex[3]===totals[3]){
-              values.push(90-index);
-            }
-            return p
-           })
-        }
-        else if(userData.age>=15 && userData.age<=17){
-          Profile.map((p,index)=>{
-            if(p.oppositional[4]===totals[0] ||
-            p.inattention[4]===totals[1] ||
-            p.hyperactivity[4]===totals[2] ||
-            p.adhdindex[4]===totals[3]){
-              values.push(90-index);
-            }
-            return p
-           })
-        }
-
-        // values.map((value)=>{
-        //   if(value>60){
-        //     setStatus("1")
-        //   }
-        //   return value
-        // })
-
+          return value;
+        });
+        console.log(status);
       }
       setBool(true);
     }
@@ -307,91 +322,101 @@ const Assessments = () => {
       <div className="hero-image">
         <img src={adhd} alt="hero image" />
       </div>
+      <h1>Conners' Parent Rating Scale-Revised (S)</h1>
+      <h4>    by C. Keith Conners, Ph.D.</h4>
+      <form className="card-container">
+        <div className="input-field">
+          <label htmlFor="name">Full Name</label>
+          <input
+            type="text"
+            autoComplete="off"
+            name="name"
+            id="name"
+            onChange={handleInput}
+            value={userData.name}
+          />
+        </div>
 
-      <form  className="card-container">
-          <div className="input-field">
-            <label htmlFor="name">Full Name</label>
-            <input
-              type="text"
-              autoComplete="off"
-              name="name"
-              id="name"
-             
-              value={userData.name}
-            />
-          </div>
+        <div className="input-field">
+          <label htmlFor="age"> Age</label>
+          <input
+            type="number"
+            autoComplete="off"
+            name="age"
+            id="age"
+            onChange={handleInput}
+            value={userData.age}
+          />
+        </div>
 
-          <div className="input-field">
-            <label htmlFor="age"> Age</label>
-            <input
-              type="number"
-              autoComplete="off"
-              name="age"
-              id="age"
-         
-              value={userData.age}
-            />
-          </div>
-      
+        <div className="input-field">
+          <label htmlFor="gender"> Gender</label>
+          <input
+            type="radio"
+            autoComplete="off"
+            onChange={handleInput}
+            name="gender"
+            id="Male"
+            value="Male"
+          />
+          Male
+          <input
+            type="radio"
+            autoComplete="off"
+            onChange={handleInput}
+            name="gender"
+            id="Female"
+            value="Female"
+          />
+          Female
+        </div>
 
-        
-          <div className="input-field">
-            <label htmlFor="gender"> Gender</label>
-            <input
-              type="radio"
-              autoComplete="off"
-            
-              name="gender"
-              id="Male"
-              value="Male"
-            />
-            Male
-            <input
-              type="radio"
-              autoComplete="off"
-              
-              name="gender"
-              id="Female"
-              value="Female"
-            />
-            Female
-          </div>
-
-          <div className="input-field">
-            <label htmlFor="parent_id">Parent ID</label>
-            <input
-              type="text"
-              autoComplete="off"
-              name="parent_id"
-              id="parent_id"
-             
-              value={userData.parent_id}
-            />
-          </div>
-          <div className="input-field">
-            <label htmlFor="school">School Grade</label>
-            <input
-              type="text"
-              autoComplete="off"
-              name="school"
-              id="school"
-           
-              value={userData.school_grade}
-            />
-          </div>
-            <div className="input-field">
-            <label htmlFor="date">Today Date</label>
-            <input
-              type="date"
-              autoComplete="off"
-              name="date"
-              id="date"
-           
-              value={userData.today_date}
-            />
-          </div>
-          </form>
-
+        <div className="input-field">
+          <label htmlFor="parent_id">Parent ID</label>
+          <input
+            type="number"
+            autoComplete="off"
+            name="parent_id"
+            id="parent_id"
+            onChange={handleInput}
+            value={userData.parent_id}
+          />
+        </div>
+        <div className="input-field">
+          <label htmlFor="school_grade">School Grade</label>
+          <input
+            type="number"
+            autoComplete="off"
+            name="school_grade"
+            id="school_grade"
+            onChange={handleInput}
+            value={userData.school_grade}
+          />
+        </div>
+        <div className="input-field">
+          <label htmlFor="today_date">Today Date</label>
+          <input
+            type="date"
+            autoComplete="off"
+            name="today_date"
+            id="today_date"
+            onChange={handleInput}
+            value={userData.today_date}
+          />
+        </div>
+      </form>
+      <h3>Insructions: </h3>
+      <p>
+        {" "}
+        Below are a number of common problems that children have in school.
+        Please rate each item according to how much of a problem it has been in
+        the last month. For each item, ask yourself“How much ofa problem has
+        this been in the last month'?”, and circle the best answer for each one.
+        If none, not at all, seldom, or very infrequently. you would circle 0.
+        If very much true, or it occurs very often or frequently, you would
+        Circle 3. You would Cll'CiC l or 2 for ratings in between. Please
+        respond to all the items.{" "}
+      </p>
       <div className="container">
         <div className="questions">
           <div></div>
@@ -455,7 +480,6 @@ const Assessments = () => {
         <button onClick={handleSubmit} type="button">
           Submit
         </button>
-
 
         {totals &&
           Profile.map((p, i) => (

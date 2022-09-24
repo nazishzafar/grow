@@ -1,7 +1,8 @@
 .hero-image>img{
     width: 100%;
+    /* margin-top: 5.1rem; */
 }
-.learn,.play,.life{
+.learn,.play,.life,.feature{
    
     padding:1.5rem;
     box-sizing: border-box;
@@ -29,3 +30,19 @@ p{
 
 
 }
+.offer_head{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.offer-container{
+    margin:3rem 2rem 3rem 2rem ;   
+
+}
+
+
+

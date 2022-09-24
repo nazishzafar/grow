@@ -22,7 +22,7 @@ function App() {
 
         
         <Router>
-                
+              <PreNavbar/>  
             <NavbarComp/>
             <Routes>
                 <Route path='/' element={<Home/>}/>

@@ -1,7 +1,7 @@
 .footer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  padding: 2.5  vmax;
+  padding: 2.5 vmax;
   background-color: rgb(117, 117, 117);
   color: white;
   position: absolute;
@@ -10,22 +10,9 @@
 
 
 }
-.footer>div>a{
-    text-decoration: none;
-    color: rgb(197,197,197);
-    font-size: 1vmax;
-    margin: 0.6vmax;
-}
+
 .footer>div{
     display: flex;
     flex-direction: column;
     margin: 1vmax;
-    
-}
-.footer>div:nth-child(2)>a{
-    display: inline-block;
-
-}
-.footer>div>a:hover{
-    color: white;
 }

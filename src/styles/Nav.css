@@ -9,6 +9,7 @@
     width: 100%;
     z-index: 1000;
     height: 5rem;
+    /* position: fixed; */
 }
 .navlinks{
     text-decoration: none;
@@ -24,3 +25,4 @@
     max-height: 15rem;
   
 }
+

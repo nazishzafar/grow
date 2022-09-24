@@ -7,7 +7,7 @@ export default function Footer({footer}) {
     return(
     <div className='footer'>
         <div>
-        <p>Services</p>
+        Services
         {
             data.Services.map((item,index)=>(
                 <div key={index}>{item}</div>
@@ -16,7 +16,7 @@ export default function Footer({footer}) {
         }
         </div>
         <div>
-        <p>Contact Us</p>
+        Contact Us
         {
             data.Contact_Us.map((item,index)=>(
                 <div key={index}>{item}</div>

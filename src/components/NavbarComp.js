@@ -8,7 +8,7 @@ import logo from "../Images/logo.png"
 
 export default function NavbarComp() {
   return (
-    <div className='Navbar'>
+    <div className='Navbar' >
         <div className='logo'>
             <Link to='/'>
                 <img id='logoimg' src={logo} alt= 'logo' />

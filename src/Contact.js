@@ -14,6 +14,7 @@ export const Contact = () => {
 
     emailjs.sendForm('service_ksc70pg', 'template_3sr1159', e.target, 'CzTosi5QN3aEoI4l8')
       .then((result) => {
+        
           
           alert("Your Message has been sent successfully");
       }, (error) => {
