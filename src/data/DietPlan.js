@@ -107,7 +107,7 @@ export const DietPlan = {
             "1322 Calories"
         ]
 
-    },
+},
 
 
     "normalweight": {
@@ -216,55 +216,6 @@ export const DietPlan = {
     },
 
 
-    "normalweight": {
-        "Water_Requirement": ["13 Glass."],
-        "Recommendation": ["Eat Healthy , Fresh Food.",
-            "Drink Plenty Of Water.",
-            "Sleep Well For 8 hours. ",
-            "Avoid Processed Meat / Frozen Food.",
-            "Avoid Ready to eat meals.",
-            "Don't skip Walk.",
-            "Drink 2 glass of milk daily.",
-            "Try to Eat Fish Twice.",
-            "Eat Fresh Food then Frozen.",
-            "Check your Vitamin D level.",],
-
-        "Breakfast": [
-            "1 Apple","2 Multi Grain Bread","2 Eggs","2 tbs Olive Oil"
-        ],
-        "BreakCal": [
-            "90+60+160+150= 460 Calories"
-        ],
-        "MorningSnack": ["2 Fruites (SEASONAL)"],
-
-        "MornSnackCal": [
-            "120 Calories"
-        ],
-        "Lunch": ["Salad(1/2 Cucumber + 1/2 Tomato + 1/2 Cabbage )","1 Chapatti","Gravy(1/2C Spanish + 10g Chicken)","3/4 C Yogurt"],
-
-        "LunchCal": [
-            "37+120+25+75+120=377 Calories"
-        ],
-        "EveningSnack": ["1 Cup Tea"],
-
-        "ESnackCal": [
-            "80 Calories"
-        ],
-        "Dinner": ["1 Fruit","1 C Brown Rice","20g Chicken","1/2 Cup Mashed Potatos"],
-
-        "DinnerCal": [
-            "60+120+150+25=355 Calories"
-        ],
-        "BedTimeSnack": ["1 CUP MILK","4 Wallnuts"],
-
-        "BedTimeSnackCal": [
-            "120+45=165 Calories"
-        ],
-        "Exercise":["1 Hour Walk.","3rice a week Light aerobic exercise like running, walking"],
-        "Total_Cal": [
-            "15507 Calories"
-        ]
-    },
 
 
 

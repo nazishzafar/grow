@@ -9,7 +9,7 @@ import Home from './Home'
 import Assessments from './Assessments'
 import About from './About'
 import Articles  from './Articles'
-import CommentApp from './CommentApp'
+// import CommentApp from './CommentApp'
 import Diet from './Diet'
 import Contact from './Contact'
 import Signup from './Signup'
@@ -29,7 +29,7 @@ function App() {
                 <Route path='/assessment' element={<Assessments/>}/>
                 <Route path='/articles' element={<Articles/>}/>
                 <Route path='/diet' element={<Diet/>}/>
-                <Route path='/CommentApp' element={<CommentApp/>}/>
+                {/* <Route path='/CommentApp' element={<CommentApp/>}/> */}
                 <Route path='/contact' element={<Contact/>}/>
                 <Route path='/about' element={<About/>}/>
                 <Route path='/Signup' element={<Signup/>}/>

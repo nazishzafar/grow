@@ -218,6 +218,7 @@ const Assessments = () => {
 
   const handleSubmit = () => {
     const verify = assessments.find((assessment) => assessment.answer === null);
+    let values = [];
 
     if (verify) {
       alert("Please fill all options");
@@ -240,8 +241,8 @@ const Assessments = () => {
         "Hyperactivity:  " + c,
         "ADHD:  " + d,
       ]);
+
       if (totals) {
-        let values = [];
 
         if (userData.age >= 3 && userData.age <= 5) {
           Profile.map((p, index) => {
@@ -315,6 +316,8 @@ const Assessments = () => {
       }
       setBool(true);
     }
+    console.log(values)
+
   };
 
   return (
@@ -419,7 +422,7 @@ const Assessments = () => {
       </p>
       <div className="container">
         <div className="questions">
-          <div></div>
+          
           <div className="options ">
             {[
               "Never, Seldom",

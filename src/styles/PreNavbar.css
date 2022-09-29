@@ -3,7 +3,6 @@
     display: grid;
     grid-template-columns: 5fr 2fr;
     color: white;
-    
 }
 .PreNavbar > div{
 padding: 0.5vmax 4vmax;
