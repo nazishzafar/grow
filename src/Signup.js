@@ -24,11 +24,12 @@ const Signup = () => {
   const handleSubmit=async(e)=>{
     e.preventDefault();
     try {
-      const {data}=await axios.post("http://127.0.0.1:8000/api/user/register/",{...userRegisteration,password2:userRegisteration.emailpassword}).then((response)=>{
-        console.log(response.data)
+      const {data}=await axios.post("http://127.0.0.1:8000/api/user/register/",{...userRegisteration}).then((response)=>{
+        console.log(response)
       })
     } catch (error) {
-      alert(error.message)
+      // alert(error.message)
+      console.log(error.message)
     }
   }
 
@@ -38,16 +39,16 @@ const Signup = () => {
     <form  onSubmit={handleSubmit}  className='card-container'>
         <div className='input-field'>
           <label htmlFor='name'><FaUser/> Full Name</label>
-          <input type='text' value={userRegisteration.name} autoComplete='off' onChange={handleInput} name='name' id='name'/>
+          <input type='text' value={userRegisteration.name} autoComplete='off' onChange={handleInput} name='name' id='name' required/>
         </div>
 
         <div className='input-field'>
           <label htmlFor='email'><FaEnvelope/>  Email</label>
-          <input type='email' value={userRegisteration.email} autoComplete='off' onChange={handleInput} name='email' id='email'/>
+          <input type='email' value={userRegisteration.email} autoComplete='off' onChange={handleInput} name='email' id='email' required/>
         </div>
         <div className='input-field'>
           <label htmlFor='password'><FaLock/>  Password</label>
-          <input type='password' value={userRegisteration.password} autoComplete='off' onChange={handleInput} name='password' id='password'/>
+          <input type='password' value={userRegisteration.password} autoComplete='off' onChange={handleInput} name='password' id='password' required/>
         </div>
 
         <Button  type='submit'>Registeration</Button>

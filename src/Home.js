@@ -1,7 +1,20 @@
 import React from "react";
 import hero from "./Images/hero.jpg";
 import "./styles/Home.css";
-import book from "./Images/book.png"
+import book from "./Images/read.png"
+import play from "./Images/playtime.png"
+import life from "./Images/life.png"
+import normal from "./Images/nutrition.png"
+import UnderWeight from "./Images/diet.png"
+import over from "./Images/over.png"
+import disable from "./Images/disabled.png"
+import autism from "./Images/autism.png"
+import early from "./Images/physical.png"
+
+
+
+
+
 
 const Home = () => {
   return (
@@ -23,6 +36,9 @@ const Home = () => {
         </div>
 
         <div className="feature" style={{ backgroundColor: "#F5561D" }}>
+        <div style={{ backgroundImage: `url(${play})`}} className="feature-img">
+
+</div>
           <h3>Play</h3>
           <p>
             Spending time together with your baby helps form a lasting bond.
@@ -31,6 +47,7 @@ const Home = () => {
         </div>
 
         <div className="feature" style={{ backgroundColor: "#44cbd8" }}>
+        <div style={{ backgroundImage: `url(${life})`}} className="feature-img"></div>
           <h3>Parenting Life</h3>
           <p>
             Parenting is challenging and rewarding! Read about postpartum life,
@@ -50,8 +67,8 @@ const Home = () => {
 
       <div className="offer-container">
         <div className="feature ">
-          <i class="fa fa-home" aria-hidden="true"></i>
-          <h3>Activities for Normal</h3>
+        <div style={{ backgroundImage: `url(${normal})`}} className="feature-img"></div>
+          <h3>Diet Plan for Normal</h3>
           <p>
             Between all those diaper changes, feedings, and naps there will be
             times when your newborn is awake and alert, ready to take in his
@@ -60,7 +77,9 @@ const Home = () => {
         </div>
 
         <div className="feature ">
-          <h3>UnderWeight Diet Plan</h3>
+        <div style={{ backgroundImage: `url(${UnderWeight})`}} className="feature-img"></div>
+
+          <h3>Diet Plan for UnderWeight </h3>
 
           <p>
             Is your child too busy or too picky to eat? Discover what to serve
@@ -70,7 +89,9 @@ const Home = () => {
         </div>
 
         <div className="feature ">
-          <h3>OverWeight diet Plan</h3>
+        <div style={{ backgroundImage: `url(${over})`}} className="feature-img"></div>
+
+          <h3>Diet Plan for OverWeight</h3>
           <p>
             Is your child too busy or too picky to eat? Discover what to serve
             your toddler or preschooler and how to make family mealtimes more
@@ -79,28 +100,34 @@ const Home = () => {
         </div>
 
         <div className="feature">
-          <h3>Parent's Experiences</h3>
+        <div style={{ backgroundImage: `url(${autism})`}} className="feature-img"></div>
+
+          <h3>Activities for ADHD and Autism</h3>
           <p>
             Parenting is challenging and rewarding! Read about postpartum life,
             finding support, and experiences from other parents.
           </p>
         </div>
-
         <div className="feature">
-          <h3>Early develoment</h3>
-          <p>
-            Caring for your baby is a big job, and it includes safeguarding her
-            safety and well-being. Read on your baby development here.
-          </p>
-        </div>
-
-        <div className="feature">
+        <div style={{ backgroundImage: `url(${disable})`}} className="feature-img"></div>
           <h3>Activities for Special Child</h3>
           <p>
             Sometimes real superheros live in the hearts of small children
             fighting big battles. Learn to overcome your child disability here.
           </p>
         </div>
+
+        <div className="feature">
+        <div style={{ backgroundImage: `url(${early})`}} className="feature-img"></div>
+
+          <h3>Early develoment of Child</h3>
+          <p>
+            Caring for your baby is a big job, and it includes safeguarding her
+            safety and well-being. Read on your baby development here.
+          </p>
+        </div>
+
+      
       </div>
     </div>
   );
