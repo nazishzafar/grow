@@ -1,5 +1,5 @@
 import './App.css';
-import PreNavbar from './components/PreNavbar';
+
 import NavbarComp from './components/NavbarComp'
 import Slider from './components/Slider'
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
@@ -22,7 +22,7 @@ function App() {
 
         
         <Router>
-              <PreNavbar/>  
+        
             <NavbarComp/>
             <Routes>
                 <Route path='/' element={<Home/>}/>

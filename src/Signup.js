@@ -51,7 +51,7 @@ const Signup = () => {
           <input type='password' value={userRegisteration.password} autoComplete='off' onChange={handleInput} name='password' id='password' required/>
         </div>
 
-        <Button  type='submit'>Registeration</Button>
+        <Button type='button'  >Registeration</Button>
       </form>   
     
   )

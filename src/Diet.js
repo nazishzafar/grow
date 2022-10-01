@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import nutrition from "./Images/Nutrition.svg";
+import nutrition from "./Images/Nutrition.jpg";
 import { Button } from "react-bootstrap";
 import "./styles/Home.css";
 import { DietPlan } from "./data/DietPlan";
@@ -70,9 +70,10 @@ const Diet = () => {
 
   return (
     <div>
-      <div className="hero-image">
+      <div className="hero-image" style={{marginTop:"2.9rem"}}>
         <img src={nutrition} alt="hero image" />
       </div>
+
       {BMI === 0 ? (
         <form onSubmit={handleSubmit} className="card-container">
           <div className="input-field">

@@ -14,8 +14,6 @@ export const Contact = () => {
 
     emailjs.sendForm('service_ksc70pg', 'template_3sr1159', e.target, 'CzTosi5QN3aEoI4l8')
       .then((result) => {
-        
-          
           alert("Your Message has been sent successfully");
       }, (error) => {
           alert(error.text)
@@ -27,19 +25,19 @@ export const Contact = () => {
       <h2>Contact Us</h2>
       <div className='input-field'>
           <label htmlFor='name'>Full Name</label>
-          <input type='text'autoComplete='off'  name='name' id='name'/>
+          <input type='text'autoComplete='off'  name='name' id='name'required/>
         </div>
 
         <div className='input-field'>
           <label htmlFor='email'>  Email</label>
-          <input type='email'  autoComplete='off'  name='email' id='email'/>
+          <input type='email'  autoComplete='off'  name='email' id='email' required/>
         </div>
         <div className='input-field'>
           <label htmlFor='Message'> Message</label>
-          <textarea  autoComplete='off'  name='message' id='Message' rows='7' placeholder='Message'></textarea>
+          <textarea  autoComplete='off'  name='message' id='Message' rows='7' placeholder='Message' required></textarea>
         </div>
 
-        <Button  type='submit'>Submit</Button>
+        <Button type='submit'>Submit</Button>
     </form>
   );
 };

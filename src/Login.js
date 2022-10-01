@@ -17,7 +17,7 @@ const Login = () => {
       <input type='password' autoComplete='off' name='password' id='password'/>
     </div>
 
-    <Button  type='submit'>Registeration</Button>
+    <Button type='button'>Registeration</Button>
   </form> 
   )
 }
