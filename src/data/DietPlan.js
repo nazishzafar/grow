@@ -178,25 +178,25 @@ export const DietPlan = {
 
             "Morning_Snack": ["1 cup normal water","1 tbs apple cider vineger"],
             "MornSnackCal": [
-                "60 Calories"
+                "3 Calories"
             ],
 
             "Breakfast": [
                 "1 EGG 1 yolk omelet", "2 bran bread" ,"8 almonds"
             ],
             "BreakCal": [
-                "75+160+60+80=375 Calories"
+                "120+179+55=354 Calories"
             ],
 
            
         "Lunch": ["Chapati 6 inch (Almond flour)",  "salan" ," 8 tbs yogurt"],
         "LunchCal": [
-            "120+37+80+75 = 312 Calories"
+            "180+37+59 = 312 Calories"
         ],
 
         "EveSnack": ["1 glass strawberry juice / falsa juice"],
         "EveSnackCal": [
-            "100 Calories"
+            "90 Calories"
         ],
 
         "Dinner": ["Steamed broccoli", "cabbage" ," black pepper" , "2-piece Chicken/mutton"],
