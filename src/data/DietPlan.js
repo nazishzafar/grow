@@ -165,16 +165,15 @@ export const DietPlan = {
     "Obese": {
         "Water_Requirement": ["10 Glass"],
 
-        "Recommendation": ["Avoid processed foods/frozen items/bakery items. ",
-            "Avoid Bakeryitems , fride items and frizzy drinks",
-            "Limit whitesugar and salt",
-            "Eat fresh vegetables , fruits and nuts",
-            "Drink plenty of water",
-            "Take 8 hours sleep ",
-            "Don't skip your physical activity",
-            "Don't eat outdoor food more than a once in a week.",
-            "Try to eat fish twice a week",
-            "Check your Vitamin D level."],
+        "Recommendation": ["Eat Healthy , Fresh Food.",
+        "Drink Plenty Of Water.",
+        "Sleep Well For 8 hours. ",
+        "Avoid Processed Meat / Frozen Food.",
+        "Avoid Ready to eat meals.",
+        "Don't skip Walk.",
+        "Drink 2 glass of milk daily.",
+        "Eat Fresh Food then Frozen.",
+       ],
 
             "Morning_Snack": ["1 cup normal water","1 tbs apple cider vineger"],
             "MornSnackCal": [
