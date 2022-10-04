@@ -5,7 +5,7 @@ import {data} from "../data/data"
 import logo from "../Images/logo.png"
 
 
-import {FaEnvelope, FaLock, FaPhoneAlt, FaUser, FaQuestionCircle} from 'react-icons/fa'
+import {FaEnvelope,FaWpforms,FaClipboardList,FaAppleAlt,FaAddressBook, FaLock, FaPhoneAlt, FaUser, FaQuestionCircle,FaHome,FaInfoCircle} from 'react-icons/fa'
 
 
 export default function NavbarComp() {
@@ -34,13 +34,13 @@ export default function NavbarComp() {
         </div>
        
         <div className='navlinks'>
-       <Link to='/' className='navlinks'>Home</Link>
-       <Link to='/assessment' className='navlinks'>Assessments</Link>
-       <Link to='/articles' className='navlinks'>Articles</Link>
-       <Link to='/diet' className='navlinks'>Diet Plan</Link>
+       <Link to='/' className='navlinks'><FaHome/> Home</Link>
+       <Link to='/assessment' className='navlinks'><FaWpforms/> Assessments</Link>
+       <Link to='/articles' className='navlinks'><FaClipboardList/> Articles</Link>
+       <Link to='/diet' className='navlinks'><FaAppleAlt/> Diet Plan</Link>
        {/* <Link to='/CommentApp' className='navlinks'>Community</Link> */}
-       <Link to='/contact' className='navlinks'>Contact</Link>
-       <Link to='/about' className='navlinks'>About</Link>
+       <Link to='/contact' className='navlinks'><FaAddressBook/> Contact</Link>
+       <Link to='/about' className='navlinks'><FaInfoCircle/> About</Link>
        <Link to='/login' className='navlinks'><FaLock/> Log in</Link> 
         <Link to='/signup' className='navlinks'><FaUser/> Sign Up</Link>
 

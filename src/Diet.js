@@ -73,7 +73,7 @@ const Diet = () => {
 
   return (
     <div>
-      <div className="hero-image" style={{marginTop:"2.9rem"}}>
+      <div className="hero-image" >
         <img src={nutrition} alt="hero image" />
       </div>
 

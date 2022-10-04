@@ -181,16 +181,16 @@ export const DietPlan = {
             ],
 
             "Breakfast": [
-                "1 EGG 1 yolk omelet", "2 bran bread" ,"8 almonds"
+                "1 EGG 1 whole", "2 bran bread" ,"8 almonds"
             ],
             "BreakCal": [
-                "120+179+55=354 Calories"
+                "75+140+45= 260 Calories"
             ],
 
            
-        "Lunch": ["Chapati 6 inch (Almond flour)",  "salan" ," 8 tbs yogurt"],
+        "Lunch": ["Chapati 6 inch",  "salan" ," 1 cup cooked veges"],
         "LunchCal": [
-            "180+37+59 = 312 Calories"
+            "160+50+120+ 45 oil = 375 Calories"
         ],
 
         "EveSnack": ["1 glass strawberry juice / falsa juice"],
@@ -198,18 +198,18 @@ export const DietPlan = {
             "90 Calories"
         ],
 
-        "Dinner": ["Steamed broccoli", "cabbage" ," black pepper" , "2-piece Chicken/mutton"],
+        "Dinner": ["1/2 cup Steamed broccoli", "cabbage"  , "2-piece Chicken/mutton"],
         "DinnerCal": [
-            "50+140+75+45 =310 Calories"
+            "25+25+150 =200 Calories"
         ],
 
         "BedTimeSnack": ["1 cup milk (skimmed)"],
         "BedSnackCal": [
-            "120+45 =165 Calories"
+            "120 = Calories"
         ],
         "Exercise":["30 Minutes Brisk Walk","Deep breathing for 10 mints"],
         "Total_Cal": [
-            "1322 Calories"
+            "1048 Calories"
         ]
 
     },
