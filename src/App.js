@@ -7,8 +7,10 @@ import {data} from './data/data'
 import Footer from './components/Footer'
 import Home from './Home'
 import Assessments from './Assessments'
+import Psychlogical from './Psychlogical'
 import About from './About'
 import Articles  from './Articles'
+import Autism from './Autism'
 // import CommentApp from './CommentApp'
 import Diet from './Diet'
 import Contact from './Contact'
@@ -29,6 +31,8 @@ function App() {
                 <Route path='/assessment' element={<Assessments/>}/>
                 <Route path='/articles' element={<Articles/>}/>
                 <Route path='/diet' element={<Diet/>}/>
+                <Route path='/Psychlogical' element={<Psychlogical/>}/>
+                <Route path='/Autism' element={<Autism/>}/>
                 {/* <Route path='/CommentApp' element={<CommentApp/>}/> */}
                 <Route path='/contact' element={<Contact/>}/>
                 <Route path='/about' element={<About/>}/>
