@@ -218,7 +218,7 @@ const Assessments = () => {
 
   const handleSubmit = () => {
     const verify = assessments.find((assessment) => assessment.answer === null);
-    let values = [];
+    let value = 0;
 
     if (verify) {
       alert("Please fill all options");
@@ -235,89 +235,60 @@ const Assessments = () => {
       const d = assessments
         .map((assessment) => assessment.blocks[3])
         .reduce((total, num) => total + num);
-      setTotals([
-        "Oppositional:  " + a,
-        "Cognitive  " + b,
-        "Hyperactivity:  " + c,
-        "ADHD:  " + d,
-      ]);
+      setTotals([a, b, c, d]);
 
-      if (totals) {
-
+      if (totals.length > 0) {
         if (userData.age >= 3 && userData.age <= 5) {
           Profile.map((p, index) => {
-            if (
-              p.oppositional[0] === totals[0] ||
-              p.inattention[0] === totals[1] ||
-              p.hyperactivity[0] === totals[2] ||
-              p.adhdindex[0] === totals[3]
-            ) {
-              values.push(90 - index);
+            if (p.adhdindex[0] === totals[3]) {
+              value = 90 - index;
             }
             return p;
           });
         } else if (userData.age >= 6 && userData.age <= 8) {
           Profile.map((p, index) => {
-            if (
-              p.oppositional[1] === totals[0] ||
-              p.inattention[1] === totals[1] ||
-              p.hyperactivity[1] === totals[2] ||
-              p.adhdindex[1] === totals[3]
-            ) {
-              values.push(90 - index);
+            if (p.adhdindex[1] === totals[3]) {
+              value = 90 - index;
             }
             return p;
           });
         } else if (userData.age >= 9 && userData.age <= 11) {
           Profile.map((p, index) => {
-            if (
-              p.oppositional[2] === totals[0] ||
-              p.inattention[2] === totals[1] ||
-              p.hyperactivity[2] === totals[2] ||
-              p.adhdindex[2] === totals[3]
-            ) {
-              values.push(90 - index);
+            if (p.adhdindex[2] === totals[3]) {
+              value = 90 - index;
             }
             return p;
           });
         } else if (userData.age >= 12 && userData.age <= 14) {
           Profile.map((p, index) => {
-            if (
-              p.oppositional[3] === totals[0] ||
-              p.inattention[3] === totals[1] ||
-              p.hyperactivity[3] === totals[2] ||
-              p.adhdindex[3] === totals[3]
-            ) {
-              values.push(90 - index);
+            if (p.adhdindex[3] === totals[3]) {
+              value = 90 - index;
             }
             return p;
           });
         } else if (userData.age >= 15 && userData.age <= 17) {
           Profile.map((p, index) => {
-            if (
-              p.oppositional[4] === totals[0] ||
-              p.inattention[4] === totals[1] ||
-              p.hyperactivity[4] === totals[2] ||
-              p.adhdindex[4] === totals[3]
-            ) {
-              values.push(90 - index);
+            if (p.adhdindex[4] === totals[3]) {
+              value = 90 - index;
             }
             return p;
           });
         }
 
-        values.map((value) => {
-          if (value > 60) {
-            setStatus("1");
+          if (value< 60) {
+            setStatus("No adssr");
           }
-          return value;
-        });
-        console.log(status);
+          else if(value>=60 && value<=65)
+          {
+            setStatus("moderate")
+          }
+          else if(value>65)
+          {
+            setStatus("exists")
+          }
       }
       setBool(true);
     }
-    console.log(values)
-
   };
 
   return (
@@ -326,8 +297,8 @@ const Assessments = () => {
         <img src={adhd} alt="hero image" />
       </div>
       <h1>Conners' Parent Rating Scale-Revised (S)</h1>
-      <h4>    by C. Keith Conners, Ph.D.</h4>
-      
+      <h4> by C. Keith Conners, Ph.D.</h4>
+
       <form className="card-container">
         <div className="input-field">
           <label htmlFor="name">Full Name</label>
@@ -423,7 +394,6 @@ const Assessments = () => {
       </p>
       <div className="container">
         <div className="questions">
-
           <div className="options ">
             {[
               "Never, Seldom",
@@ -484,7 +454,7 @@ const Assessments = () => {
         <button onClick={handleSubmit} type="button">
           Submit
         </button>
-
+{/* 
         {totals &&
           Profile.map((p, i) => (
             <div
@@ -509,7 +479,7 @@ const Assessments = () => {
                 <div>{v}</div>
               ))}
             </div>
-          ))}
+          ))} */}
       </div>
     </div>
   );
