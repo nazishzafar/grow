@@ -17,6 +17,9 @@ import Diet from './Diet'
 import Contact from './Contact'
 import Signup from './Signup'
 import Login from './Login'
+import CreateBlog from "./CommunityBlogs/CreateBlog";
+import Blogs from "./CommunityBlogs/Blogs";
+import Blog from "./CommunityBlogs/Blog";
 
 function App() {
 
@@ -40,6 +43,16 @@ function App() {
                 <Route path='/about' element={<About />} />
                 <Route path='/Signup' element={<Signup />} />
                 <Route path='/Login' element={<Login />} />
+
+
+
+                <Route path="create-blog" element={<CreateBlog />} />
+        <Route path="update-blog/:blogId" element={<CreateBlog />} />
+        <Route path="blogs" element={<Blogs />} />
+        <Route path="blogs/:blogId" element={<Blog />} />
+        <Route path="*" element={<div>Page Not Found ):</div>} />
+
+
             </Routes>
             <Footer footer={data.footer} />
         </Router>

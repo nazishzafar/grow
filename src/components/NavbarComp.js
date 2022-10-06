@@ -22,7 +22,7 @@ export default function NavbarComp() {
           <Link to='/diet' className='navlinks'><FaAppleAlt /> Nutrition</Link>
           <Link to='/activities' className='navlinks'><FaWpforms /> Activities</Link>
           <Link to='/articles' className='navlinks'><FaClipboardList /> Articles</Link>
-          <Link to='/Community' className='navlinks'>Community</Link>
+          <Link to='/' className='navlinks'>Community</Link>
           <Link to='/contact' className='navlinks'><FaAddressBook /> Contact</Link>
           <Link to='/login' className='navlinks'><FaLock /> Log in</Link>
           <Link to='/signup' className='navlinks'><FaUser /> Sign Up</Link>

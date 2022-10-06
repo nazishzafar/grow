@@ -18,7 +18,7 @@ const Diet = () => {
   });
 
   const [BMI, setBMI] = useState(0);
-  const [tempBMI,setTempBMI]=useState(0);
+  const [tempBMI, setTempBMI] = useState(0);
 
   const handleInput = (e) => {
     const name = e.target.name;
@@ -44,17 +44,17 @@ const Diet = () => {
         1.85 * userDiet.height -
         4.676 * userDiet.age;
     }
-    console.log("Your BEE is "+BEE);
+    console.log("Your BEE is " + BEE);
 
     var TEE =
       Number(userDiet.activity * userDiet.stress * userDiet.temperature) * BEE;
-    console.log("Your TEE is "+TEE);
-    console.log("Your BMI is"+BMI);
+    console.log("Your TEE is " + TEE);
+    console.log("Your BMI is" + BMI);
     setTempBMI(BMI);
 
     if (BMI < 18.5 && userDiet.age >= 12) {
       console.log("You're underweight");
-      
+
       setBMI(1);
     } else if (BMI > 18.5 && BMI < 24.9 && userDiet.age >= 12) {
       console.log("Your weight is normal");
@@ -138,7 +138,7 @@ const Diet = () => {
               name="gender"
               id="Male"
               value="Male"
-          
+
 
             />
             Male
@@ -173,33 +173,33 @@ const Diet = () => {
             <select onChange={handleInput} name="stress">
               {(userDiet.gender === "Male"
                 ? [
-                    { name: "None ", ratio: 1.0 },
-                    { name: "Solid Tumor ", ratio: 1.15 },
-                    { name: "Leukemia/Lymphoma", ratio: 1.27 },
-                    { name: "Inflammatory bowel disease", ratio: 1.11 },
-                    { name: "Liver disease", ratio: 1.07 },
-                    { name: "Burns", ratio: 1.64 },
-                    { name: "Pancreatic disease", ratio: 1.13 },
-                    { name: "General surgery", ratio: 1.2 },
-                    { name: " Transplantation", ratio: 1.19 },
-                    { name: "Sepsis", ratio: 1.33 },
-                    { name: "Abscess", ratio: 1.12 },
-                    { name: "Other infection", ratio: 1.16 },
-                  ]
+                  { name: "None ", ratio: 1.0 },
+                  { name: "Solid Tumor ", ratio: 1.15 },
+                  { name: "Leukemia/Lymphoma", ratio: 1.27 },
+                  { name: "Inflammatory bowel disease", ratio: 1.11 },
+                  { name: "Liver disease", ratio: 1.07 },
+                  { name: "Burns", ratio: 1.64 },
+                  { name: "Pancreatic disease", ratio: 1.13 },
+                  { name: "General surgery", ratio: 1.2 },
+                  { name: " Transplantation", ratio: 1.19 },
+                  { name: "Sepsis", ratio: 1.33 },
+                  { name: "Abscess", ratio: 1.12 },
+                  { name: "Other infection", ratio: 1.16 },
+                ]
                 : [
-                    { name: "None ", ratio: 1.0 },
-                    { name: "Solid Tumor ", ratio: 1.25 },
-                    { name: "Leukemia/Lymphoma", ratio: 1.37 },
-                    { name: "Inflammatory bowel disease", ratio: 1.12 },
-                    { name: "Liver disease", ratio: 1.11 },
-                    { name: "Burns", ratio: 1.52},
-                    { name: "Pancreatic disease", ratio: 1.21 },
-                    { name: "General surgery", ratio: 1.39},
-                    { name: " Transplantation", ratio: 1.27},
-                    { name: "Sepsis", ratio: 1.27 },
-                    { name: "Abscess", ratio: 1.39 },
-                    { name: "Other infection", ratio: 1.39 },
-                  ]
+                  { name: "None ", ratio: 1.0 },
+                  { name: "Solid Tumor ", ratio: 1.25 },
+                  { name: "Leukemia/Lymphoma", ratio: 1.37 },
+                  { name: "Inflammatory bowel disease", ratio: 1.12 },
+                  { name: "Liver disease", ratio: 1.11 },
+                  { name: "Burns", ratio: 1.52 },
+                  { name: "Pancreatic disease", ratio: 1.21 },
+                  { name: "General surgery", ratio: 1.39 },
+                  { name: " Transplantation", ratio: 1.27 },
+                  { name: "Sepsis", ratio: 1.27 },
+                  { name: "Abscess", ratio: 1.39 },
+                  { name: "Other infection", ratio: 1.39 },
+                ]
               ).map((o) => (
                 <option value={o.ratio} key={o.name}>
                   {o.name}
@@ -332,7 +332,7 @@ const Diet = () => {
         </div>
       ) : BMI === 2 ? (
         <div className="container">
-        <h4>Your BMI is {tempBMI}</h4>
+          <h4>Your BMI is {tempBMI}</h4>
           <h3>Your weight is normal/Healthy </h3>
 
           <div>
@@ -434,7 +434,7 @@ const Diet = () => {
         </div>
       ) : BMI === 3 ? (
         <div className="container">
-        <h4>Your BMI is {tempBMI}</h4>
+          <h4>Your BMI is {tempBMI}</h4>
           <h3>You are Over weight </h3>
 
           <div>
@@ -538,7 +538,7 @@ const Diet = () => {
         </div>
       ) : BMI === 4 ? (
         <div className="container">
-        <h4>Your BMI is {tempBMI}</h4>
+          <h4>Your BMI is {tempBMI}</h4>
           <h3>Your are obese </h3>
 
           <div>
@@ -641,9 +641,115 @@ const Diet = () => {
           ))}
         </div>
       ) : (
-        <div>
-          <h2>Your age is less than 12</h2>
+        <div className="container">
           <h4>Your BMI is {tempBMI}</h4>
+          <h3>Healthy Diet Plan for kids of age 6 to 12 years</h3>
+          <div>
+            <h2>Recommendation</h2>
+          </div>
+          {DietPlan.Kids.Recommendation.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div>
+            <h2>Exercise</h2>
+          </div>
+          {DietPlan.Kids.Exercise.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+
+          <div>
+            <h2>Breakfast</h2>
+          </div>
+          {DietPlan.Kids.Breakfast.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div>
+            <h2>Breakfast Calories</h2>
+          </div>
+          {DietPlan.Kids.BreakCal.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+
+          <div>
+            <h2>Morning Snack</h2>
+          </div>
+          {DietPlan.Kids.Morning_Snack.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div>
+            <h2>Morning Snack Calories</h2>
+          </div>
+          {DietPlan.Kids.MornSnackCal.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div>
+            <h2>Pre Lunch</h2>
+          </div>
+          {DietPlan.Kids.PreLunch.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div>
+            <h2>Pre Lunch Calories</h2>
+          </div>
+          {DietPlan.Kids.PreLunchCal.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+
+
+          <div>
+            <h2>Lunch</h2>
+          </div>
+          {DietPlan.Kids.Lunch.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div>
+            <h2>Lunch Calories</h2>
+          </div>
+          {DietPlan.Kids.LunchCal.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div>
+            <h2>Evening Snack</h2>
+          </div>
+          {DietPlan.Kids.EveSnack.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div>
+            <h2>Evening Snack Calories</h2>
+          </div>
+          {DietPlan.Kids.EveSnackCal.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div>
+            <h2>Dinner</h2>
+          </div>
+          {DietPlan.Kids.Dinner.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div>
+            <h2>Dinner Calories</h2>
+          </div>
+          {DietPlan.Kids.DinnerCal.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div>
+            <h2>Bed Time Snack</h2>
+          </div>
+          {DietPlan.Kids.BedTimeSnack.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div>
+            <h2>Bed Time Snack Calories</h2>
+          </div>
+          {DietPlan.Kids.BedSnackCal.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div>
+            <h2>Total Calories of the diet</h2>
+          </div>
+          {DietPlan.Kids.Total_Cal.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
         </div>
       )}
     </div>
