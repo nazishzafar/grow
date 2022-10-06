@@ -3,7 +3,9 @@ import { useState } from "react";
 import nutrition from "./Images/Nutrition.jpg";
 import { Button } from "react-bootstrap";
 import "./styles/Home.css";
+import "./styles/Diet.css";
 import { DietPlan } from "./data/DietPlan";
+import Chart from "react-apexcharts";
 
 const Diet = () => {
   const [userDiet, setUserDiet] = useState({
@@ -77,9 +79,44 @@ const Diet = () => {
         <img src={nutrition} alt="hero image" />
       </div>
 
+      <div className="container-fluid mt-3 mb-3">
+        <Chart
+        type="bar"
+        width={1300}
+        height={700}
+        series={
+          [{
+            name:"Weight category",
+            data:[65,34,56,12,34]
+          }]
+        }
+        options={{
+          title:{
+            text:"Weight category",
+            style:{
+              fontSize:30
+            }
+          },
+          colors:["#436f87"],
+          theme:{mode:"dark"},
+          axis:{
+            categories:["Kids","Under Weight","Normal/Healthy Weight","Over weight","Obese"],
+            title:{
+              text:"Weight Category",
+              style:{
+                colors:"#436f87"
+              }
+            }
+          }
+        }
+
+        }
+        />
+      </div>
+
       {BMI === 0 ? (
-        <form onSubmit={handleSubmit} className="card-container">
-          <div className="input-field">
+        <form onSubmit={handleSubmit} className="Dietcard-container">
+          <div className="DietInput-feild">
             <label htmlFor="name">Full Name</label>
             <input
               type="text"
@@ -92,7 +129,7 @@ const Diet = () => {
             />
           </div>
 
-          <div className="input-field">
+          <div className="DietInput-feild">
             <label htmlFor="age"> Age</label>
             <input
               type="number"
@@ -104,7 +141,7 @@ const Diet = () => {
               required
             />
           </div>
-          <div className="input-field">
+          <div className="DietInput-feild">
             <label htmlFor="weight"> Weight in kg:</label>
             <input
               type="number"
@@ -117,7 +154,7 @@ const Diet = () => {
             />
           </div>
 
-          <div className="input-field">
+          <div className="DietInput-feild">
             <label htmlFor="Height"> Height in cm:</label>
             <input
               type="number"
@@ -129,7 +166,7 @@ const Diet = () => {
               required
             />
           </div>
-          <div className="input-field">
+          <div className="DietInput-feild">
             <label htmlFor="gender"> Gender</label>
             <input
               type="radio"
@@ -153,9 +190,10 @@ const Diet = () => {
             Female
           </div>
 
-          <div className="input-field">
+          <div className="DietInput-feild">
             <label htmlFor="activity">Activity</label>
-            <select onChange={handleInput} name="activity">
+            <select onChange={handleInput} name="activity" >
+              
               {[
                 { name: "Bed_ridden", ratio: 1.2 },
                 { name: "Heavily_Active", ratio: 2.25 },
@@ -168,7 +206,7 @@ const Diet = () => {
               ))}
             </select>
           </div>
-          <div className="input-field">
+          <div className="DietInput-feild">
             <label htmlFor="stress">Stress</label>
             <select onChange={handleInput} name="stress">
               {(userDiet.gender === "Male"
@@ -208,7 +246,7 @@ const Diet = () => {
             </select>
           </div>
 
-          <div className="input-field">
+          <div className="DietInput-feild">
             <label htmlFor="temperature">Temperature</label>
             <select onChange={handleInput} name="temperature">
               {[

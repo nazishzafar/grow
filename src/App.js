@@ -2,8 +2,9 @@ import './App.css';
 
 import NavbarComp from './components/NavbarComp'
 
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { data } from './data/data'
+import { dataFooter } from './data/data'
 import Footer from './components/Footer'
 import Home from './Home'
 import Assessments from './Assessments'
@@ -48,7 +49,7 @@ function App() {
 
 
             </Routes>
-            <Footer footer={data.footer} />
+            <Footer footer={dataFooter.footer} />
         </Router>
 
 

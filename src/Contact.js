@@ -33,7 +33,7 @@ export const Contact = () => {
         <img src={contact} alt="Contact image" className="contactImg"/>
     <form ref={form} onSubmit={sendEmail} >
     <h2>Get into Touch</h2>
-        <div className="input-field">
+        <div className="contact-input-feild">
           <input
             type="text"
             autoComplete="off"
@@ -42,7 +42,7 @@ export const Contact = () => {
             required
           />
         </div>
-        <div className="input-field">
+        <div className="contact-input-feild">
           <input
             type="email"
             autoComplete="off"
@@ -51,7 +51,7 @@ export const Contact = () => {
             required
           />
         </div>
-        <div className="input-field">
+        <div className="contact-input-feild">
           <textarea
             autoComplete="off"
             name="message"

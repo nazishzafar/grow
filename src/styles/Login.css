@@ -1,4 +1,4 @@
-.Signup-card-container{
+.login-card-container{
     width:30rem;
     padding:1.5rem;
     box-sizing: border-box;
@@ -13,11 +13,11 @@
     color: white;
 }
 
-.user-input-field{
+.log-input-field{
     display: flex;
     gap:1rem;
 }
 
-.user-input-field label{
+.log-input-field label{
     flex:1;     
 }

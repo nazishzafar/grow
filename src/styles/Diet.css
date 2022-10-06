@@ -1,4 +1,4 @@
-.Signup-card-container{
+.Dietcard-container{
     width:30rem;
     padding:1.5rem;
     box-sizing: border-box;
@@ -13,11 +13,12 @@
     color: white;
 }
 
-.user-input-field{
+.DietInput-feild{
     display: flex;
     gap:1rem;
+   
 }
 
-.user-input-field label{
+.DietInput-feild label{
     flex:1;     
 }

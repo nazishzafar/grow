@@ -35,24 +35,25 @@ const Signup = () => {
 
 
   return (
-    
-    <form  onSubmit={handleSubmit}  className='card-container'>
-        <div className='input-field'>
+    <React.Fragment>
+    <form  onSubmit={handleSubmit}  className='Signup-card-container'>
+        <div className='user-input-field'>
           <label htmlFor='name'><FaUser/> Full Name</label>
           <input type='text' value={userRegisteration.name} autoComplete='off' onChange={handleInput} name='name' id='name' required/>
         </div>
 
-        <div className='input-field'>
+        <div className='user-input-field'>
           <label htmlFor='email'><FaEnvelope/>  Email</label>
           <input type='email' value={userRegisteration.email} autoComplete='off' onChange={handleInput} name='email' id='email' required/>
         </div>
-        <div className='input-field'>
+        <div className='user-input-field'>
           <label htmlFor='password'><FaLock/>  Password</label>
           <input type='password' value={userRegisteration.password} autoComplete='off' onChange={handleInput} name='password' id='password' required/>
         </div>
 
-        <Button type='button'  >Registeration</Button>
-      </form>   
+        <Button type='submit'  >Registeration</Button>
+      </form> 
+      </React.Fragment>  
     
   )
 }

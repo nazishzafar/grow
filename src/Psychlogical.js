@@ -1,13 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import adhd from "./Images/adhd.jpg";
 import "./styles/Home.css";
-import book from "./Images/read.png"
+
 import play from "./Images/playtime.png"
 import life from "./Images/life.png"
-import { Button } from "react-bootstrap";
+import { Button, Toast } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import Chart from "react-apexcharts";
+
 
 export default function Psychlogical()  {
+
+  // const[adhdStatus,setAdhdStatus]=useState([]);
+  // const[Model,setModel]=useState([]);
+
+  // useEffect(()=>{
+  //   const getData=async()=>{
+  //     const adhdStatus=[];
+  //     const getModel=[];
+  //     const reqData=await axios("url");
+  //     const resData=await reqData.json;
+  //      for(let i=0; i<resData.length;i++){
+  //       adhdStatus.push(resData[i].status);
+  //       getModel.push(resData[i].Model);
+  //      }
+  //      setAdhdStatus(adhdStatus);
+  //      setModel(getModel);
+ 
+  //   }
+  // },[])
     const navigate = useNavigate();
   return (
     <div>
@@ -36,8 +57,79 @@ export default function Psychlogical()  {
           </p>
         </Button>
       </div>
+<div>
+<div className="container-fluid mt-3 mb-3">
+  <Chart
+  width={1349}
+  height={550}
+  type="donut" 
+  series={[56,89,45]}
 
+  options={{
+    labels:["With ADHD" ,"No Adhd","Moderate"  ],
+    title:{
+      text:"ADHD Model" 
+    },
+    plotOptions:{
+      pie:{
+        donut:{
+          labels:{
+            show:true,
+            total:{
+              show:true,
+              fontSize:30,
+              color:"#436f87" ,
 
+            }
+          }
+        }
+      }
+    },
+    dataLabels:{
+      enabled:true
+    }
+  }}
+  />
+</div>
+
+<div className="container-fluid mt-3 mb-3">
+  <Chart
+  width={1349}
+  height={550}
+  type="pie" 
+  series={[56,89,45]}
+
+  options={{
+    labels:["With Autism" ,"No Autism","Moderate"  ],
+    title:{
+      text:"Autism Model" 
+    },
+    noData:{
+      text:"Empty Data" 
+    },
+    plotOptions:{
+      pie:{
+        donut:{
+          labels:{
+            show:true,
+            total:{
+              show:true,
+              fontSize:30,
+              color:"#436f87" ,
+
+            }
+          }
+        }
+      }
+    },
+    dataLabels:{
+      enabled:true
+    }
+  }}
+  />
+</div>
+
+</div>
 
       </div>
   )

@@ -35,11 +35,11 @@
 }
 
 
-.input-field{
+.contact-input-feild{
     display: flex;
 }
 
-.input-field textarea,input{
+.contact-input-feild textarea{
     border-radius: 10px;
     width: 100%;
     padding: 3px;
