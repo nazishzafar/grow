@@ -66,7 +66,7 @@ const Home = () => {
       </div>
 
       <div className="offer-container">
-        <div className="feature ">
+        <button className="feature ">
         <div style={{ backgroundImage: `url(${normal})`}} className="feature-img"></div>
           <h3>Diet Plan for Normal</h3>
           <p>
@@ -74,9 +74,9 @@ const Home = () => {
             times when your newborn is awake and alert, ready to take in his
             surroundings and engage with you.
           </p>
-        </div>
+        </button>
 
-        <div className="feature ">
+        <button className="feature ">
         <div style={{ backgroundImage: `url(${UnderWeight})`}} className="feature-img"></div>
 
           <h3>Diet Plan for UnderWeight </h3>
@@ -86,9 +86,9 @@ const Home = () => {
             your toddler or preschooler and how to make family mealtimes more
             pleasant.
           </p>
-        </div>
+        </button>
 
-        <div className="feature ">
+        <button className="feature ">
         <div style={{ backgroundImage: `url(${over})`}} className="feature-img"></div>
 
           <h3>Diet Plan for OverWeight</h3>
@@ -97,9 +97,9 @@ const Home = () => {
             your toddler or preschooler and how to make family mealtimes more
             pleasant.
           </p>
-        </div>
+        </button>
 
-        <div className="feature">
+        <button className="feature">
         <div style={{ backgroundImage: `url(${autism})`}} className="feature-img"></div>
 
           <h3>Activities for ADHD and Autism</h3>
@@ -107,17 +107,17 @@ const Home = () => {
             Parenting is challenging and rewarding! Read about postpartum life,
             finding support, and experiences from other parents.
           </p>
-        </div>
-        <div className="feature">
+        </button>
+        <button className="feature">
         <div style={{ backgroundImage: `url(${disable})`}} className="feature-img"></div>
           <h3>Activities for Special Child</h3>
           <p>
             Sometimes real superheros live in the hearts of small children
             fighting big battles. Learn to overcome your child disability here.
           </p>
-        </div>
+        </button>
 
-        <div className="feature">
+        <button className="feature">
         <div style={{ backgroundImage: `url(${early})`}} className="feature-img"></div>
 
           <h3>Early develoment of Child</h3>
@@ -125,7 +125,7 @@ const Home = () => {
             Caring for your baby is a big job, and it includes safeguarding her
             safety and well-being. Read on your baby development here.
           </p>
-        </div>
+        </button>
 
       
       </div>
