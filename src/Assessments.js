@@ -3,6 +3,7 @@ import adhd from "./Images/adhd.jpg";
 import "./styles/Home.css";
 import "./styles/Assessments.css";
 import { Profile } from "./data/Profile";
+import Accordion from 'react-bootstrap/Accordion';
 
 const initialValue = [
   {
@@ -380,9 +381,11 @@ const Assessments = () => {
           />
         </div>
       </form>
-      <h3>Insructions: </h3>
-      <p>
-        {" "}
+      <Accordion defaultActiveKey="0">
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>Instructions</Accordion.Header>
+        <Accordion.Body>
+        
         Below are a number of common problems that children have in school.
         Please rate each item according to how much of a problem it has been in
         the last month. For each item, ask yourself“How much ofa problem has
@@ -390,8 +393,11 @@ const Assessments = () => {
         If none, not at all, seldom, or very infrequently. you would circle 0.
         If very much true, or it occurs very often or frequently, you would
         Circle 3. You would Cll'CiC l or 2 for ratings in between. Please
-        respond to all the items.{" "}
-      </p>
+        respond to all the items.
+     </Accordion.Body>
+     </Accordion.Item>
+     </Accordion>
+      
       <div className="container">
         <div className="questions">
           <div className="options ">

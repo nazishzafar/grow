@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import adhd from "./Images/adhd.jpg";
 import "./styles/Home.css";
+import "./styles/Psychologist.css";
 
 import play from "./Images/playtime.png"
 import life from "./Images/life.png"
@@ -57,11 +58,12 @@ export default function Psychlogical()  {
           </p>
         </Button>
       </div>
-<div>
-<div className="container-fluid mt-3 mb-3">
+<div className="chart-main-container">
+<div className="donut-chart">
   <Chart
-  width={1349}
-  height={550}
+  
+  width='500'
+
   type="donut" 
   series={[56,89,45]}
 
@@ -70,6 +72,8 @@ export default function Psychlogical()  {
     title:{
       text:"ADHD Model" 
     },
+   
+   
     plotOptions:{
       pie:{
         donut:{
@@ -79,24 +83,41 @@ export default function Psychlogical()  {
               show:true,
               fontSize:30,
               color:"#436f87" ,
+           
 
             }
           }
         }
       }
     },
+    
     dataLabels:{
       enabled:true
-    }
+    },
+    chart: {
+      animations: {
+          enabled: true,
+          easing: 'easeinout',
+          speed: 800,
+          animateGradually: {
+              enabled: true,
+              delay: 150
+          },
+          dynamicAnimation: {
+              enabled: true,
+              speed: 350
+          }
+      }
+  }
   }}
   />
 </div>
 
-<div className="container-fluid mt-3 mb-3">
+<div className="donut-chart">
   <Chart
-  width={1349}
-  height={550}
-  type="pie" 
+  width='500'
+ 
+  type="donut" 
   series={[56,89,45]}
 
   options={{

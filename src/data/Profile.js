@@ -3,7 +3,7 @@ export const Profile = [
     oppositional: [-1, -1, 17, 16, 17],
     inattention: [-1, -1, 16, -1, -1],
     hyperactivity: [-1, 15, -1, -1, -1],
-    adhdindex: [-1, -1, 27, 33, 30],
+    adhdindex: [27, 33, 30,-1, -1],
   },
 
   {

@@ -79,11 +79,10 @@ const Diet = () => {
         <img src={nutrition} alt="hero image" />
       </div>
 
-      <div className="container-fluid mt-3 mb-3">
+      <div className="diet-bar">
         <Chart
         type="bar"
-        width={1300}
-        height={700}
+        width='500'
         series={
           [{
             name:"Weight category",
@@ -97,10 +96,56 @@ const Diet = () => {
               fontSize:30
             }
           },
+          xaxis: {
+            categories: [
+              "Kids","Under Weight","Normal/Healthy Weight","Over weight","Obese"
+            ]
+          },
+          legend: {
+            position: "right",
+            verticalAlign: "top",
+            containerMargin: {
+              left: 35,
+              right: 60
+            }
+          },
+          responsive: [
+            {
+              breakpoint: 1000,
+              options: {
+                plotOptions: {
+                  bar: {
+                    horizontal: false
+                  }
+                },
+                legend: {
+                  position: "bottom"
+                }
+              }
+            }
+          ],
+
+          chart: {
+            animations: {
+                enabled: true,
+                easing: 'easeinout',
+                speed: 850,
+                animateGradually: {
+                    enabled: true,
+                    delay: 150
+                },
+                dynamicAnimation: {
+                    enabled: true,
+                    speed: 350
+                }
+            }
+        },
+        
+        
           colors:["#436f87"],
           theme:{mode:"dark"},
           axis:{
-            categories:["Kids","Under Weight","Normal/Healthy Weight","Over weight","Obese"],
+            
             title:{
               text:"Weight Category",
               style:{
@@ -112,6 +157,10 @@ const Diet = () => {
 
         }
         />
+
+
+
+
       </div>
 
       {BMI === 0 ? (
