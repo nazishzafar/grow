@@ -3,6 +3,7 @@ import './App.css';
 import NavbarComp from './components/NavbarComp'
 
 
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { dataFooter } from './data/data'
 import Footer from './components/Footer'

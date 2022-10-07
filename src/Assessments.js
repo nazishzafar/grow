@@ -422,6 +422,7 @@ const Assessments = () => {
                   fontSize: "1rem",
                   fontWeight: "bold",
                   marginLeft: "3rem",
+                  flexWrap:"wrap"
                 }}
                 key={option}
               >

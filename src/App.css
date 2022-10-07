@@ -3,3 +3,6 @@ body{
     background-color: whitesmoke;
    
 }
+
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
