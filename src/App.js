@@ -18,7 +18,7 @@ import Diet from './Diet'
 import Contact from './Contact'
 import Signup from './Signup'
 import Login from './Login'
-import adDiets from './adDiets'
+import AdDiets from './adDiets'
 
 import adhdActivities from './adhdActivities';
 function App() {
@@ -44,7 +44,7 @@ function App() {
                 <Route path='/about' element={<About />} />
                 <Route path='/Signup' element={<Signup />} />
                 <Route path='/Login' element={<Login />} />
-                <Route path='/adDiets' element={<adDiets />} />
+                <Route path='/adDiets' element={<AdDiets />} />
 
 
 

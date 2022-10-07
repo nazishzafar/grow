@@ -1,7 +1,10 @@
 import React from 'react'
 
-export const adDiets = () => {
+ const AdDiets = () => {
   return (
-    <div>adDiets</div>
+    <div style={{padding:"90px"}}>
+      <h2>Dieghsagf</h2>
+    </div>
   )
 }
+export default  AdDiets;
