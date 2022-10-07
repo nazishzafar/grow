@@ -93,7 +93,8 @@ const Diet = () => {
           title:{
             text:"Weight category",
             style:{
-              fontSize:30
+              fontSize:30,
+            
             }
           },
           xaxis: {

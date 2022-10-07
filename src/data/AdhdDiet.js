@@ -1,5 +1,5 @@
 export const Adhd={
-    "Adhd":["No specific diet, but the assumption is that some foods you may eat make your symptoms better or worse"],
+    "specificDiet":["No specific diet, but the assumption is that some foods you may eat make your symptoms better or worse"],
     "Recommendation":["Supplements of vitamins and minerals are recommended to meat daily nutrients requirements",
 "A high protein diet beans, cheese, eggs meat is recommended",
 "Complex carbs recommended like fruits, Vegetables, grains(oranges, apples, cucumber,kiwi,pears","Add Omega 3 rich diet like nuts, seeds, Fish, olives, Coconut oil and omega 3 fatty acids supplements"],

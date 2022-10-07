@@ -5,7 +5,7 @@ import "./styles/Psychologist.css";
 
 import play from "./Images/playtime.png"
 import life from "./Images/life.png"
-import { Button, Toast } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Chart from "react-apexcharts";
 

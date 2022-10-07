@@ -3,7 +3,9 @@ import adhd from "./Images/adhd.jpg";
 import "./styles/Home.css";
 import "./styles/Assessments.css";
 import { Profile } from "./data/Profile";
-import Accordion from 'react-bootstrap/Accordion';
+import Accordion from "react-bootstrap/Accordion";
+import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const initialValue = [
   {
@@ -198,8 +200,9 @@ const Assessments = () => {
 
     setUserData({ ...userData, [name]: value });
   };
+  const navigate = useNavigate();
 
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState();
   const [assessments, setAssessments] = useState(initialValue);
   const [totals, setTotals] = useState([]);
   const [bool, setBool] = useState(false);
@@ -276,19 +279,20 @@ const Assessments = () => {
           });
         }
 
-          if (value< 60) {
-            setStatus("No adssr");
-          }
-          else if(value>=60 && value<=65)
-          {
-            setStatus("moderate")
-          }
-          else if(value>65)
-          {
-            setStatus("exists")
-          }
+        if (value < 40) {
+          setStatus(0);
+        } else if (value >= 40 && value <= 60) {
+          setStatus(1);
+        } else if (value >= 60 && value < 65) {
+          setStatus(1);
+        } else if (value >= 65 && value < 70) {
+          setStatus(1);
+        } else if (value >= 70) {
+          setStatus(1);
+        }
       }
       setBool(true);
+      console.log(status);
     }
   };
 
@@ -297,118 +301,128 @@ const Assessments = () => {
       <div className="hero-image">
         <img src={adhd} alt="hero image" />
       </div>
-      <h1>Conners' Parent Rating Scale-Revised (S)</h1>
-      <h4> by C. Keith Conners, Ph.D.</h4>
+      <div className="heading">
+        <h1>Conners' Parent Rating Scale-Revised (S)</h1>
+        <h4> by C. Keith Conners, Ph.D.</h4>
+      </div>
+      <div className="conner-cotainer">
+        <form>
+          <div className="conner-input-field">
+            <label htmlFor="name">Full Name</label>
+            <input
+              type="text"
+              autoComplete="off"
+              name="name"
+              id="name"
+              onChange={handleInput}
+              value={userData.name}
+            />
+          </div>
 
-      <form className="card-container">
-        <div className="input-field">
-          <label htmlFor="name">Full Name</label>
-          <input
-            type="text"
-            autoComplete="off"
-            name="name"
-            id="name"
-            onChange={handleInput}
-            value={userData.name}
-          />
-        </div>
+          <div className="conner-input-field">
+            <label htmlFor="age"> Age</label>
+            <input
+              type="number"
+              autoComplete="off"
+              name="age"
+              id="age"
+              onChange={handleInput}
+              value={userData.age}
+            />
+          </div>
 
-        <div className="input-field">
-          <label htmlFor="age"> Age</label>
-          <input
-            type="number"
-            autoComplete="off"
-            name="age"
-            id="age"
-            onChange={handleInput}
-            value={userData.age}
-          />
-        </div>
+          <div className="conner-input-field">
+            <label htmlFor="gender"> Gender</label>
+            <input
+              type="radio"
+              autoComplete="off"
+              onChange={handleInput}
+              name="gender"
+              id="Male"
+              value="Male"
+            />
+            Male
+            <input
+              type="radio"
+              autoComplete="off"
+              onChange={handleInput}
+              name="gender"
+              id="Female"
+              value="Female"
+            />
+            Female
+          </div>
 
-        <div className="input-field">
-          <label htmlFor="gender"> Gender</label>
-          <input
-            type="radio"
-            autoComplete="off"
-            onChange={handleInput}
-            name="gender"
-            id="Male"
-            value="Male"
-          />
-          Male
-          <input
-            type="radio"
-            autoComplete="off"
-            onChange={handleInput}
-            name="gender"
-            id="Female"
-            value="Female"
-          />
-          Female
-        </div>
+          <div className="conner-input-field">
+            <label htmlFor="parent_id">Parent ID</label>
+            <input
+              type="number"
+              autoComplete="off"
+              name="parent_id"
+              id="parent_id"
+              onChange={handleInput}
+              value={userData.parent_id}
+            />
+          </div>
+          <div className="conner-input-field">
+            <label htmlFor="school_grade">School Grade</label>
+            <input
+              type="number"
+              autoComplete="off"
+              name="school_grade"
+              id="school_grade"
+              onChange={handleInput}
+              value={userData.school_grade}
+            />
+          </div>
+          <div className="conner-input-field">
+            <label htmlFor="today_date">Today Date</label>
+            <input
+              type="date"
+              autoComplete="off"
+              name="today_date"
+              id="today_date"
+              onChange={handleInput}
+              value={userData.today_date}
+            />
+          </div>
+        </form>
+      </div>
+      <div className="accordion">
+        <Accordion>
+          <Accordion.Item>
+            <Accordion.Header>Instructions</Accordion.Header>
+            <Accordion.Body
+              style={{ backgroundColor: "#437f86", color: "white" }}
+            >
+              Below are a number of common problems that children have in
+              school. Please rate each item according to how much of a problem
+              it has been in the last month. For each item, ask yourself“How
+              much ofa problem has this been in the last month'?”, and circle
+              the best answer for each one. If none, not at all, seldom, or very
+              infrequently. you would circle 0. If very much true, or it occurs
+              very often or frequently, you would Circle 3. You would Cll'CiC l
+              or 2 for ratings in between. Please respond to all the items.
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+      </div>
 
-        <div className="input-field">
-          <label htmlFor="parent_id">Parent ID</label>
-          <input
-            type="number"
-            autoComplete="off"
-            name="parent_id"
-            id="parent_id"
-            onChange={handleInput}
-            value={userData.parent_id}
-          />
-        </div>
-        <div className="input-field">
-          <label htmlFor="school_grade">School Grade</label>
-          <input
-            type="number"
-            autoComplete="off"
-            name="school_grade"
-            id="school_grade"
-            onChange={handleInput}
-            value={userData.school_grade}
-          />
-        </div>
-        <div className="input-field">
-          <label htmlFor="today_date">Today Date</label>
-          <input
-            type="date"
-            autoComplete="off"
-            name="today_date"
-            id="today_date"
-            onChange={handleInput}
-            value={userData.today_date}
-          />
-        </div>
-      </form>
-      <Accordion defaultActiveKey="0">
-      <Accordion.Item eventKey="0">
-        <Accordion.Header>Instructions</Accordion.Header>
-        <Accordion.Body>
-        
-        Below are a number of common problems that children have in school.
-        Please rate each item according to how much of a problem it has been in
-        the last month. For each item, ask yourself“How much ofa problem has
-        this been in the last month'?”, and circle the best answer for each one.
-        If none, not at all, seldom, or very infrequently. you would circle 0.
-        If very much true, or it occurs very often or frequently, you would
-        Circle 3. You would Cll'CiC l or 2 for ratings in between. Please
-        respond to all the items.
-     </Accordion.Body>
-     </Accordion.Item>
-     </Accordion>
-      
-      <div className="container">
-        <div className="questions">
-          <div className="options ">
+      <div className="form-container">
+        <div className="adhd-questions">
+          <div className="adhd-options ">
             {[
-              "Never, Seldom",
-              "Occasionally",
-              "Often, Quite a Bit",
-              "Very Often, Very Frequent",
+              "1. Never, Seldom",
+              "2. Occasionally",
+              "3. Often, Quite a Bit",
+              "4. Very Often, Very Frequent",
             ].map((option) => (
               <div
-                style={{ fontSize: "1rem", fontWeight: "bold" }}
+                style={{
+                  fontSize: "1rem",
+                  fontWeight: "bold",
+                  marginLeft: "3rem",
+                }}
                 key={option}
               >
                 {option}
@@ -417,13 +431,21 @@ const Assessments = () => {
           </div>
         </div>
         {assessments.map((assessment, index) => (
-          <div key={assessment.question} className="questions">
+          <div key={assessment.question} className="adhd-questions">
             <div>
               {index + 1}. {assessment.question}
             </div>
-            <form className="options">
+            <form className="adhd-options" id="adhd-form">
               {assessment.options.map((option) => (
-                <div key={option} className="radio-label">
+                <div
+                  key={option}
+                  className="adhd-radio-label"
+                  style={{
+                    color: "white",
+                    width: "3rem",
+                    textAlign: "center",
+                  }}
+                >
                   {bool ? (
                     <div
                       style={{
@@ -450,17 +472,52 @@ const Assessments = () => {
           </div>
         ))}
         {bool && (
-          <div style={{ display: "flex", gap: "1rem", fontWeight: "500" }}>
-            Result:{" "}
-            {totals.map((total, id) => (
-              <div key={id}>{total}</div>
-            ))}
+          <div>
+            <div style={{ display: "flex", gap: "1rem", fontWeight: "500" }}>
+              Result:
+              {[
+                " 1. Opposite: ",
+                "2. Cognitive/Inattentive ",
+                "3. Hyperactivity ",
+                "4. ADHD Index ",
+              ]}
+              {totals.map((total, id) => (
+                <div key={id}>{total}</div>
+              ))}
+            </div>
+            <div className="recomm" style={{ display: "flex", gap: "5rem" }}>
+              <Button
+              
+                style={{
+                  backgroundColor: "#437f86",
+                  width: "20rem",
+                  height: "5rem",
+                  marginTop: "3rem",
+                }}
+                onClick={() => navigate("/adDiets")}
+              >
+                Recommendations
+              </Button>
+
+              <button onClick={() => navigate("/adhdActivities")}
+                style={{
+                  backgroundColor: "#437f86",
+                  width: "20rem",
+                  height: "5rem",
+                  marginTop: "3rem",
+                }}
+              >
+                Activities
+              </button>
+            </div>
           </div>
         )}
+
         <button onClick={handleSubmit} type="button">
           Submit
         </button>
-{/* 
+
+        {/* 
         {totals &&
           Profile.map((p, i) => (
             <div
