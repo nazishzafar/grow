@@ -10,7 +10,8 @@ const Signup = () => {
   const [userRegisteration, setUserRegisteration]=useState({
     name:'',
     email:'',
-    password:''
+    password:'',
+    tc:false
   });
 
   const handleInput=(e)=>{

@@ -3,9 +3,9 @@ import adhd from "./Images/adhd.jpg";
 import "./styles/Home.css";
 import "./styles/Assessments.css";
 import { Profile } from "./data/Profile";
-import Accordion from "react-bootstrap/Accordion";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import axios from 'axios';
 
 const initialValue = [
   {
@@ -187,11 +187,12 @@ const initialValue = [
 const Assessments = () => {
   const [userData, setUserData] = useState({
     name: "",
-    age: 4,
-    school_grade: 0,
-    parent_id: 0,
+    age: 3,
+    school_Grade: 0,
+    
     gender: "",
-    today_date: "12/06/2021",
+    
+    
   });
 
   const handleInput = (e) => {
@@ -202,7 +203,7 @@ const Assessments = () => {
   };
   const navigate = useNavigate();
 
-  const [status, setStatus] = useState();
+  const [status, setStatus] = useState("nan");
   const [assessments, setAssessments] = useState(initialValue);
   const [totals, setTotals] = useState([]);
   const [bool, setBool] = useState(false);
@@ -220,81 +221,109 @@ const Assessments = () => {
     );
   };
 
-  const handleSubmit = () => {
+  var tscore=0;
+
+
+  const handleSubmit = (e) => {
     const verify = assessments.find((assessment) => assessment.answer === null);
-    let value = 0;
+
+    console.log(verify,assessments)
 
     if (verify) {
       alert("Please fill all options");
     } else {
-      const a = assessments
+    let opposite = assessments
         .map((assessment) => assessment.blocks[0])
         .reduce((total, num) => total + num);
-      const b = assessments
+       let cognitive = assessments
         .map((assessment) => assessment.blocks[1])
         .reduce((total, num) => total + num);
-      const c = assessments
+    let hyperactive = assessments
         .map((assessment) => assessment.blocks[2])
         .reduce((total, num) => total + num);
-      const d = assessments
+       let adhd = assessments
         .map((assessment) => assessment.blocks[3])
         .reduce((total, num) => total + num);
-      setTotals([a, b, c, d]);
-
+      setTotals([opposite, cognitive, hyperactive, adhd]);
       if (totals.length > 0) {
         if (userData.age >= 3 && userData.age <= 5) {
           Profile.map((p, index) => {
             if (p.adhdindex[0] === totals[3]) {
-              value = 90 - index;
+              
+              tscore=(90 - index);
             }
             return p;
           });
         } else if (userData.age >= 6 && userData.age <= 8) {
           Profile.map((p, index) => {
             if (p.adhdindex[1] === totals[3]) {
-              value = 90 - index;
+             
+              tscore=(90 - index);
             }
             return p;
           });
         } else if (userData.age >= 9 && userData.age <= 11) {
           Profile.map((p, index) => {
             if (p.adhdindex[2] === totals[3]) {
-              value = 90 - index;
+              tscore=(90 - index);
             }
             return p;
           });
         } else if (userData.age >= 12 && userData.age <= 14) {
           Profile.map((p, index) => {
             if (p.adhdindex[3] === totals[3]) {
-              value = 90 - index;
+              tscore=(90 - index);
             }
             return p;
           });
         } else if (userData.age >= 15 && userData.age <= 17) {
           Profile.map((p, index) => {
             if (p.adhdindex[4] === totals[3]) {
-              value = 90 - index;
+              tscore=(90 - index);
             }
             return p;
           });
         }
 
-        if (value < 40) {
-          setStatus(0);
-        } else if (value >= 40 && value <= 60) {
-          setStatus(1);
-        } else if (value >= 60 && value < 65) {
-          setStatus(1);
-        } else if (value >= 65 && value < 70) {
-          setStatus(1);
-        } else if (value >= 70) {
-          setStatus(1);
+        if (tscore < 40) {
+          setStatus("no adhd");
+        }else  if (tscore >= 40 && tscore <= 60) {
+          setStatus('slightly');
+        } else if (tscore >= 60 && tscore < 65) {
+          setStatus('moderate');
+        }else if (tscore>= 65 && tscore< 70) {
+          setStatus('heavly');
+        }else if (tscore>= 70) {
+          setStatus('severe');
         }
+        
       }
+      console.log(opposite,cognitive,hyperactive,adhd)
       setBool(true);
+      // alert("Your T score is "+ value +"and status is "+ status)
       console.log(status);
+      console.log(tscore)
+      try {
+        console.log(localStorage.getItem('token'))
+        const config = {
+          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+      };
+      const {data}= axios.post("http://127.0.0.1:8000/user_adhd_result/ ",{...userData,opposite,cognitive,hyperactive,adhd,tscore,status},config).then((response)=>{
+        
+        console.log(userData)
+        console.log(localStorage.getItem('token'))
+
+      })
+    } catch (error) {
+      
+      // alert(error.message)
+      console.log(error.message)
+    }
+
+     
     }
   };
+
 
   return (
     <div>
@@ -305,6 +334,8 @@ const Assessments = () => {
         <h1>Conners' Parent Rating Scale-Revised (S)</h1>
         <h4> by C. Keith Conners, Ph.D.</h4>
       </div>
+      <h2>{tscore}-{status}</h2>
+
       <div className="conner-cotainer">
         <form>
           <div className="conner-input-field">
@@ -327,6 +358,8 @@ const Assessments = () => {
               autoComplete="off"
               name="age"
               id="age"
+              min='3'
+              max='17'
               onChange={handleInput}
               value={userData.age}
               required
@@ -355,41 +388,20 @@ const Assessments = () => {
             Female
           </div>
 
+       
           <div className="conner-input-field">
-            <label htmlFor="parent_id">Parent ID</label>
+            <label htmlFor="school_Grade">School Grade</label>
             <input
               type="number"
               autoComplete="off"
-              name="parent_id"
-              id="parent_id"
+              name="school_Grade"
+              id="school_Grade"
               onChange={handleInput}
-              value={userData.parent_id}
-            />
-          </div>
-          <div className="conner-input-field">
-            <label htmlFor="school_grade">School Grade</label>
-            <input
-              type="number"
-              autoComplete="off"
-              name="school_grade"
-              id="school_grade"
-              onChange={handleInput}
-              value={userData.school_grade}
+              value={userData.school_Grade}
               required
             />
           </div>
-          <div className="conner-input-field">
-            <label htmlFor="today_date">Today Date</label>
-            <input
-              type="date"
-              autoComplete="off"
-              name="today_date"
-              id="today_date"
-              onChange={handleInput}
-              value={userData.today_date}
-              required
-            />
-          </div>
+     
         </form>
       </div>
       <div className="instruction">
@@ -435,7 +447,7 @@ const Assessments = () => {
             <div>
               {index + 1}. {assessment.question}
             </div>
-            <form className="adhd-options" id="adhd-form">
+            <form className="adhd-options" id="adhd-form" >
               {assessment.options.map((option) => (
                 <div
                   key={option}
@@ -471,8 +483,10 @@ const Assessments = () => {
             </form>
           </div>
         ))}
+           
         {bool && (
           <div>
+             
             <div style={{ display: "flex", gap: "1rem", fontWeight: "500" }}>
               Result:
               {[
@@ -485,6 +499,8 @@ const Assessments = () => {
                 <div key={id}>{total}</div>
               ))}
             </div>
+       
+            
             <div className="recomm" style={{ display: "flex", gap: "5rem" }}>
               <Button
               
