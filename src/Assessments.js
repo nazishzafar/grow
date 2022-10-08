@@ -331,13 +331,15 @@ const Assessments = () => {
       <div className="hero-image">
         <img src={adhd} alt="hero image" />
       </div>
-      <div className="heading">
+
+
+      <div class="container" style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",marginTop:"1.5rem"}}>
         <h1>Conners' Parent Rating Scale-Revised (S)</h1>
         <h4> by C. Keith Conners, Ph.D.</h4>
       </div>
-      <h2>{tscore}-{status}</h2>
+     
     
-      <div className="conner-cotainer">
+      {/* <div className="conner-cotainer">
         <form>
           <div className="conner-input-field">
             <label htmlFor="name">Full Name</label>
@@ -403,8 +405,79 @@ const Assessments = () => {
             />
           </div>
      
-        </form>
-      </div>
+        </form> */}
+      {/* </div> */}
+
+      <form >
+  <div class="mb-3 mt-3">
+  <label htmlFor="name">Full Name: </label>
+    <input
+              type="text"
+              autoComplete="off"
+              name="name"
+              id="name"
+              onChange={handleInput}
+              value={userData.name}
+              required
+            />
+  </div>
+  <div class="mb-3 mt-3">
+  <label htmlFor="age"> Age</label>
+            <input
+              type="number"
+              autoComplete="off"
+              name="age"
+              id="age"
+             
+              onChange={handleInput}
+              value={userData.age}
+              required
+            />
+  </div>
+
+    
+  <div class="mb-3 mt-3 form-check">
+  <label htmlFor="gender" class="form-check-label"> Gender</label>
+            <input
+              type="radio"
+              autoComplete="off"
+              onChange={handleInput}
+              name="gender"
+              id="Male"
+              value="Male"
+              class="form-check-input"
+            />
+            Male
+            <input
+              type="radio"
+              autoComplete="off"
+              onChange={handleInput}
+              name="gender"
+              id="Female"
+              value="Female"
+              class="form-check-input"
+            />
+            Female
+  </div>
+
+
+  
+  <div class="mb-3 mt-3">
+  <label htmlFor="school_Grade">School Grade</label>
+            <input
+              type="number"
+              autoComplete="off"
+              name="school_Grade"
+              id="school_Grade"
+              onChange={handleInput}
+              value={userData.school_Grade}
+              required/>
+  </div>
+
+</form>
+
+
+
       <div className="instruction">
         <h2>Instructions</h2>
         <p >

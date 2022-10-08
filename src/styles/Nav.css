@@ -1,4 +1,4 @@
-.Navbar {
+/* .Navbar {
     background-color: #437f86;
     display: flex;
     flex-direction: row;
@@ -43,5 +43,30 @@
 
 .navlinks:hover {
     color: #035159;
+
+} */
+
+
+.logo-img{
+    padding: 1.5rem;
+    max-width: 80px;
+    height: 70px;
+    margin: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5%;
+    margin-left: 3rem;
+   
+
+}
+.rounded-pill{
+    width: 130px;
+  
+}
+.navbar{
+padding-left: 0.5rem;
+margin-left: 2.5px;
+
 
 }

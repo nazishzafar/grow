@@ -36,20 +36,32 @@ const Login = () => {
   }
   return (
     
-    <form onSubmit={handleSubmit}  className='login-card-container'>
-   <h1>SignIn</h1>
+ 
 
-    <div className='log-input-feild'>
-      <label htmlFor='email'><FaEnvelope/>  Email</label>
-      <input  type='email'  value={userLogin.email} autoComplete='off' onChange={handleInput} name='email' id='email' required/>
-    </div>
-    <div className='log-input-feild'>
-      <label htmlFor='password'><FaLock/>  Password</label>
-      <input  type='password' autoComplete='off' name='password' onChange={handleInput} id='password' required/>
-    </div>
 
-    <Button type='submit'>Registeration</Button>
-  </form> 
+<div class="container mt-3">
+  <h3>Sign in</h3>
+  
+    
+  <form  class="was-validated" onSubmit={handleSubmit}>
+    <div class="mb-3 mt-3">
+    <label htmlFor='email' class="form-label"><FaEnvelope/>  Email: </label>
+      <input  type='email' class="form-control" value={userLogin.email} autoComplete='off' onChange={handleInput} name='email' id='email' placeholder='Enter Email' required/>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="mb-3">
+    <label htmlFor='password' class="form-label"><FaLock/>  Password:</label>
+      <input  type='password' autoComplete='off' class="form-control" name='password' onChange={handleInput} placeholder="Enter your password" id='password' required/>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+ 
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+
   )
 }
 

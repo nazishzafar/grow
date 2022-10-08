@@ -33,9 +33,11 @@ export default function Psychlogical()  {
     const navigate = useNavigate();
   return (
     <div>
-    <div className="hero-image">
-        <img src={adhd} alt="hero image" />
-      </div>
+    <div class="bg-image" >
+  
+    
+  <img class="img-fluid" src={adhd} alt="hero-img" />  
+</div>
       <div className="offer-container">
         
         <Button className="feature" style={{ backgroundColor: "#F5561D" }} onClick={()=>navigate("/Assessment")}>
@@ -58,7 +60,7 @@ export default function Psychlogical()  {
           </p>
         </Button>
       </div>
-<div className="chart-main-container">
+{/* <div className="chart-main-container">
 <div className="donut-chart">
   <Chart
   
@@ -150,7 +152,7 @@ export default function Psychlogical()  {
   />
 </div>
 
-</div>
+</div> */}
 
       </div>
   )

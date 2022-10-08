@@ -18,12 +18,52 @@ import early from "./Images/physical.png"
 
 const Home = () => {
   return (
-    <div>
-      <div className="hero-image">
-        <img src={hero} alt="hero image" />
-      </div>
+//     <div>
 
-      <div className="offer-container">
+
+//       <div className="offer-container">
+//         <div className="feature" style={{ backgroundColor: "#9fe149" }}>
+//           <div style={{ backgroundImage: `url(${book})`}} className="feature-img">
+
+//           </div>
+//           <h3>Learn</h3>
+//           <p>
+//             Your baby is marvel, growing, challenging and accomplishing at a
+//             rapid pace. Read up on your baby's development here.{" "}
+//           </p>
+//         </div>
+
+//         <div className="feature" style={{ backgroundColor: "#F5561D" }}>
+//         <div style={{ backgroundImage: `url(${play})`}} className="feature-img">
+
+// </div>
+//           <h3>Play</h3>
+//           <p>
+//             Spending time together with your baby helps form a lasting bond.
+//             Here are some games and activities you'll both enjoy
+//           </p>
+//         </div>
+
+//         <div className="feature" style={{ backgroundColor: "#44cbd8" }}>
+//         <div style={{ backgroundImage: `url(${life})`}} className="feature-img"></div>
+//           <h3>Parenting Life</h3>
+//           <p>
+//             Parenting is challenging and rewarding! Read about postpartum life,
+//             finding support, and experiences from other parents
+//           </p>
+//         </div>
+//       </div>
+
+   
+//     </div>
+
+<div>
+<div class="bg-image" >
+  
+    
+    <img class="img-fluid" src={hero} alt="hero-img" />  
+</div>
+<div className="offer-container">
         <div className="feature" style={{ backgroundColor: "#9fe149" }}>
           <div style={{ backgroundImage: `url(${book})`}} className="feature-img">
 
@@ -35,14 +75,14 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="feature" style={{ backgroundColor: "#F5561D" }}>
+         <div className="feature" style={{ backgroundColor: "#F5561D" }}>
         <div style={{ backgroundImage: `url(${play})`}} className="feature-img">
 
-</div>
+ </div>
           <h3>Play</h3>
-          <p>
-            Spending time together with your baby helps form a lasting bond.
-            Here are some games and activities you'll both enjoy
+           <p>
+             Spending time together with your baby helps form a lasting bond.
+             Here are some games and activities you'll both enjoy
           </p>
         </div>
 
@@ -55,6 +95,7 @@ const Home = () => {
           </p>
         </div>
       </div>
+
 
       <div>
         <div className="offer_head">
@@ -129,7 +170,12 @@ const Home = () => {
 
       
       </div>
-    </div>
+
+
+
+
+
+</div>
   );
 };
 

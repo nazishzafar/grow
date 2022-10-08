@@ -19,7 +19,7 @@ import Diet from './Diet'
 import Contact from './Contact'
 import Signup from './Signup'
 import Login from './Login'
-import AdDiets from './adDiets'
+import AdDiet from './AdDiet'
 import Autistic from './Autistic';
 import OutdoorAutistic from './OutdoorAutistic';
 
@@ -47,7 +47,7 @@ function App() {
                 <Route path='/about' element={<About />} />
                 <Route path='/Signup' element={<Signup />} />
                 <Route path='/Login' element={<Login />} />
-                <Route path='/adDiets' element={<AdDiets />} />
+                <Route path='/AdDiet' element={<AdDiet />} />
                 <Route path='/Autistic' element={<Autistic />} />
                 <Route path='/OutdoorAutistic' element={<OutdoorAutistic />} />
 
