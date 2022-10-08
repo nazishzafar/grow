@@ -20,8 +20,10 @@ import Contact from './Contact'
 import Signup from './Signup'
 import Login from './Login'
 import AdDiets from './adDiets'
+import Autistic from './Autistic';
+import OutdoorAutistic from './OutdoorAutistic';
 
-import adhdActivities from './adhdActivities';
+import AdhdActivities from './AdhdActivities';
 function App() {
 
 
@@ -37,7 +39,7 @@ function App() {
                 <Route path='/articles' element={<Articles />} />
                 <Route path='/diet' element={<Diet />} />
                 <Route path='/Psychlogical' element={<Psychlogical />} />
-                <Route path='/adhdActivities' element={<adhdActivities/>} />
+                <Route path='/AdhdActivities' element={<AdhdActivities/>} />
                 <Route path='/Autism' element={<Autism />} />
                 <Route path='/Community' element={<Community />} />
                 <Route path='/Activities' element={<Activities />} />
@@ -46,6 +48,8 @@ function App() {
                 <Route path='/Signup' element={<Signup />} />
                 <Route path='/Login' element={<Login />} />
                 <Route path='/adDiets' element={<AdDiets />} />
+                <Route path='/Autistic' element={<Autistic />} />
+                <Route path='/OutdoorAutistic' element={<OutdoorAutistic />} />
 
 
 

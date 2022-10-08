@@ -316,6 +316,7 @@ const Assessments = () => {
               id="name"
               onChange={handleInput}
               value={userData.name}
+              required
             />
           </div>
 
@@ -328,6 +329,7 @@ const Assessments = () => {
               id="age"
               onChange={handleInput}
               value={userData.age}
+              required
             />
           </div>
 
@@ -373,6 +375,7 @@ const Assessments = () => {
               id="school_grade"
               onChange={handleInput}
               value={userData.school_grade}
+              required
             />
           </div>
           <div className="conner-input-field">
@@ -384,17 +387,14 @@ const Assessments = () => {
               id="today_date"
               onChange={handleInput}
               value={userData.today_date}
+              required
             />
           </div>
         </form>
       </div>
-      <div className="accordion">
-        <Accordion>
-          <Accordion.Item>
-            <Accordion.Header>Instructions</Accordion.Header>
-            <Accordion.Body
-              style={{ backgroundColor: "#437f86", color: "white" }}
-            >
+      <div className="instruction">
+        <h2>Instructions</h2>
+        <p >
               Below are a number of common problems that children have in
               school. Please rate each item according to how much of a problem
               it has been in the last month. For each item, ask yourself“How
@@ -403,9 +403,8 @@ const Assessments = () => {
               infrequently. you would circle 0. If very much true, or it occurs
               very often or frequently, you would Circle 3. You would Cll'CiC l
               or 2 for ratings in between. Please respond to all the items.
-            </Accordion.Body>
-          </Accordion.Item>
-        </Accordion>
+              </p>
+          
       </div>
 
       <div className="form-container">
@@ -444,7 +443,7 @@ const Assessments = () => {
                   style={{
                     color: "white",
                     width: "3rem",
-                    textAlign: "center",
+                    textAlign: "center"
                   }}
                 >
                   {bool ? (
@@ -500,7 +499,7 @@ const Assessments = () => {
                 Recommendations
               </Button>
 
-              <button onClick={() => navigate("/adhdActivities")}
+              <button onClick={() => navigate("/AdhdActivities")}
                 style={{
                   backgroundColor: "#437f86",
                   width: "20rem",
