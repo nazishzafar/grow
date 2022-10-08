@@ -6,7 +6,7 @@ import "./styles/Home.css";
 import "./styles/Diet.css";
 import { DietPlan } from "./data/DietPlan";
 import Chart from "react-apexcharts";
-
+import axios from 'axios';
 const Diet = () => {
   const [userDiet, setUserDiet] = useState({
     name: "",
@@ -14,9 +14,7 @@ const Diet = () => {
     weight: 0,
     height: 0,
     gender: "",
-    activity: "",
-    temperature: "",
-    stress: "",
+  
   });
 
   const [BMI, setBMI] = useState(0);
@@ -29,29 +27,11 @@ const Diet = () => {
     setUserDiet({ ...userDiet, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit =async(e) => {
     e.preventDefault();
     const BMI = userDiet.weight / Math.pow(userDiet.height / 100, 2);
-    var BEE = 0;
-    if (userDiet.gender === "Male") {
-      BEE =
-        66.5 +
-        13.75 * userDiet.weight +
-        5.003 * userDiet.height -
-        6.775 * userDiet.age;
-    } else if (userDiet.gender === "Female") {
-      BEE =
-        65.51 +
-        9.563 * userDiet.weight +
-        1.85 * userDiet.height -
-        4.676 * userDiet.age;
-    }
-    console.log("Your BEE is " + BEE);
-
-    var TEE =
-      Number(userDiet.activity * userDiet.stress * userDiet.temperature) * BEE;
-    console.log("Your TEE is " + TEE);
-    console.log("Your BMI is" + BMI);
+    
+ 
     setTempBMI(BMI);
 
     if (BMI < 18.5 && userDiet.age >= 12) {
@@ -71,6 +51,27 @@ const Diet = () => {
       console.log("Your age is less than 12");
       setBMI(5);
     }
+  //   try {
+  //     console.log(localStorage.getItem('token'))
+  //     const config = {
+  //       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+  //   };
+  //   const {data}= axios.post("http://127.0.0.1:8000/user_adhd_result/ ",{...userDiet,tempBMI},config).then((response)=>{
+      
+  //     console.log(userData)
+  //     console.log(localStorage.getItem('token'))
+
+  //   })
+  // } catch (error) {
+    
+  //   // alert(error.message)
+  //   console.log(error.message)
+  // }
+
+   
+  
+
+
   };
 
   return (
@@ -240,79 +241,7 @@ const Diet = () => {
             Female
           </div>
 
-          <div className="DietInput-feild">
-            <label htmlFor="activity">Activity</label>
-            <select onChange={handleInput} name="activity" >
-              
-              {[
-                { name: "Bed_ridden", ratio: 1.2 },
-                { name: "Heavily_Active", ratio: 2.25 },
-                { name: "Moderate_to_Active", ratio: 1.76 },
-                { name: "Light_or_Sedentary", ratio: 1.53 },
-              ].map((o) => (
-                <option value={o.ratio} key={o.name}>
-                  {o.name}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="DietInput-feild">
-            <label htmlFor="stress">Stress</label>
-            <select onChange={handleInput} name="stress">
-              {(userDiet.gender === "Male"
-                ? [
-                  { name: "None ", ratio: 1.0 },
-                  { name: "Solid Tumor ", ratio: 1.15 },
-                  { name: "Leukemia/Lymphoma", ratio: 1.27 },
-                  { name: "Inflammatory bowel disease", ratio: 1.11 },
-                  { name: "Liver disease", ratio: 1.07 },
-                  { name: "Burns", ratio: 1.64 },
-                  { name: "Pancreatic disease", ratio: 1.13 },
-                  { name: "General surgery", ratio: 1.2 },
-                  { name: " Transplantation", ratio: 1.19 },
-                  { name: "Sepsis", ratio: 1.33 },
-                  { name: "Abscess", ratio: 1.12 },
-                  { name: "Other infection", ratio: 1.16 },
-                ]
-                : [
-                  { name: "None ", ratio: 1.0 },
-                  { name: "Solid Tumor ", ratio: 1.25 },
-                  { name: "Leukemia/Lymphoma", ratio: 1.37 },
-                  { name: "Inflammatory bowel disease", ratio: 1.12 },
-                  { name: "Liver disease", ratio: 1.11 },
-                  { name: "Burns", ratio: 1.52 },
-                  { name: "Pancreatic disease", ratio: 1.21 },
-                  { name: "General surgery", ratio: 1.39 },
-                  { name: " Transplantation", ratio: 1.27 },
-                  { name: "Sepsis", ratio: 1.27 },
-                  { name: "Abscess", ratio: 1.39 },
-                  { name: "Other infection", ratio: 1.39 },
-                ]
-              ).map((o) => (
-                <option value={o.ratio} key={o.name}>
-                  {o.name}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="DietInput-feild">
-            <label htmlFor="temperature">Temperature</label>
-            <select onChange={handleInput} name="temperature">
-              {[
-                { name: "Normal", ratio: 1.0 },
-                { name: ">=100.4F OR 38°C", ratio: 1.1 },
-                { name: " >=102.2 OR 39°C", ratio: 1.2 },
-                { name: ">=104 OR 40°C", ratio: 1.3 },
-                { name: ">=105.8 OR 41°C", ratio: 1.4 },
-              ].map((o) => (
-                <option value={o.ratio} key={o.name}>
-                  {o.name}
-                </option>
-              ))}
-            </select>
-          </div>
-
+        
           <Button type="submit">Submit</Button>
         </form>
       ) : BMI === 1 ? (

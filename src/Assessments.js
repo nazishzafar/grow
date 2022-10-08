@@ -308,6 +308,7 @@ const Assessments = () => {
         const config = {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       };
+      debugger
       const {data}= axios.post("http://127.0.0.1:8000/user_adhd_result/ ",{...userData,opposite,cognitive,hyperactive,adhd,tscore,status},config).then((response)=>{
         
         console.log(userData)
@@ -335,7 +336,7 @@ const Assessments = () => {
         <h4> by C. Keith Conners, Ph.D.</h4>
       </div>
       <h2>{tscore}-{status}</h2>
-
+    
       <div className="conner-cotainer">
         <form>
           <div className="conner-input-field">
