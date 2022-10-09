@@ -409,11 +409,12 @@ const Assessments = () => {
       {/* </div> */}
 
       <form >
-  <div class="mb-3 mt-3">
-  <label htmlFor="name">Full Name: </label>
+  <div class="mb-3 mt-3 form-group">
+  <label htmlFor="name" class="form-label">Full Name: </label>
     <input
               type="text"
               autoComplete="off"
+              class="form-control"
               name="name"
               id="name"
               onChange={handleInput}
@@ -421,14 +422,14 @@ const Assessments = () => {
               required
             />
   </div>
-  <div class="mb-3 mt-3">
-  <label htmlFor="age"> Age</label>
+  <div class="mb-3 mt-3 form-group">
+  <label htmlFor="age" class="form-label"> Age</label>
             <input
               type="number"
               autoComplete="off"
               name="age"
               id="age"
-             
+              class="form-control"
               onChange={handleInput}
               value={userData.age}
               required
@@ -462,13 +463,14 @@ const Assessments = () => {
 
 
   
-  <div class="mb-3 mt-3">
-  <label htmlFor="school_Grade">School Grade</label>
+  <div class="mb-3 mt-3 form-group">
+  <label htmlFor="school_Grade" class="form-label">School Grade</label>
             <input
               type="number"
               autoComplete="off"
               name="school_Grade"
               id="school_Grade"
+              class="form-control"
               onChange={handleInput}
               value={userData.school_Grade}
               required/>
