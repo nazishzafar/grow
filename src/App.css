@@ -1,7 +1,10 @@
 body{
-    margin: 0%;
+    margin: 0;
     background-color: whitesmoke;
-   
+    padding: 0;
+}
+.navbarPadding{
+    padding-top: 6.5rem;
 }
 
 

@@ -1,5 +1,5 @@
 export const DietPlan = {
-    "underweight":
+    "underweight_1_6":
     {
         "Water_Requirement": ["9-10 Glass"],
 

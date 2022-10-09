@@ -1,0 +1,129 @@
+#navbar-section{
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.navbar1{
+    background-color:#437f86 ;
+    transition: 0.6s ease-in;
+}
+.navbar2{
+    background-color: #437f86;
+    /* background-color: black; */
+}
+/* 
+.navbar{
+    margin-top: 50px;
+} */
+
+.navList{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.navbar .list .item{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    /* identical to box height, or 100% */
+    /* text-decoration: none; */
+
+
+    color: #FFFFFF;
+}
+
+.navList a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.navList a:hover{
+    color: #20373a;
+}
+/* .nav-link{
+    text-decoration: none;
+} */
+
+.hamburger{
+    display: none;
+}
+
+
+@media screen and (max-width: 992px) {
+    /* #basic-navbar-nav{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    } */
+    .hamburger{
+        display: block;
+        cursor: pointer;
+        /* z-index: 1000; */
+    }
+
+    .hamburger .line{
+        width: 30px;
+        height: 3px;
+        background: #FFFFFF;
+        margin: 6px 0;
+    }
+
+    .line1{
+        transform: translateY(4px);
+    }
+
+    .line3{
+        transform: translateY(-4px);
+    }
+    .offcanvas.offcanvas-top{
+        background-color: rgba(0, 122, 122, 1);
+        height: fit-content !important;
+    }
+
+   
+
+    .offcanvas-body .list{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .offcanvas-body a{  text-align: center;
+        text-decoration: none;
+        color: #FFFFFF;
+    }
+
+    .offcanvas-body a:hover{
+        color: blue;
+    }
+ 
+
+}
+
+
+@media screen and (max-width:400px) {
+    .offcanvas.offcanvas-top img{
+        width: 200px;
+    }
+    .navbar-brand img{
+        width: 200px;
+    }
+    
+}

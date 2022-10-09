@@ -1,0 +1,193 @@
+/* Footer */
+.FooterSection{
+    /* width: 1440px; */
+    margin-top: 80.42px;
+    /* height: 461.94px; */
+    background: #437f86;
+}
+
+.FooterRow{
+    margin-top: 49px;
+    /* margin-left: 80px;
+    margin-right: 178px; */
+    
+}
+
+.FooterRow .aboutFooter{
+    margin-top: 61.62px;
+    /* width: 100%; */
+}
+.FooterRow .aboutFooter .footerLogo{
+    color: #FFFFFF;
+    width: fit-content;
+  
+}
+
+.FooterRow .aboutFooter p{
+    margin-top: 19.99px;
+    margin-bottom: 46.83px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 30px;
+    /* or 188% */
+    /* width:316px; */
+    min-height: 140.77px;
+    /* #FFFFFF */
+
+    color: #FFFFFF;
+}
+
+.FooterRow .aboutFooter .InputEmail{
+    background: #FFFFFF;
+    border-radius: 5px;
+    border-style:none ;
+    font-family: 'Spectral';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 87%;
+    /* or 14px */
+    /* width: 296px; */
+    min-height: 47px;
+    /* #8F8F8F */
+    /* text-align: center; */
+    color: #8F8F8F;
+    padding-left:1.06rem;
+    padding-right: 1rem;
+    width: 100%;
+
+}
+
+
+
+.FooterRow .homeFooter{
+    margin-top: 63.63px;
+}
+
+.FooterRow .homeFooter .title{
+    font-family: 'Spectral';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 19px;
+
+    /* #FFFFFF */
+
+    color: #FFFFFF;
+    margin-bottom: 35.46px;
+}
+
+.FooterRow .homeFooter .homeList{
+    /* background-color:#8F8F8F; */
+    padding-left: 0;
+}
+
+.FooterRow .homeFooter .ListContent{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 1rem;
+line-height: 12px;
+/* identical to box height, or 75% */
+/* #FFFFFF */
+text-decoration: none;
+color: #FFFFFF;
+margin-bottom: 26.58px;
+}
+
+.FooterRow .helpfooter{
+    margin-top: 63.63px;
+}
+
+.FooterRow .helpfooter .title{
+    font-family: 'Spectral';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 19px;
+
+    /* #FFFFFF */
+
+    color: #FFFFFF;
+    margin-bottom: 35.47px;
+}
+
+.FooterRow .helpfooter .helpList{
+    padding-left: 0;
+}
+
+.FooterRow .helpfooter .helpListContent{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 15px;
+    /* identical to box height, or 75% */
+    /* #FFFFFF */
+    color: #FFFFFF;
+    margin-bottom: 26.48px;
+}
+
+.FooterRow .contactFooter{
+    margin-top: 63.63px;
+}
+
+.FooterRow .contactFooter .title{
+    font-family: 'Spectral';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1rem;
+    /* #FFFFFF */
+    color: #FFFFFF;
+    margin-bottom: 38.47px;
+}
+.FooterRow .contactFooter .contactFooterList{
+   padding-left: 0;
+}
+
+.FooterRow .contactFooter .contactListcontent{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 15px;
+    /* identical to box height, or 75% */
+    /* #FFFFFF */
+    color: #FFFFFF;
+    margin-bottom: 26.48px;
+}
+
+.FooterRow .contactFooter .SocialMedia{
+    display: flex;
+    flex-direction: row;
+   /* margin-left: 18px; */
+   flex-wrap: wrap;
+   align-items: center;
+   gap: 1rem;
+}
+
+.HorizontalRow{
+    /* margin: 43.86px 178px 33.11px 80px; */
+    margin-top: 2.926875rem;
+    margin-bottom: 2.069375rem;
+    /* padding: 0; */
+    height: 0%;
+    border: 1px solid #FFFFFF;
+    width: 100%;
+}
+
+.copyright{
+    /* margin-left: 80px; */
+    padding-bottom:26.43px ;
+    font-family: 'Spectral';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 87%;
+    /* or 12px */
+    /* #FFFFFF */
+    color: #FFFFFF;
+}

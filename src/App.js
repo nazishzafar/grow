@@ -1,12 +1,13 @@
 import './App.css';
 
 import NavbarComp from './components/NavbarComp'
-
+import NavbarSection from './components/NavbarSection';
 
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { dataFooter } from './data/data'
-import Footer from './components/Footer'
+// import Footer from './components/Footer'
+import Footer from './components/Footer/Footercomp';
 import Home from './Home'
 import Assessments from './Assessments'
 import Psychlogical from './Psychlogical'
@@ -32,13 +33,14 @@ function App() {
 
         <Router>
 
-            <NavbarComp />
+            {/* <NavbarComp /> */}
+            <NavbarSection/>
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/assessment' element={<Assessments />} />
                 <Route path='/articles' element={<Articles />} />
                 <Route path='/diet' element={<Diet />} />
-                <Route path='/Psychlogical' element={<Psychlogical />} />
+                <Route path='/Psychlogical' element={<Psychlogical/>} />
                 <Route path='/AdhdActivities' element={<AdhdActivities/>} />
                 <Route path='/Autism' element={<Autism />} />
                 <Route path='/Community' element={<Community />} />
@@ -57,7 +59,7 @@ function App() {
 
 
             </Routes>
-            <Footer footer={dataFooter.footer} />
+            <Footer/>
         </Router>
 
 

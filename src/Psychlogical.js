@@ -3,15 +3,13 @@ import adhd from "./Images/adhd.jpg";
 import "./styles/Home.css";
 import "./styles/Psychologist.css";
 
-import play from "./Images/playtime.png"
-import life from "./Images/life.png"
+import play from "./Images/playtime.png";
+import life from "./Images/life.png";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Chart from "react-apexcharts";
 
-
-export default function Psychlogical()  {
-
+export default function Psychlogical() {
   // const[adhdStatus,setAdhdStatus]=useState([]);
   // const[Model,setModel]=useState([]);
 
@@ -27,23 +25,25 @@ export default function Psychlogical()  {
   //      }
   //      setAdhdStatus(adhdStatus);
   //      setModel(getModel);
- 
+
   //   }
   // },[])
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
-    <div>
-    <div class="bg-image" >
-  
-    
-  <img class="img-fluid" src={adhd} alt="hero-img" />  
-</div>
+    <div className="navbarPadding">
+      <div style={{maxWidth:'1440px', objectFit:'contain'}}>
+        <img width="100%" height="100%" src={adhd} alt="hero-img" />
+      </div>
       <div className="offer-container">
-        
-        <Button className="feature" style={{ backgroundColor: "#F5561D" }} onClick={()=>navigate("/Assessment")}>
-        <div style={{ backgroundImage: `url(${play})`}} className="feature-img">
-
-</div>
+        <Button
+          className="feature"
+          style={{ backgroundColor: "#F5561D" }}
+          onClick={() => navigate("/Assessment")}
+        >
+          <div
+            style={{ backgroundImage: `url(${play})` }}
+            className="feature-img"
+          ></div>
           <h3>ADHD</h3>
           <p>
             Spending time together with your baby helps form a lasting bond.
@@ -51,8 +51,15 @@ export default function Psychlogical()  {
           </p>
         </Button>
 
-        <Button className="feature" style={{ backgroundColor: "#44cbd8"  }} onClick={()=>navigate("/Autism")}>
-        <div style={{ backgroundImage: `url(${life})`}} className="feature-img" ></div>
+        <Button
+          className="feature"
+          style={{ backgroundColor: "#44cbd8" }}
+          onClick={() => navigate("/Autism")}
+        >
+          <div
+            style={{ backgroundImage: `url(${life})` }}
+            className="feature-img"
+          ></div>
           <h3>Autism</h3>
           <p>
             Parenting is challenging and rewarding! Read about postpartum life,
@@ -60,7 +67,7 @@ export default function Psychlogical()  {
           </p>
         </Button>
       </div>
-{/* <div className="chart-main-container">
+      {/* <div className="chart-main-container">
 <div className="donut-chart">
   <Chart
   
@@ -153,7 +160,6 @@ export default function Psychlogical()  {
 </div>
 
 </div> */}
-
-      </div>
-  )
+    </div>
+  );
 }

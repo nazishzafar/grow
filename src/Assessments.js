@@ -203,8 +203,9 @@ const Assessments = () => {
   };
   const navigate = useNavigate();
 
-  const [status, setStatus] = useState("nan");
+  const [status, setStatus] = useState("");
   const [assessments, setAssessments] = useState(initialValue);
+  const totalArray =[];
   const [totals, setTotals] = useState([]);
   const [bool, setBool] = useState(false);
 
@@ -221,10 +222,11 @@ const Assessments = () => {
     );
   };
 
-  var tscore=0;
+  var tscore;
 
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     const verify = assessments.find((assessment) => assessment.answer === null);
 
     console.log(verify,assessments)
@@ -235,20 +237,28 @@ const Assessments = () => {
     let opposite = assessments
         .map((assessment) => assessment.blocks[0])
         .reduce((total, num) => total + num);
+       totalArray[0]=opposite;
        let cognitive = assessments
         .map((assessment) => assessment.blocks[1])
         .reduce((total, num) => total + num);
+      totalArray[1]= cognitive;
     let hyperactive = assessments
         .map((assessment) => assessment.blocks[2])
         .reduce((total, num) => total + num);
+       totalArray[2]=hyperactive;
        let adhd = assessments
         .map((assessment) => assessment.blocks[3])
         .reduce((total, num) => total + num);
-      setTotals([opposite, cognitive, hyperactive, adhd]);
-      if (totals.length > 0) {
+       totalArray[3]=adhd;
+        // [opposite, cognitive, hyperactive, adhd]
+        console.log(totalArray,"totalArray")
+      setTotals(totalArray)
+      console.log(opposite,cognitive,hyperactive,adhd)
+      // console.log(totals, "totals")
+      // if (totalArray[3] >= 0) {
         if (userData.age >= 3 && userData.age <= 5) {
           Profile.map((p, index) => {
-            if (p.adhdindex[0] === totals[3]) {
+            if (p.adhdindex[0] === totalArray[3]) {
               
               tscore=(90 - index);
             }
@@ -256,35 +266,35 @@ const Assessments = () => {
           });
         } else if (userData.age >= 6 && userData.age <= 8) {
           Profile.map((p, index) => {
-            if (p.adhdindex[1] === totals[3]) {
+            if (p.adhdindex[1] === totalArray[3]) {
              
-              tscore=(90 - index);
+              tscore= (90 - index);
             }
             return p;
           });
         } else if (userData.age >= 9 && userData.age <= 11) {
           Profile.map((p, index) => {
-            if (p.adhdindex[2] === totals[3]) {
-              tscore=(90 - index);
+            if (p.adhdindex[2] === totalArray[3]) {
+              tscore= (90 - index);
             }
             return p;
           });
         } else if (userData.age >= 12 && userData.age <= 14) {
           Profile.map((p, index) => {
-            if (p.adhdindex[3] === totals[3]) {
-              tscore=(90 - index);
+            if (p.adhdindex[3] === totalArray[3]) {
+              tscore=( 90 - index);
             }
             return p;
           });
         } else if (userData.age >= 15 && userData.age <= 17) {
           Profile.map((p, index) => {
             if (p.adhdindex[4] === totals[3]) {
-              tscore=(90 - index);
+              tscore=( 90 - index);
             }
             return p;
           });
         }
-
+        console.log(tscore,"tscore")
         if (tscore < 40) {
           setStatus("no adhd");
         }else  if (tscore >= 40 && tscore <= 60) {
@@ -297,37 +307,38 @@ const Assessments = () => {
           setStatus('severe');
         }
         
-      }
-      console.log(opposite,cognitive,hyperactive,adhd)
-      setBool(true);
-      // alert("Your T score is "+ value +"and status is "+ status)
-      console.log(status);
-      console.log(tscore)
-      try {
-        console.log(localStorage.getItem('token'))
-        const config = {
-          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-      };
-      debugger
-      const {data}= axios.post("http://127.0.0.1:8000/user_adhd_result/ ",{...userData,opposite,cognitive,hyperactive,adhd,tscore,status},config).then((response)=>{
-        
-        console.log(userData)
-        console.log(localStorage.getItem('token'))
-
-      })
-    } catch (error) {
-      
-      // alert(error.message)
-      console.log(error.message)
-    }
-
+      // }
      
+      console.log(status,"status");
+      console.log(tscore);
+      
+      // alert("Your T score is "+ value +"and status is "+ status)
+     
+    //   try {
+    //     console.log(localStorage.getItem('token'))
+    //     const config = {
+    //       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+    //   };
+    //   debugger
+    //   const {data}= axios.post("http://127.0.0.1:8000/user_adhd_result/ ",{...userData,opposite,cognitive,hyperactive,adhd,tscore,status},config).then((response)=>{
+        
+    //     console.log(userData)
+    //     console.log(localStorage.getItem('token'))
+
+    //   })
+    // } catch (error) {
+      
+    //   // alert(error.message)
+    //   console.log(error.message)
+    // }
+
+     setBool(true)
     }
   };
 
 
   return (
-    <div>
+    <div className="navbarPadding">
       <div className="hero-image">
         <img src={adhd} alt="hero image" />
       </div>
@@ -336,6 +347,7 @@ const Assessments = () => {
       <div class="container" style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",marginTop:"1.5rem"}}>
         <h1>Conners' Parent Rating Scale-Revised (S)</h1>
         <h4> by C. Keith Conners, Ph.D.</h4>
+        <h1>{tscore}</h1>
       </div>
      
     
@@ -409,19 +421,19 @@ const Assessments = () => {
       {/* </div> */}
 
       <form >
-  <div class="mb-3 mt-3 form-group">
-  <label htmlFor="name" class="form-label">Full Name: </label>
-    <input
-              type="text"
-              autoComplete="off"
-              class="form-control"
-              name="name"
-              id="name"
-              onChange={handleInput}
-              value={userData.name}
-              required
-            />
-  </div>
+        <div class="mb-3 mt-3 form-group">
+        <label htmlFor="name" class="form-label">Full Name: </label>
+          <input
+                    type="text"
+                    autoComplete="off"
+                    class="form-control"
+                    name="name"
+                    id="name"
+                    onChange={handleInput}
+                    value={userData.name}
+                    required
+                  />
+        </div>
   <div class="mb-3 mt-3 form-group">
   <label htmlFor="age" class="form-label"> Age</label>
             <input
@@ -437,7 +449,8 @@ const Assessments = () => {
   </div>
 
     
-  <div class="mb-3 mt-3 form-check">
+  <div class="mb-3 mt-3 form-check ">
+    <div>
   <label htmlFor="gender" class="form-check-label"> Gender</label>
             <input
               type="radio"
@@ -459,6 +472,7 @@ const Assessments = () => {
               class="form-check-input"
             />
             Female
+            </div>
   </div>
 
 
@@ -556,10 +570,14 @@ const Assessments = () => {
                   )}
                 </div>
               ))}
+             
             </form>
           </div>
         ))}
-           
+        {!bool &&  <button onClick={handleSubmit} type="button">
+                Submit
+        </button>}
+        
         {bool && (
           <div>
              
@@ -602,12 +620,19 @@ const Assessments = () => {
                 Activities
               </button>
             </div>
+       
           </div>
         )}
 
-        <button onClick={handleSubmit} type="button">
-          Submit
-        </button>
+
+
+
+
+
+
+
+
+        
 
         {/* 
         {totals &&
