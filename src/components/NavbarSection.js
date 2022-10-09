@@ -88,19 +88,19 @@ const NavbarSection = () => {
         </Offcanvas.Header>
         <Offcanvas.Body>
         <Nav className="list">
-            <Nav.Link className='item' > <Link class="nav-link" to='/'><span style={{paddingRight:"5px"}}><FaHome /></span> Home</Link></Nav.Link>
-            <Nav.Link className='item'> <Link to='/psychlogical' className='nav-link'><span style={{paddingRight:"5px"}}><FaAddressBook/> </span> Psychlogical</Link></Nav.Link>
-            <Nav.Link className='item'>  <Link class="nav-link" to='/diet'><span style={{paddingRight:"5px"}}><FaAppleAlt/></span> Diet Plans</Link></Nav.Link>
+            <Nav.Link className='item' onClick={handleClose} > <Link class="nav-link" to='/'><span style={{paddingRight:"5px"}}><FaHome /></span> Home</Link></Nav.Link>
+            <Nav.Link className='item' onClick={handleClose}> <Link to='/psychlogical' className='nav-link'><span style={{paddingRight:"5px"}}><FaAddressBook/> </span> Psychlogical</Link></Nav.Link>
+            <Nav.Link className='item' onClick={handleClose}>  <Link class="nav-link" to='/diet'><span style={{paddingRight:"5px"}}><FaAppleAlt/></span> Diet Plans</Link></Nav.Link>
             <NavDropdown style={{paddingTop:'10px'}} className='item' title="Activities" id="basic-nav-dropdown">
-              <NavDropdown.Item style={{backgroundColor:"#437f86"}} className='item' href=""><Link  to='/activities'>Normal Child</Link></NavDropdown.Item>
-              <NavDropdown.Item  style={{backgroundColor:"#437f86"}}  className='item' href="">
+              <NavDropdown.Item style={{backgroundColor:"#437f86"}} className='item' href="" onClick={handleClose}><Link  to='/activities'>Normal Child</Link></NavDropdown.Item>
+              <NavDropdown.Item  style={{backgroundColor:"#437f86"}}  className='item' href="" onClick={handleClose}>
               <Link to='/Autistic'>Autistic Child</Link>
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link className='item'> <Link to='/articles' className='nav-link'><span style={{paddingRight:"5px"}}><FaClipboardList/> </span>Articles</Link></Nav.Link>
-            <Nav.Link className='item'> <Link to='/contact' className='nav-link'><span style={{paddingRight:"5px"}}><FaHome/></span> Contact</Link></Nav.Link>
-            <Nav.Link className='item'> <Link to='/login' className='nav-link'><span style={{paddingRight:"5px"}}><FaLock/></span> Log in</Link></Nav.Link>
-            <Nav.Link className='item'>  <Link to='/signup' className='nav-link'><span style={{paddingRight:"5px"}}><FaUser/></span> Sign Up</Link></Nav.Link>
+            <Nav.Link className='item' onClick={handleClose}> <Link to='/articles' className='nav-link'><span style={{paddingRight:"5px"}}><FaClipboardList/> </span>Articles</Link></Nav.Link>
+            <Nav.Link className='item' onClick={handleClose}> <Link to='/contact' className='nav-link'><span style={{paddingRight:"5px"}}><FaHome/></span> Contact</Link></Nav.Link>
+            <Nav.Link className='item' onClick={handleClose}> <Link to='/login' className='nav-link'><span style={{paddingRight:"5px"}}><FaLock/></span> Log in</Link></Nav.Link>
+            <Nav.Link className='item' onClick={handleClose}>  <Link to='/signup' className='nav-link'><span style={{paddingRight:"5px"}}><FaUser/></span> Sign Up</Link></Nav.Link>
            
             
           </Nav>

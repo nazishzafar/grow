@@ -75,15 +75,16 @@ const Diet = () => {
   };
 
   return (
-    <div>
-      <div className="hero-image" >
-        <img src={nutrition} alt="hero image" />
+    <div className="navbarPadding">
+      
+      <div style={{ maxWidth: "1440px", objectFit: "contain" }}>
+        <img width="100%" height="100%" src={nutrition} alt="hero image" />
       </div>
 
       <div className="diet-bar">
         <Chart
         type="bar"
-        width='500'
+        maxWidth='500px'
         series={
           [{
             name:"Weight category",
@@ -169,7 +170,7 @@ const Diet = () => {
         <form onSubmit={handleSubmit} className="Dietcard-container">
           <div className="DietInput-feild">
             <label htmlFor="name">Full Name</label>
-            <input
+            <input style={{borderRadius:'10px',outline:'none', border:'none'}}
               type="text"
               autoComplete="off"
               name="name"
@@ -182,11 +183,13 @@ const Diet = () => {
 
           <div className="DietInput-feild">
             <label htmlFor="age"> Age</label>
-            <input
+            <input  style={{borderRadius:'10px',outline:'none', border:'none'}}
               type="number"
               autoComplete="off"
               name="age"
               id="age"
+              max={12}
+              min={1}    
               onChange={handleInput}
               value={userDiet.age}
               required
@@ -194,7 +197,7 @@ const Diet = () => {
           </div>
           <div className="DietInput-feild">
             <label htmlFor="weight"> Weight in kg:</label>
-            <input
+            <input  style={{borderRadius:'10px', outline:'none', border:'none'}}
               type="number"
               autoComplete="off"
               name="weight"
@@ -207,7 +210,7 @@ const Diet = () => {
 
           <div className="DietInput-feild">
             <label htmlFor="Height"> Height in cm:</label>
-            <input
+            <input  style={{borderRadius:'10px',outline:'none', border:'none'}}
               type="number"
               autoComplete="off"
               name="height"
@@ -219,7 +222,7 @@ const Diet = () => {
           </div>
           <div className="DietInput-feild">
             <label htmlFor="gender"> Gender</label>
-            <input
+            <input  
               type="radio"
               autoComplete="off"
               onChange={handleInput}
@@ -231,6 +234,7 @@ const Diet = () => {
             />
             Male
             <input
+
               type="radio"
               autoComplete="off"
               onChange={handleInput}
@@ -242,7 +246,7 @@ const Diet = () => {
           </div>
 
         
-          <Button type="submit">Submit</Button>
+          <button style={{borderRadius:'10px'}} type="submit">Submit</button>
         </form>
       ) : BMI === 1 ? (
         <div className="container">

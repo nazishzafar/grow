@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./styles/Home.css";
+import { Link } from "react-router-dom";
 const questionaires = [
   {
     question: "Relating to people",
@@ -121,18 +122,21 @@ export default function Autism() {
   return (
     <div className="navbarPadding">
       <div className="container">
-        <form action="submit" className="option">
+      
+        <div className="" style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', padding:'30px',}}>
+        <h3 >Autism Childhood rating Scale</h3>
+        <form action="submit" className="option" style={{ boxShadow:'2px', backgroundColor:'#437f86'}}>
           {questionaires.map((assessment, index) => (
-            <div key={assessment.question} className="questions">
-              <div>
-                {index + 1}.{assessment.question}
+            <div key={assessment.question} className="questions" style={{padding:"10px"}}>
+              <div style={{padding:'5px'}}>
+                {index + 1}. {assessment.question}
               </div>
 
-              <select onChange={handleInput}>
+              <select defaultValue= {0} onChange={handleInput} style={{width:'100%', border:'1px solid #437f86', borderRadius:'10px',outline:'none'}}>
                 {[
-                  { name: "no", ratio: 1 },
+                  { name: "No", ratio: 1 },
                   { name: "moderate", ratio: 1.5 },
-                  { name: "yes", ratio: 2 },
+                  { name: "Yes", ratio: 2 },
                   { name: "wow", ratio: 2.5 },
                 ].map((o) => (
                   <option value={o.ratio} key={o.name}>
@@ -142,20 +146,22 @@ export default function Autism() {
               </select>
             </div>
           ))}
+          <div style={{display:'flex',alignItems:'center',justifyContent:'center'}}> 
           <button
-            style={{ marginTop: "10px" }}
+            style={{ marginTop: "10px",backgroundColor:'white' , borderRadius:'20px',padding:'5px', width:'200px', margin:'10px'}}
             type="button"
             onClick={handleSubmit}
           >
             Show Result
-          </button>
+          </button></div>
+         
         </form>
         {dietRecomendation? 
-        <div style={{display:'flex', gap:"10px"}}>
-            <button>Recommendation</button>
-            <button>Activities</button>
+        <div style={{display:'flex', gap:"10px",padding:'5px'}}>
+            <button style={{borderRadius:'20px', backgroundColor:'#437f86', padding:'10px',width:'150px'}}><Link style={{color:'white'}} to="" >Recommendation</Link></button>
+            <button style={{borderRadius:'20px', backgroundColor:'#437f86',padding:'10px',width:'100px'}}><Link style={{color:'white'}} to="">Activities</Link></button>
         </div>:""}
-       
+        </div>
       </div>
     </div>
   );

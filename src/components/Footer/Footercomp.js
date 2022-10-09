@@ -25,7 +25,7 @@ const Footer = () => {
                 <div className ="col-lg-3 col-md-6 col-sm-12 col-xs-12 homeFooter">
                 <h5 className ="title">Features</h5>
                 <ul className ="homeList">
-                    <li style={{textDecoration:'none'}} className ="ListContent"><Link to='/'>Home</Link></li>
+                    <li style={{textDecoration:'none'}} className ="ListContent"><Link style={{color:"white"}} to='/'>Home</Link></li>
                     <li className ="ListContent">Features</li>
                     <li className ="ListContent">FAQs</li>
                     <li className ="ListContent">
@@ -49,8 +49,8 @@ const Footer = () => {
                     <li className ="contactListcontent">letsgrowtogether91@gmail.com</li>
                 </ul>
                 <div className ="SocialMedia">
-                    <FaFacebook/>
-                    <FaInstagram/>
+                    <FaFacebook style={{color:'white'}}/>
+                    <FaInstagram style={{color:"white"}}/>
                     {/* <img className ="instagram socialIcon" src=  alt="instagram" />
                     <img className ="linkedin socialIcon" src= alt="linkedin" />
                     <img className ="twitter socialIcon" src=  alt="twitter" />

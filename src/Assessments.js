@@ -5,7 +5,7 @@ import "./styles/Assessments.css";
 import { Profile } from "./data/Profile";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import axios from 'axios';
+import axios from "axios";
 
 const initialValue = [
   {
@@ -189,23 +189,21 @@ const Assessments = () => {
     name: "",
     age: 3,
     school_Grade: 0,
-    
+
     gender: "",
-    
-    
   });
 
   const handleInput = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-
+   
     setUserData({ ...userData, [name]: value });
   };
   const navigate = useNavigate();
 
   const [status, setStatus] = useState("");
   const [assessments, setAssessments] = useState(initialValue);
-  const totalArray =[];
+  const totalArray = [];
   const [totals, setTotals] = useState([]);
   const [bool, setBool] = useState(false);
 
@@ -224,133 +222,136 @@ const Assessments = () => {
 
   var tscore;
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const verify = assessments.find((assessment) => assessment.answer === null);
 
-    console.log(verify,assessments)
+    console.log(verify, assessments);
 
     if (verify) {
       alert("Please fill all options");
     } else {
-    let opposite = assessments
+      let opposite = assessments
         .map((assessment) => assessment.blocks[0])
         .reduce((total, num) => total + num);
-       totalArray[0]=opposite;
-       let cognitive = assessments
+      totalArray[0] = opposite;
+      let cognitive = assessments
         .map((assessment) => assessment.blocks[1])
         .reduce((total, num) => total + num);
-      totalArray[1]= cognitive;
-    let hyperactive = assessments
+      totalArray[1] = cognitive;
+      let hyperactive = assessments
         .map((assessment) => assessment.blocks[2])
         .reduce((total, num) => total + num);
-       totalArray[2]=hyperactive;
-       let adhd = assessments
+      totalArray[2] = hyperactive;
+      let adhd = assessments
         .map((assessment) => assessment.blocks[3])
         .reduce((total, num) => total + num);
-       totalArray[3]=adhd;
-        // [opposite, cognitive, hyperactive, adhd]
-        console.log(totalArray,"totalArray")
-      setTotals(totalArray)
-      console.log(opposite,cognitive,hyperactive,adhd)
+      totalArray[3] = adhd;
+      // [opposite, cognitive, hyperactive, adhd]
+      console.log(totalArray, "totalArray");
+      setTotals(totalArray);
+      console.log(opposite, cognitive, hyperactive, adhd);
       // console.log(totals, "totals")
       // if (totalArray[3] >= 0) {
-        if (userData.age >= 3 && userData.age <= 5) {
-          Profile.map((p, index) => {
-            if (p.adhdindex[0] === totalArray[3]) {
-              
-              tscore=(90 - index);
-            }
-            return p;
-          });
-        } else if (userData.age >= 6 && userData.age <= 8) {
-          Profile.map((p, index) => {
-            if (p.adhdindex[1] === totalArray[3]) {
-             
-              tscore= (90 - index);
-            }
-            return p;
-          });
-        } else if (userData.age >= 9 && userData.age <= 11) {
-          Profile.map((p, index) => {
-            if (p.adhdindex[2] === totalArray[3]) {
-              tscore= (90 - index);
-            }
-            return p;
-          });
-        } else if (userData.age >= 12 && userData.age <= 14) {
-          Profile.map((p, index) => {
-            if (p.adhdindex[3] === totalArray[3]) {
-              tscore=( 90 - index);
-            }
-            return p;
-          });
-        } else if (userData.age >= 15 && userData.age <= 17) {
-          Profile.map((p, index) => {
-            if (p.adhdindex[4] === totals[3]) {
-              tscore=( 90 - index);
-            }
-            return p;
-          });
-        }
-        console.log(tscore,"tscore")
-        if (tscore < 40) {
-          setStatus("no adhd");
-        }else  if (tscore >= 40 && tscore <= 60) {
-          setStatus('slightly');
-        } else if (tscore >= 60 && tscore < 65) {
-          setStatus('moderate');
-        }else if (tscore>= 65 && tscore< 70) {
-          setStatus('heavly');
-        }else if (tscore>= 70) {
-          setStatus('severe');
-        }
-        
+      if (userData.age >= 3 && userData.age <= 5) {
+        Profile.map((p, index) => {
+          if (p.adhdindex[0] === totalArray[3]) {
+            tscore = 90 - index;
+          }
+          return p;
+        });
+      } else if (userData.age >= 6 && userData.age <= 8) {
+        Profile.map((p, index) => {
+          if (p.adhdindex[1] === totalArray[3]) {
+            tscore = 90 - index;
+          }
+          return p;
+        });
+      } else if (userData.age >= 9 && userData.age <= 11) {
+        Profile.map((p, index) => {
+          if (p.adhdindex[2] === totalArray[3]) {
+            tscore = 90 - index;
+          }
+          return p;
+        });
+      } else if (userData.age >= 12 && userData.age <= 14) {
+        Profile.map((p, index) => {
+          if (p.adhdindex[3] === totalArray[3]) {
+            tscore = 90 - index;
+          }
+          return p;
+        });
+      } else if (userData.age >= 15 && userData.age <= 17) {
+        Profile.map((p, index) => {
+          if (p.adhdindex[4] === totals[3]) {
+            tscore = 90 - index;
+          }
+          return p;
+        });
+      }
+      console.log(tscore, "tscore");
+      if (tscore < 40) {
+        setStatus("no adhd");
+      } else if (tscore >= 40 && tscore <= 60) {
+        setStatus("slightly");
+      } else if (tscore >= 60 && tscore < 65) {
+        setStatus("moderate");
+      } else if (tscore >= 65 && tscore < 70) {
+        setStatus("heavly");
+      } else if (tscore >= 70) {
+        setStatus("severe");
+      }
+
       // }
-     
-      console.log(status,"status");
+
+      console.log(status, "status");
       console.log(tscore);
-      
+
       // alert("Your T score is "+ value +"and status is "+ status)
-     
-    //   try {
-    //     console.log(localStorage.getItem('token'))
-    //     const config = {
-    //       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-    //   };
-    //   debugger
-    //   const {data}= axios.post("http://127.0.0.1:8000/user_adhd_result/ ",{...userData,opposite,cognitive,hyperactive,adhd,tscore,status},config).then((response)=>{
-        
-    //     console.log(userData)
-    //     console.log(localStorage.getItem('token'))
 
-    //   })
-    // } catch (error) {
-      
-    //   // alert(error.message)
-    //   console.log(error.message)
-    // }
+      //   try {
+      //     console.log(localStorage.getItem('token'))
+      //     const config = {
+      //       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+      //   };
+      //   debugger
+      //   const {data}= axios.post("http://127.0.0.1:8000/user_adhd_result/ ",{...userData,opposite,cognitive,hyperactive,adhd,tscore,status},config).then((response)=>{
 
-     setBool(true)
+      //     console.log(userData)
+      //     console.log(localStorage.getItem('token'))
+
+      //   })
+      // } catch (error) {
+
+      //   // alert(error.message)
+      //   console.log(error.message)
+      // }
+
+      setBool(true);
     }
   };
 
-
   return (
     <div className="navbarPadding">
-      <div className="hero-image">
-        <img src={adhd} alt="hero image" />
+      <div style={{ maxWidth: "1440px", objectFit: "contain" }}>
+        <img width="100%" height="100%" src={adhd} alt="hero-img" />
       </div>
 
-
-      <div class="container" style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",marginTop:"1.5rem"}}>
+      <div
+        class="container"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: "1.5rem",
+        }}
+      >
         <h1>Conners' Parent Rating Scale-Revised (S)</h1>
         <h4> by C. Keith Conners, Ph.D.</h4>
         <h1>{tscore}</h1>
       </div>
-     
-    
+
       {/* <div className="conner-cotainer">
         <form>
           <div className="conner-input-field">
@@ -419,39 +420,48 @@ const Assessments = () => {
      
         </form> */}
       {/* </div> */}
-
-      <form >
+      <div style={{display:"flex",flexDirection:'column',alignItems:'center',justifyContent:'center',padding:'30px', boxShadow: "0px 4px 8px 0px rgba(0, 0, 0, 0.4)"}}>
+        <div style={{maxWidth:"600px",backgroundColor:"",width:"100%"}}>
+        <form >
         <div class="mb-3 mt-3 form-group">
-        <label htmlFor="name" class="form-label">Full Name: </label>
+          <label htmlFor="name" class="form-label">
+            Full Name:{" "}
+          </label>
           <input
-                    type="text"
-                    autoComplete="off"
-                    class="form-control"
-                    name="name"
-                    id="name"
-                    onChange={handleInput}
-                    value={userData.name}
-                    required
-                  />
+            type="text"
+            
+            autoComplete="off"
+            class="form-control"
+            name="name"
+            id="name"
+            onChange={handleInput}
+            value={userData.name}
+            required
+          />
         </div>
-  <div class="mb-3 mt-3 form-group">
-  <label htmlFor="age" class="form-label"> Age</label>
-            <input
-              type="number"
-              autoComplete="off"
-              name="age"
-              id="age"
-              class="form-control"
-              onChange={handleInput}
-              value={userData.age}
-              required
-            />
-  </div>
+        <div class="mb-3 mt-3 form-group">
+          <label htmlFor="age" class="form-label">
+            {" "}
+            Age
+          </label>
+          <input
+            type="number"
+            autoComplete="off"
+            max={17}
+            min={3}
+            name="age"
+            id="age"
+            class="form-control"
+            onChange={handleInput}
+            value={userData.age}
+            required
+          />
+        </div>
 
-    
-  <div class="mb-3 mt-3 form-check ">
-    <div>
-  <label htmlFor="gender" class="form-check-label"> Gender</label>
+        <div class="mb-3 mt-3" style={{display:'flex',gap:"10px"}}>
+         {/* <form > */}
+           <span>Gender: </span>
+           
             <input
               type="radio"
               autoComplete="off"
@@ -461,7 +471,10 @@ const Assessments = () => {
               value="Male"
               class="form-check-input"
             />
-            Male
+             <label htmlFor="Male">
+              Male
+            </label>
+            
             <input
               type="radio"
               autoComplete="off"
@@ -471,46 +484,51 @@ const Assessments = () => {
               value="Female"
               class="form-check-input"
             />
-            Female
-            </div>
-  </div>
-
-
-  
-  <div class="mb-3 mt-3 form-group">
-  <label htmlFor="school_Grade" class="form-label">School Grade</label>
-            <input
-              type="number"
-              autoComplete="off"
-              name="school_Grade"
-              id="school_Grade"
-              class="form-control"
-              onChange={handleInput}
-              value={userData.school_Grade}
-              required/>
-  </div>
-
-</form>
-
-
-
-      <div className="instruction">
-        <h2>Instructions</h2>
-        <p >
-              Below are a number of common problems that children have in
-              school. Please rate each item according to how much of a problem
-              it has been in the last month. For each item, ask yourself“How
-              much ofa problem has this been in the last month'?”, and circle
-              the best answer for each one. If none, not at all, seldom, or very
-              infrequently. you would circle 0. If very much true, or it occurs
-              very often or frequently, you would Circle 3. You would Cll'CiC l
-              or 2 for ratings in between. Please respond to all the items.
-              </p>
+             <label htmlFor="Female" >
+              Female
+            </label>
           
+            {/* </form> */}
+        </div>
+
+        <div class="mb-3 mt-3 form-group">
+          <label htmlFor="school_Grade" class="form-label">
+            School Grade
+          </label>
+          <input
+            type="number"
+            autoComplete="off"
+            name="school_Grade"
+            id="school_Grade"
+            class="form-control"
+            onChange={handleInput}
+            value={userData.school_Grade}
+            required
+          />
+        </div>
+      </form>
+        </div>
       </div>
 
-      <div className="form-container">
-        <div className="adhd-questions">
+        <div style={{display:"flex",flexDirection:'column',alignItems:'center',justifyContent:'center',padding:'30px'}}>
+        <div className="instruction">
+        <h2>Instructions</h2>
+        <p>
+          Below are a number of common problems that children have in school.
+          Please rate each item according to how much of a problem it has been
+          in the last month. For each item, ask yourself“How much ofa problem
+          has this been in the last month'?”, and circle the best answer for
+          each one. If none, not at all, seldom, or very infrequently. you would
+          circle 0. If very much true, or it occurs very often or frequently,
+          you would Circle 3. You would Cll'CiC l or 2 for ratings in between.
+          Please respond to all the items.
+        </p>
+      </div>
+        </div>
+      
+        <div style={{display:"flex", justifyContent:"center", alignItems:'center'}}>
+        <div className="form-container">
+        <div className="">
           <div className="adhd-options ">
             {[
               "1. Never, Seldom",
@@ -520,10 +538,11 @@ const Assessments = () => {
             ].map((option) => (
               <div
                 style={{
+                
                   fontSize: "1rem",
                   fontWeight: "bold",
                   marginLeft: "3rem",
-                  flexWrap:"wrap"
+                  flexWrap: "wrap",
                 }}
                 key={option}
               >
@@ -537,7 +556,7 @@ const Assessments = () => {
             <div>
               {index + 1}. {assessment.question}
             </div>
-            <form className="adhd-options" id="adhd-form" >
+            <form className="adhd-options" id="adhd-form">
               {assessment.options.map((option) => (
                 <div
                   key={option}
@@ -545,7 +564,7 @@ const Assessments = () => {
                   style={{
                     color: "white",
                     width: "3rem",
-                    textAlign: "center"
+                    textAlign: "center",
                   }}
                 >
                   {bool ? (
@@ -560,7 +579,7 @@ const Assessments = () => {
                       {assessment.blocks[option]}
                     </div>
                   ) : (
-                    <input
+                    <input 
                       onChange={(e) => handleChange(e, index)}
                       type="radio"
                       value={option}
@@ -570,17 +589,17 @@ const Assessments = () => {
                   )}
                 </div>
               ))}
-             
             </form>
           </div>
         ))}
-        {!bool &&  <button onClick={handleSubmit} type="button">
-                Submit
-        </button>}
-        
+        {!bool && (
+          <button onClick={handleSubmit} type="button">
+            Submit
+          </button>
+        )}
+
         {bool && (
           <div>
-             
             <div style={{ display: "flex", gap: "1rem", fontWeight: "500" }}>
               Result:
               {[
@@ -593,11 +612,9 @@ const Assessments = () => {
                 <div key={id}>{total}</div>
               ))}
             </div>
-       
-            
+
             <div className="recomm" style={{ display: "flex", gap: "5rem" }}>
               <Button
-              
                 style={{
                   backgroundColor: "#437f86",
                   width: "20rem",
@@ -609,7 +626,8 @@ const Assessments = () => {
                 Recommendations
               </Button>
 
-              <button onClick={() => navigate("/AdhdActivities")}
+              <button
+                onClick={() => navigate("/AdhdActivities")}
                 style={{
                   backgroundColor: "#437f86",
                   width: "20rem",
@@ -620,19 +638,8 @@ const Assessments = () => {
                 Activities
               </button>
             </div>
-       
           </div>
         )}
-
-
-
-
-
-
-
-
-
-        
 
         {/* 
         {totals &&
@@ -661,6 +668,9 @@ const Assessments = () => {
             </div>
           ))} */}
       </div>
+        </div>
+     
+
     </div>
   );
 };

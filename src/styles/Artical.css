@@ -1,0 +1,25 @@
+
+ul {
+  border-bottom: 1.5px solid #cecece;
+}
+li {
+  transform: translateY(1px);
+}
+.nav-link {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: #cecece;
+}
+.nav-link.active {
+  border-bottom: 2px solid #76d3be;
+  border-top: none;
+  border-left: none;
+  border-right: navajowhite;
+  font-weight: 600;
+  color: #76d3be;
+  background-color: transparent;
+}
+
