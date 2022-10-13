@@ -23,8 +23,12 @@ import Login from './Login'
 import AdDiet from './AdDiet'
 import Autistic from './Autistic';
 import OutdoorAutistic from './OutdoorAutistic';
-
+import AutismAct from './AutismAct';
 import AdhdActivities from './AdhdActivities';
+import SensoryAct from './SensoryAct';
+import Social from './Social';
+
+
 function App() {
 
 
@@ -52,6 +56,13 @@ function App() {
                 <Route path='/AdDiet' element={<AdDiet />} />
                 <Route path='/Autistic' element={<Autistic />} />
                 <Route path='/OutdoorAutistic' element={<OutdoorAutistic />} />
+                <Route path='/SensoryAct' element={<SensoryAct />} />
+                <Route path='/Social' element={<Social />} />
+                <Route path='/AutismAct' element={<AutismAct />} />
+                
+                
+
+
 
 
 

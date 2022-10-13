@@ -5,7 +5,7 @@ import {FaEnvelope, FaLock,  FaUser} from 'react-icons/fa'
 import axios from 'axios';
 
 
-
+import { useNavigate } from "react-router-dom";
 const Signup = () => {
   const [userRegisteration, setUserRegisteration]=useState({
     name:'',
@@ -13,7 +13,7 @@ const Signup = () => {
     password:'',
     tc:false
   });
-
+const navigate=useNavigate();
   const handleInput=(e)=>{
     const name=e.target.name;
     const value=e.target.value;
@@ -27,10 +27,13 @@ const Signup = () => {
     try {
       const {data}=await axios.post("http://127.0.0.1:8000/api/user/register/",{...userRegisteration}).then((response)=>{
         console.log(response)
+        alert('Login Successfuly');
+        navigate("/");
       })
     } catch (error) {
       // alert(error.message)
       console.log(error.message)
+      alert("May already exist");
     }
   }
 
@@ -56,7 +59,7 @@ const Signup = () => {
     //   </form> 
     //   </React.Fragment>  
 
-
+<div className="navbarPadding">
     <div class="container mt-3">
   <h3>Sign Up</h3>
   
@@ -81,6 +84,7 @@ const Signup = () => {
  
   <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+</div>
 </div>
     
   )

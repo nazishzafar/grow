@@ -32,7 +32,7 @@ export const DietPlan = {
         "Don't skip Walk.",
         "Drink 2 glass of milk daily.",
         "Eat Fresh Food then Frozen.",
-    ],
+    ]
 
     },
 
@@ -75,7 +75,7 @@ export const DietPlan = {
 
     },
 
-    "normalweight1_6":
+    "overweight1_6":
     {
         "Water_Requirement": ["2-4 Glass of water"],
 
@@ -190,6 +190,7 @@ export const DietPlan = {
 
     },
     "normalweight7_8": {
+        "Water_Requirement": ["7-8 Glass of water"],
 
 
         "Recommendation": ["Get adequate sleep; Children in kindergarten to grade 6 should get between 9 to 11 hours of sleep",

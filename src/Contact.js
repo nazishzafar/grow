@@ -30,7 +30,7 @@ export const Contact = () => {
   return (
     <div className="main-contact">
       <div className="contact">      
-        <img src={contact} alt="Contact image" className="contactImg"/>
+       
     <form ref={form} onSubmit={sendEmail} >
     <h2>Get into Touch</h2>
         <div className="contact-input-feild">

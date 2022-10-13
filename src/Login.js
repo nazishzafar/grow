@@ -26,18 +26,19 @@ const Login = () => {
       const {data}=await axios.post("http://127.0.0.1:8000/api/user/login/",{...userLogin}).then((response)=>{
         localStorage.setItem('token', response.data.token.access)
         console.log(localStorage.getItem('token'))
+        alert("Log in successfuly")
         navigate("/")
-        localStorage.setItem('token', null)
+       // localStorage.setItem('token', null)
       })
     } catch (error) {
-      // alert(error.message)
+       alert(error.message)
       console.log(error.message)
     }
   }
   return (
     
  
-
+<div className="navbarPadding">
 
 <div class="container mt-3">
   <h3>Sign in</h3>
@@ -60,7 +61,7 @@ const Login = () => {
   <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
-
+</div>
 
   )
 }

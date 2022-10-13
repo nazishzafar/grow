@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import axios from "axios";
 
+
 const initialValue = [
   {
     answer: null,
@@ -186,7 +187,7 @@ const initialValue = [
 
 const Assessments = () => {
   const [userData, setUserData] = useState({
-    name: "",
+    child_name: "",
     age: 3,
     school_Grade: 0,
 
@@ -201,7 +202,7 @@ const Assessments = () => {
   };
   const navigate = useNavigate();
 
-  const [status, setStatus] = useState("");
+  
   const [assessments, setAssessments] = useState(initialValue);
   const totalArray = [];
   const [totals, setTotals] = useState([]);
@@ -221,6 +222,7 @@ const Assessments = () => {
   };
 
   var tscore;
+  var adhd_status;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -247,12 +249,9 @@ const Assessments = () => {
         .map((assessment) => assessment.blocks[3])
         .reduce((total, num) => total + num);
       totalArray[3] = adhd;
-      // [opposite, cognitive, hyperactive, adhd]
       console.log(totalArray, "totalArray");
       setTotals(totalArray);
       console.log(opposite, cognitive, hyperactive, adhd);
-      // console.log(totals, "totals")
-      // if (totalArray[3] >= 0) {
       if (userData.age >= 3 && userData.age <= 5) {
         Profile.map((p, index) => {
           if (p.adhdindex[0] === totalArray[3]) {
@@ -289,45 +288,46 @@ const Assessments = () => {
           return p;
         });
       }
-      console.log(tscore, "tscore");
+    
+
+     
+
       if (tscore < 40) {
-        setStatus("no adhd");
+        adhd_status="No adhd";
       } else if (tscore >= 40 && tscore <= 60) {
-        setStatus("slightly");
+       adhd_status="slightly";
       } else if (tscore >= 60 && tscore < 65) {
-        setStatus("moderate");
+        adhd_status="moderate";
       } else if (tscore >= 65 && tscore < 70) {
-        setStatus("heavly");
+        adhd_status="heavly";
       } else if (tscore >= 70) {
-        setStatus("severe");
+        adhd_status="severe";
       }
 
-      // }
+    
 
-      console.log(status, "status");
-      console.log(tscore);
+        try {
+          console.log(localStorage.getItem('token'))
+          const config = {
+            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+            
+        };
+        
+        const {data}= axios.post("http://127.0.0.1:8000/user_adhd_result/ ",{...userData,opposite,cognitive,hyperactive,adhd,tscore,adhd_status},config).then((response)=>{
 
-      // alert("Your T score is "+ value +"and status is "+ status)
+          console.log(userData)
+          alert("Your T score is " + tscore + " Your adhd_status is "+ adhd_status)
+          console.log(localStorage.getItem('token'))
 
-      //   try {
-      //     console.log(localStorage.getItem('token'))
-      //     const config = {
-      //       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-      //   };
-      //   debugger
-      //   const {data}= axios.post("http://127.0.0.1:8000/user_adhd_result/ ",{...userData,opposite,cognitive,hyperactive,adhd,tscore,status},config).then((response)=>{
+        })
+      } catch (error) {
 
-      //     console.log(userData)
-      //     console.log(localStorage.getItem('token'))
-
-      //   })
-      // } catch (error) {
-
-      //   // alert(error.message)
-      //   console.log(error.message)
-      // }
+         alert(error.message)
+        console.log(error.message)
+      }
 
       setBool(true);
+     
     }
   };
 
@@ -349,82 +349,15 @@ const Assessments = () => {
       >
         <h1>Conners' Parent Rating Scale-Revised (S)</h1>
         <h4> by C. Keith Conners, Ph.D.</h4>
-        <h1>{tscore}</h1>
+      
       </div>
 
-      {/* <div className="conner-cotainer">
-        <form>
-          <div className="conner-input-field">
-            <label htmlFor="name">Full Name</label>
-            <input
-              type="text"
-              autoComplete="off"
-              name="name"
-              id="name"
-              onChange={handleInput}
-              value={userData.name}
-              required
-            />
-          </div>
-
-          <div className="conner-input-field">
-            <label htmlFor="age"> Age</label>
-            <input
-              type="number"
-              autoComplete="off"
-              name="age"
-              id="age"
-              min='3'
-              max='17'
-              onChange={handleInput}
-              value={userData.age}
-              required
-            />
-          </div>
-
-          <div className="conner-input-field">
-            <label htmlFor="gender"> Gender</label>
-            <input
-              type="radio"
-              autoComplete="off"
-              onChange={handleInput}
-              name="gender"
-              id="Male"
-              value="Male"
-            />
-            Male
-            <input
-              type="radio"
-              autoComplete="off"
-              onChange={handleInput}
-              name="gender"
-              id="Female"
-              value="Female"
-            />
-            Female
-          </div>
-
-       
-          <div className="conner-input-field">
-            <label htmlFor="school_Grade">School Grade</label>
-            <input
-              type="number"
-              autoComplete="off"
-              name="school_Grade"
-              id="school_Grade"
-              onChange={handleInput}
-              value={userData.school_Grade}
-              required
-            />
-          </div>
-     
-        </form> */}
-      {/* </div> */}
+    
       <div style={{display:"flex",flexDirection:'column',alignItems:'center',justifyContent:'center',padding:'30px', boxShadow: "0px 4px 8px 0px rgba(0, 0, 0, 0.4)"}}>
         <div style={{maxWidth:"600px",backgroundColor:"",width:"100%"}}>
         <form >
         <div class="mb-3 mt-3 form-group">
-          <label htmlFor="name" class="form-label">
+          <label htmlFor="child_name" class="form-label">
             Full Name:{" "}
           </label>
           <input
@@ -432,10 +365,10 @@ const Assessments = () => {
             
             autoComplete="off"
             class="form-control"
-            name="name"
-            id="name"
+            name="child_name"
+            id="child_name"
             onChange={handleInput}
-            value={userData.name}
+            value={userData.child_name}
             required
           />
         </div>
@@ -520,11 +453,16 @@ const Assessments = () => {
           has this been in the last month'?”, and circle the best answer for
           each one. If none, not at all, seldom, or very infrequently. you would
           circle 0. If very much true, or it occurs very often or frequently,
-          you would Circle 3. You would Cll'CiC l or 2 for ratings in between.
+          you would Circle 3. You would Circle l or 2 for ratings in between.
           Please respond to all the items.
         </p>
       </div>
         </div>
+
+
+
+
+        
       
         <div style={{display:"flex", justifyContent:"center", alignItems:'center'}}>
         <div className="form-container">
@@ -597,7 +535,7 @@ const Assessments = () => {
             Submit
           </button>
         )}
-
+       
         {bool && (
           <div>
             <div style={{ display: "flex", gap: "1rem", fontWeight: "500" }}>
@@ -612,6 +550,7 @@ const Assessments = () => {
                 <div key={id}>{total}</div>
               ))}
             </div>
+         
 
             <div className="recomm" style={{ display: "flex", gap: "5rem" }}>
               <Button
@@ -621,7 +560,7 @@ const Assessments = () => {
                   height: "5rem",
                   marginTop: "3rem",
                 }}
-                onClick={() => navigate("/adDiets")}
+                onClick={() => navigate("/AdDiets")}
               >
                 Recommendations
               </Button>

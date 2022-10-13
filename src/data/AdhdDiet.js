@@ -11,7 +11,8 @@ export const AdhdDiet = {
         ],
        
         "Avoids": ["Candy, Corn Syrup, White Rice, Potatos, Honey, Sugar",
-        "Artificial Colors","Additives","Artificial Sweetners","Aspartame (Alow calories sweetner)","MSG(Sodium glutamate generally present in fast foods and snacks)",
+        "Artificial Colors","Additives","Artificial Sweetners","Aspartame (Alow calories sweetner)",
+        "MSG(Sodium glutamate generally present in fast foods and snacks)",
         "Nitrites" ,
         "Avoid sugar in some cases","Moderate amount of caffeine","Drink Plenty of water"],
        

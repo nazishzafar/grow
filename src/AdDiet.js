@@ -1,21 +1,44 @@
 import React from 'react'
 import articles from "./Images/articles.svg"
 import "./styles/Home.css"
-import { Adhd } from "./data/AdhdDiet";
+import { AdhdDiet } from "./data/AdhdDiet";
+import adhdRec from "./Images/adhdRec.svg";
 
- const AdDiets = () => {
+ const AdDiet = () => {
   return (
-    <div>
-    <div className='hero-image'>
-   <img  src={articles} alt="hero image"/>
-   </div>
-
-   <div>
-            <h2>Water Requirement</h2>
-          </div>
     
- </div>
-  
+    <div className="navbarPadding">
+
+
+      <div style={{ maxWidth: "1440px", objectFit: "contain" }}>
+        <img width="100%" height="100%" src={adhdRec} alt="hero-img" />
+      </div>
+
+   <div className="container">
+         
+         
+          <div>
+            <h2>Recommendations</h2>
+          </div>
+          {AdhdDiet.AdhdDiets.specificDiet.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div>
+            <h2>Recommendations</h2>
+          </div>
+          {AdhdDiet.AdhdDiets.Recommendation.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          <div>
+              <h2>Avoids</h2>
+          </div>
+          {AdhdDiet.AdhdDiets.Avoids.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+          </div>
+         
+</div>
+        
   )
 }
-export default  AdDiets;
+export default  AdDiet;

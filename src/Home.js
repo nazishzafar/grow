@@ -109,9 +109,7 @@ const Home = () => {
           <div style={{ backgroundImage: `url(${normal})`}} className="feature-img"></div>
             <h3>Diet Plan for Normal</h3>
             <p>
-              Between all those diaper changes, feedings, and naps there will be
-              times when your newborn is awake and alert, ready to take in his
-              surroundings and engage with you.
+            “You are what you eat, so don’t be fast, cheap, easy, or fake.”
             </p>
           </button>
 
@@ -121,9 +119,7 @@ const Home = () => {
             <h3>Diet Plan for UnderWeight </h3>
 
             <p>
-              Is your child too busy or too picky to eat? Discover what to serve
-              your toddler or preschooler and how to make family mealtimes more
-              pleasant.
+            “You are what you eat, so don’t be fast, cheap, easy, or fake.”
             </p>
           </button>
 
@@ -132,9 +128,8 @@ const Home = () => {
 
             <h3>Diet Plan for OverWeight</h3>
             <p>
-              Is your child too busy or too picky to eat? Discover what to serve
-              your toddler or preschooler and how to make family mealtimes more
-              pleasant.
+                            
+            “You are what you eat, so don’t be fast, cheap, easy, or fake.”
             </p>
           </button>
 
@@ -143,8 +138,8 @@ const Home = () => {
 
             <h3>Activities for ADHD and Autism</h3>
             <p>
-              Parenting is challenging and rewarding! Read about postpartum life,
-              finding support, and experiences from other parents.
+            Sometimes real superheros live in the hearts of small children
+              fighting big battles. Learn to overcome your child disability here.
             </p>
           </button>
           <button className="feature">

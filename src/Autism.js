@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./styles/Home.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 const questionaires = [
   {
     question: "Relating to people",
@@ -86,7 +89,26 @@ const questionaires = [
   },
 ];
 
+
+
+
 export default function Autism() {
+
+
+  const [userData, setUserData] = useState({
+    child_name: "",
+    age: 3,
+    school_Grade: 0,
+  
+    gender: "",
+  });
+  const handleInputform = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+   
+    setUserData({ ...userData, [name]: value });
+  };
+  const navigate = useNavigate();
   const [assessments, setAssessments] = useState(questionaires);
   const [OptionArray, setOptionArray] = useState([]);
   const [total, setTotals] = useState([]);
@@ -104,23 +126,150 @@ export default function Autism() {
   };
   const [bool, setBool] = useState(false);
   const handleSubmit = () => {
-    const totalAutism = OptionArray.reduce((a, b) => (a += b));
-    var status = "";
-    if (totalAutism >= 15 && totalAutism <= 29) {
-      status = "Minimal to no symptoms";
-    } else if (totalAutism >= 30 && totalAutism <= 36.5) {
-      status = "Mild to moderate";
-    } else if (totalAutism >= 37) {
-      status = "Severe symptoms";
+    const autism_score = OptionArray.reduce((a, b) => (a += b));
+    var autism_status = "";
+    if (autism_score >= 15 && autism_score <= 29) {
+      autism_status = "Minimal to no symptoms";
+    } else if (autism_score >= 30 && autism_score <= 36.5) {
+      autism_status = "Mild to moderate";
+    } else if (autism_score >= 37) {
+      autism_status = "Severe symptoms";
     }
-    console.log(totalAutism, "submitted");
+    console.log(autism_score, "submitted");
     console.log(OptionArray, "optio2");
-    alert(`Your Score is : ${totalAutism}   Your status is:  ${status}`);
+    alert(`Your Score is : ${autism_score}   Your autism_status is:  ${autism_status}`);
     setDietRecomendation(true);
+
+
+    try {
+      console.log(localStorage.getItem('token'))
+      const config = {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        
+    };
+    
+    const {data}= axios.post("http://127.0.0.1:8000/user_autism_result/",{...userData,autism_score,autism_status},config).then((response)=>{
+
+      console.log(userData)
+      
+      console.log(localStorage.getItem('token'))
+
+      
+
+    })
+
+    const {getData}= axios.get("http://127.0.0.1:8000/user_autism_result/",{...userData,autism_score,autism_status},config).then((response)=>{
+
+      console.log(userData)
+      
+      console.log(localStorage.getItem('token'))
+  })
+  } catch (error) {
+
+     alert(error.message)
+    console.log(error.message)
+  }
+
+
   };
 
   return (
     <div className="navbarPadding">
+
+
+<div style={{display:"flex",flexDirection:'column',alignItems:'center',justifyContent:'center',padding:'30px', boxShadow: "0px 4px 8px 0px rgba(0, 0, 0, 0.4)"}}>
+        <div style={{maxWidth:"600px",backgroundColor:"",width:"100%"}}>
+        <form >
+        <div class="mb-3 mt-3 form-group">
+          <label htmlFor="child_name" class="form-label">
+            Full Name:{" "}
+          </label>
+          <input
+            type="text"
+            
+            autoComplete="off"
+            class="form-control"
+            name="child_name"
+            id="child_name"
+            onChange={handleInputform }
+            value={userData.child_name}
+            required
+          />
+        </div>
+        <div class="mb-3 mt-3 form-group">
+          <label htmlFor="age" class="form-label">
+            {" "}
+            Age
+          </label>
+          <input
+            type="number"
+            autoComplete="off"
+            max={17}
+            min={3}
+            name="age"
+            id="age"
+            class="form-control"
+            onChange={handleInputform }
+            value={userData.age}
+            required
+          />
+        </div>
+
+        <div class="mb-3 mt-3" style={{display:'flex',gap:"10px"}}>
+         {/* <form > */}
+           <span>Gender: </span>
+           
+            <input
+              type="radio"
+              autoComplete="off"
+              onChange={handleInputform }
+              name="gender"
+              id="Male"
+              value="Male"
+              class="form-check-input"
+            />
+             <label htmlFor="Male">
+              Male
+            </label>
+            
+            <input
+              type="radio"
+              autoComplete="off"
+              onChange={handleInputform }
+              name="gender"
+              id="Female"
+              value="Female"
+              class="form-check-input"
+            />
+             <label htmlFor="Female" >
+              Female
+            </label>
+          
+            {/* </form> */}
+        </div>
+
+        <div class="mb-3 mt-3 form-group">
+          <label htmlFor="school_Grade" class="form-label">
+            School Grade
+          </label>
+          <input
+            type="number"
+            autoComplete="off"
+            name="school_Grade"
+            id="school_Grade"
+            class="form-control"
+            onChange={handleInputform }
+            value={userData.school_Grade}
+            required
+          />
+        </div>
+      </form>
+        </div>
+      </div>
+
+
+
+
       <div className="container">
       
         <div className="" style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', padding:'30px',}}>
@@ -134,10 +283,12 @@ export default function Autism() {
 
               <select defaultValue= {0} onChange={handleInput} style={{width:'100%', border:'1px solid #437f86', borderRadius:'10px',outline:'none'}}>
                 {[
-                  { name: "No", ratio: 1 },
-                  { name: "moderate", ratio: 1.5 },
-                  { name: "Yes", ratio: 2 },
-                  { name: "wow", ratio: 2.5 },
+                  { name: "Not agree", ratio: 1 },
+                  { name: "Normal to midly", ratio: 1.5 },
+                  { name: "Mildly abnormal", ratio: 2 },
+                  {name: "Mild to moderately", ratio: 2.5},
+                  { name: "Moderate", ratio: 3.5 },
+                  { name: "Moderate to severe", ratio: 4 },
                 ].map((o) => (
                   <option value={o.ratio} key={o.name}>
                     {o.name}
@@ -158,8 +309,8 @@ export default function Autism() {
         </form>
         {dietRecomendation? 
         <div style={{display:'flex', gap:"10px",padding:'5px'}}>
-            <button style={{borderRadius:'20px', backgroundColor:'#437f86', padding:'10px',width:'150px'}}><Link style={{color:'white'}} to="" >Recommendation</Link></button>
-            <button style={{borderRadius:'20px', backgroundColor:'#437f86',padding:'10px',width:'100px'}}><Link style={{color:'white'}} to="">Activities</Link></button>
+           
+            <button style={{borderRadius:'20px', backgroundColor:'#437f86',padding:'10px',width:'100px'}}><Link style={{color:'white'}} to="/AutismAct" onClick={() => navigate("/AutismAct")}>Activities</Link></button>
         </div>:""}
         </div>
       </div>

@@ -54,25 +54,25 @@ const NavbarSection = () => {
               </div> 
         <Navbar.Collapse id="basic-navbar-nav" className='navList'>
           <Nav className="list">
-            <Nav.Link className='item' > <Link class="nav-link" to='/'><span style={{paddingRight:"5px"}}><FaHome /></span> Home</Link></Nav.Link>
-            <Nav.Link className='item'> <Link to='/psychlogical' className='nav-link'><span style={{paddingRight:"5px"}}><FaAddressBook/> </span> Psychlogical</Link></Nav.Link>
-            <Nav.Link className='item'>  <Link class="nav-link" to='/diet'><span style={{paddingRight:"5px"}}><FaAppleAlt/></span> Diet Plans</Link></Nav.Link>
+            <Nav.Link className='item' > <Link class="nav-link" to='/'><span style={{paddingRight:"5px"}}></span> Home</Link></Nav.Link>
+            <Nav.Link className='item'> <Link to='/psychlogical' className='nav-link'><span style={{paddingRight:"5px"}}> </span> Psychlogical</Link></Nav.Link>
+            <Nav.Link className='item'>  <Link class="nav-link" to='/diet'><span style={{paddingRight:"5px"}}></span> Diet Plans</Link></Nav.Link>
             <NavDropdown style={{paddingTop:'10px'}} className='item' title="Activities" id="basic-nav-dropdown">
               <NavDropdown.Item style={{backgroundColor:"#437f86"}} className='item' href=""><Link  to='/activities'>Normal Child</Link></NavDropdown.Item>
               {/* <NavDropdown.Item  style={{backgroundColor:"#437f86"}}  className='item' href=""> */}
               <NavDropdown style={{backgroundColor:"#437f86", paddingLeft:'10px'}}  className='item' title="Autistic">
                 <NavDropdown.Item style={{backgroundColor:"#437f86"}} className='item' href=""><Link  to='/Autistic'>Indoor Activities</Link></NavDropdown.Item>
-                <NavDropdown.Item style={{backgroundColor:"#437f86"}} className='item' href=""><Link  to='/Autistic'>Outdoor Activities</Link></NavDropdown.Item>
-                <NavDropdown.Item style={{backgroundColor:"#437f86"}} className='item' href=""><Link  to='/Autistic'>Sensory Activities</Link></NavDropdown.Item>
-                <NavDropdown.Item style={{backgroundColor:"#437f86"}} className='item' href=""><Link  to='/Autistic'>Fun Activities</Link></NavDropdown.Item>
+                <NavDropdown.Item style={{backgroundColor:"#437f86"}} className='item' href=""><Link  to='/OutdoorAutistic'>Outdoor Activities</Link></NavDropdown.Item>
+                <NavDropdown.Item style={{backgroundColor:"#437f86"}} className='item' href=""><Link  to='/SensoryAct'>Sensory Activities</Link></NavDropdown.Item>
+                <NavDropdown.Item style={{backgroundColor:"#437f86"}} className='item' href=""><Link  to='/Social'>Social Activities</Link></NavDropdown.Item>
                 
                 </NavDropdown>
               {/* </NavDropdown.Item> */}
             </NavDropdown>
-            <Nav.Link className='item'> <Link to='/articles' className='nav-link'><span style={{paddingRight:"5px"}}><FaClipboardList/> </span>Articles</Link></Nav.Link>
-            <Nav.Link className='item'> <Link to='/contact' className='nav-link'><span style={{paddingRight:"5px"}}><FaHome/></span> Contact</Link></Nav.Link>
-            <Nav.Link className='item'> <Link to='/login' className='nav-link'><span style={{paddingRight:"5px"}}><FaLock/></span> Log in</Link></Nav.Link>
-            <Nav.Link className='item'>  <Link to='/signup' className='nav-link'><span style={{paddingRight:"5px"}}><FaUser/></span> Sign Up</Link></Nav.Link>
+            <Nav.Link className='item'> <Link to='/articles' className='nav-link'><span style={{paddingRight:"5px"}}> </span>Articles</Link></Nav.Link>
+            <Nav.Link className='item'> <Link to='/contact' className='nav-link'><span style={{paddingRight:"5px"}}></span> Contact</Link></Nav.Link>
+            <Nav.Link className='item'> <Link to='/login' className='nav-link'><span style={{paddingRight:"5px"}}></span> Log in</Link></Nav.Link>
+            <Nav.Link className='item'>  <Link to='/signup' className='nav-link'><span style={{paddingRight:"5px"}}></span> Sign Up</Link></Nav.Link>
            
             
           </Nav>
